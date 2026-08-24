@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'luvdrive — เช่ารถหรู',
-  description: 'ค้นหาและเช่ารถหรูกับ luvdrive',
+  title: 'MOVAGO — Executive Airport Transfer',
+  description: 'Premium airport transfer and executive mobility by MOVAGO',
 }
 
 export default function RootLayout({

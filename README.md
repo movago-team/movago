@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MOVAGO
 
-## Getting Started
+Premium chauffeur-driven car rental / executive airport transfer — Next.js frontend with web booking, membership, and Google Maps / pin location picker.
 
-First, run the development server:
+Brand: dark + gold (`#C5A073`). Default text size: `text-base`. Full rules: [docs/STRUCTURE.md](docs/STRUCTURE.md).
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Read first:** [docs/STRUCTURE.md](docs/STRUCTURE.md) — mandatory folder rules for the whole team.
 
-## Learn More
+| Path | Purpose |
+|------|---------|
+| `app/(marketing)/` | Home, Services, Vehicles, Destinations, Corporate, About |
+| `app/book/` | Book Now flow |
+| `components/` | layout, ui, and feature sections |
+| `constants/` `data/` `hooks/` `lib/` `services/` `styles/` `types/` `utils/` | shared non-UI code |
+| `public/images|icons` | static assets by category |
+| `_sandbox/` | experiments only (not production) |
 
-To learn more about Next.js, take a look at the following resources:
+## Main routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/` — Home
+- `/services` — Our Services
+- `/vehicles` — Vehicles
+- `/destinations` — Destinations
+- `/corporate` — Corporate
+- `/about` — About Us
+- `/book` — Book Now
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Editor consistency (Cursor + VS Code)
 
-## Deploy on Vercel
+These files are shared by both editors:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `.editorconfig`
+- `.prettierrc`
+- `.eslintrc.json`
+- `.vscode/settings.json`
+- `docs/STRUCTURE.md`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`.cursorrules` is for Cursor AI only. Structure rules still live in `docs/STRUCTURE.md` so VS Code users follow the same layout.
+
+Install the **Prettier** and **ESLint** extensions in VS Code (and Cursor) for format-on-save.

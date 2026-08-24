@@ -1,0 +1,66 @@
+# Movago — Cursor rules
+
+Follow `docs/STRUCTURE.md` as the source of truth for folder layout, brand, and product scope. Do not invent new top-level folders without updating that doc.
+
+## Product
+
+MOVAGO — premium **chauffeur-driven** car rental / executive airport transfer.
+
+Core capabilities the product must support:
+
+- Book and manage trips on the website (`/book` and booking flows)
+- Member accounts (register, login, profile, booking history)
+- Location pick-up / drop-off via **Google Maps place search** or **custom map pin**
+- Marketing pages: Home, Services, Vehicles, Destinations, Corporate, About
+
+## Brand theme (from design)
+
+Dark luxury + gold accent. Do not invent alternate palettes (no purple gradients, no emerald primary).
+
+| Token | Value | Usage |
+|-------|-------|--------|
+| Background | `#000000` | page / hero dark surfaces |
+| Surface | `#141414` / `#1A1A1A` | cards, panels, footer blocks |
+| Accent gold | `#C5A073` | CTA buttons, active nav, icons, highlights |
+| Accent gold hover | `#B08D60` | button / link hover |
+| Text primary | `#FFFFFF` | headings, primary copy on dark |
+| Text secondary | `#B3B3B3` | body / muted on dark |
+| Text on gold | `#000000` | label on gold buttons |
+| Light section bg | `#F3F3F3` | occasional light bands (amenities bars) |
+
+Typography:
+
+- Headings: serif display (luxury)
+- Body / nav / forms: clean sans-serif
+- **Default text size = `text-base`** for body, table, buttons, inputs, labels, errors
+- Avoid `text-sm` / `text-xs` except badges, captions, metadata
+- Section titles use `text-lg` and up — never shrink body below `text-base`
+
+## Structure (summary)
+
+- Routes only in `app/` (marketing group + `book` + future auth/member routes)
+- `components/layout` — Header, Footer, Navbar
+- `components/ui` — shared primitives
+- `components/<feature>` — home, vehicles, destinations, corporate, about, services, booking, membership, maps
+- `constants`, `data`, `hooks`, `lib`, `services`, `styles`, `types`, `utils`
+- Maps / Places API clients → `lib/`; booking & membership domain → `services/`
+- Assets in `public/images/*` and `public/icons`
+- Experiments only in `_sandbox/`
+
+## Do
+
+- Keep `page.tsx` thin; compose from `components/`
+- Put API/domain logic in `lib/` or `services/`
+- Use `@/` imports
+- Match naming: PascalCase components, camelCase utils
+- Use brand gold for primary CTAs (`Book Now`, Search, submit)
+- Location UX must support both Places autocomplete and manual pin drop
+
+## Do not
+
+- Put business logic or shared components under `app/`
+- Scatter fetch calls inside UI components
+- Add production features under `_sandbox/`
+- Create alternate trees like `src/components` or random root folders
+- Override default body text to smaller than `text-base`
+- Use non-brand primary colors (emerald, purple, etc.)
