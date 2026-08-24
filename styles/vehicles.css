@@ -1,0 +1,135 @@
+.vehicles-section {
+  background: radial-gradient(circle at 50% 30%, #171a1a 0%, #0d1010 56%, #090b0b 100%);
+  color: #fff;
+  padding: 38px 0 50px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.section-head h2,
+.corporate-copy h2 {
+  margin: 0 0 10px;
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.section-head p {
+  margin: 0;
+  color: #44443f;
+  font-size: 13px;
+}
+
+.section-head.dark p { color: #c6c7c4; }
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.vehicle-card {
+  border: 1px solid rgba(231,181,93,.48);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 226px;
+  overflow: hidden;
+  background: linear-gradient(120deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+}
+
+.vehicle-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vehicle-copy {
+  padding: 20px 24px 17px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-copy h3 {
+  margin: 0 0 3px;
+  font-size: 22px;
+}
+
+.vehicle-type {
+  font-size: 11px;
+  color: #c3c3bf;
+}
+
+.vehicle-meta {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0 13px;
+  flex-wrap: wrap;
+  color: #f0f0ed;
+  font-size: 10px;
+}
+
+.vehicle-copy p {
+  margin: 0;
+  color: #c8c8c4;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.vehicle-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.vehicle-bottom small {
+  display: block;
+  font-size: 10px;
+  color: #c5c5c1;
+}
+
+.vehicle-bottom strong {
+  display: block;
+  font-size: 21px;
+}
+
+.vehicle-bottom strong span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.gold-btn.small {
+  padding: 10px 25px;
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .vehicle-grid { grid-template-columns: 1fr; }
+  .vehicle-card { grid-template-columns: 43% 57%; }
+}
+
+@media (max-width: 600px) {
+  .section-head .outline-btn { display: none; }
+
+  .vehicle-card {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-image { height: 215px; }
+  .vehicle-copy { padding: 10px 17px 18px; }
+}

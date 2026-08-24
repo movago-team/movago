@@ -30,11 +30,12 @@ Dark luxury + gold accent. Do not invent alternate palettes (no purple gradients
 
 Typography:
 
-- Headings: serif display (luxury)
-- Body / nav / forms: clean sans-serif
-- **Default text size = `text-base`** for body, table, buttons, inputs, labels, errors
+- Headings: **Playfair Display** (serif, luxury)
+- Body / nav / forms: **Inter** (sans-serif)
+- **Default text size = 16px** (`text-base`) for body, table, buttons, inputs, labels, errors
 - Avoid `text-sm` / `text-xs` except badges, captions, metadata
-- Section titles use `text-lg` and up — never shrink body below `text-base`
+- Section titles use `text-lg` and up — never shrink body below 16px
+- Content canvas: `.page-width` = `width: 1440px; margin: auto;` (`max-width: 100%` on smaller viewports)
 
 ## Structure (summary)
 
