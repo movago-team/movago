@@ -21,7 +21,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['Georgia', 'Times New Roman', 'serif'],
+        sans: ['var(--font-inter)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
         card: '0 18px 50px -34px rgb(25 25 24 / 30%)',

@@ -4,12 +4,12 @@
   --cream: #f8f5ef;
   --gold: #c5a073;
   --gold-soft: #f1cc83;
+  --gold-2: #e3ad4e;
   --text: #111;
   --muted: #c8c8c3;
   --line: rgba(229, 180, 93, .48);
-  /* reference screenshot is roughly 93.2% content width */
-  --page-gutter: clamp(28px, 3.4vw, 58px);
-  --page-width: 1600px;
+  --page-gutter: clamp(20px, 3.4vw, 40px);
+  --page-width: 2560px;
 }
 
 * {
@@ -24,7 +24,8 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 button,
@@ -48,109 +49,37 @@ img {
 }
 
 .site-shell {
+  position: relative;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-shell > main {
+  flex: 1 0 auto;
 }
 
 .page-width {
-  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
-  margin-inline: auto;
+  width: 1440px;
+  max-width: 100%;
+  margin: auto;
 }
 
 h1,
 h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 .eyebrow {
   margin-bottom: 11px;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: .025em;
 }
 
-/* ========================================================= NAVBAR ========================================================= */
-
-.topbar {
-  position: relative;
-  z-index: 20;
-  height: 64px;
-  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
-  margin-inline: auto;
-  display: flex;
-  align-items: center;
-}
-
-.brand {
-  width: 150px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  flex: 0 0 150px;
-}
-
-.brand img {
-  width: auto;
-  height: 58px;
-  max-width: 76px;
-  object-fit: contain;
-}
-
-.desktop-nav {
-  display: flex;
-  align-items: stretch;
-  height: 64px;
-  margin-left: 62px;
-  gap: clamp(24px, 2.2vw, 36px);
-}
-
-.desktop-nav a {
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.desktop-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 9px;
-  height: 2px;
-  background: var(--gold);
-}
-
-.nav-actions {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.lang-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 12px;
-  padding: 0;
-}
-
-.nav-chevron {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-right: 1.3px solid currentColor;
-  border-bottom: 1.3px solid currentColor;
-  transform: translateY(-2px) rotate(45deg);
-}
+/* ========================================================= SHARED BUTTON ========================================================= */
 
 .gold-btn {
   display: inline-flex;
@@ -163,20 +92,6 @@ h2 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45);
 }
 
-.nav-book {
-  min-width: 90px;
-  height: 38px;
-  padding-inline: 17px;
-  font-size: 12px;
-}
-
-.menu-btn {
-  display: none;
-  border: 0;
-  background: transparent;
-  color: #fff;
-}
-
 /* ========================================================= HERO ========================================================= */
 
 .hero {
@@ -185,6 +100,8 @@ h2 {
   overflow: hidden;
   background: #070909;
   color: #fff;
+  /* Space for absolute Header (topbar-overlay) from marketing layout */
+  padding-top: 64px;
 }
 
 .hero-photo {
@@ -203,8 +120,9 @@ h2 {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
-  margin-inline: auto;
+  width: 1440px;
+  max-width: 100%;
+  margin: auto;
   padding-top: 30px;
 }
 
@@ -221,7 +139,7 @@ h2 {
   max-width: 320px;
   margin: 17px 0 20px;
   color: #ededeb;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -229,7 +147,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 31px;
-  font-size: 10px;
+  font-size: 16px;
   color: #f2f2ef;
 }
 
@@ -251,8 +169,10 @@ h2 {
 .booking-wrap {
   position: relative;
   z-index: 5;
-  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
-  margin-inline: auto;
+  width: 1440px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: -90px;
 }
 
@@ -282,7 +202,7 @@ h2 {
   border: 0;
   background: transparent;
   color: #f7f7f4;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -314,7 +234,7 @@ h2 {
   display: grid;
   gap: 5px;
   color: #bdbdb9;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .booking-grid input,
@@ -328,7 +248,7 @@ h2 {
   color: #f5f5f2;
   padding: 0 10px;
   outline: none;
-  font-size: 9.5px;
+  font-size: 16px;
 }
 
 .field-with-icon {
@@ -354,7 +274,7 @@ h2 {
 
 .search-btn {
   height: 35px;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .booking-benefits {
@@ -364,7 +284,7 @@ h2 {
   justify-content: space-around;
   gap: 18px;
   color: #ecece9;
-  font-size: 8.5px;
+  font-size: 16px;
 }
 
 .booking-benefits span {
@@ -378,7 +298,7 @@ h2 {
   border-radius: 4px;
   background: rgba(229, 180, 93, .10);
   color: #f4d28e;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 /* ========================================================= WHY ========================================================= */
@@ -389,8 +309,9 @@ h2 {
 }
 
 .why-grid {
-  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
-  margin-inline: auto;
+  width: 1440px;
+  max-width: 100%;
+  margin: auto;
   display: grid;
   grid-template-columns: .85fr 1.35fr;
   gap: 76px;
@@ -407,7 +328,7 @@ h2 {
 .section-intro p {
   margin: 0;
   color: #44443f;
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -442,14 +363,14 @@ h2 {
 
 .feature-grid h3 {
   margin: 1px 0 4px;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .feature-grid p {
   margin: 0;
   max-width: 350px;
   color: #555550;
-  font-size: 9.5px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -480,7 +401,7 @@ h2 {
 .section-head p {
   margin: 0;
   color: #c6c7c4;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .outline-btn {
@@ -493,7 +414,7 @@ h2 {
   border-radius: 5px;
   background: transparent;
   color: #fff;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .outline-btn.light {
@@ -544,7 +465,7 @@ h2 {
   border-radius: 42px 55px 15px 15px;
   background: linear-gradient(135deg, rgba(255, 255, 255, .035), rgba(229, 180, 93, .065));
   color: rgba(255, 255, 255, .38);
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -564,7 +485,7 @@ h2 {
 
 .vehicle-type {
   color: #c2c3bf;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .vehicle-meta {
@@ -573,14 +494,14 @@ h2 {
   gap: 10px;
   flex-wrap: wrap;
   color: #ededeb;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 .vehicle-copy p {
   margin: 0;
   max-width: 290px;
   color: #c8c8c4;
-  font-size: 8.5px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -595,18 +516,18 @@ h2 {
 .vehicle-bottom small {
   display: block;
   color: #bfc0bc;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 .vehicle-bottom strong {
   display: block;
   color: #fff;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1;
 }
 
 .vehicle-bottom strong span {
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -614,7 +535,7 @@ h2 {
   min-width: 72px;
   height: 28px;
   padding-inline: 14px;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 /* ========================================================= ROUTES ========================================================= */
@@ -667,7 +588,7 @@ h2 {
   place-items: center;
   background: linear-gradient(135deg, #ded7cb, #eee8df);
   color: #938979;
-  font-size: 9px;
+  font-size: 16px;
   letter-spacing: .05em;
 }
 
@@ -676,7 +597,7 @@ h2 {
 }
 
 .route-copy strong {
-  font-size: 9.5px;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -689,7 +610,7 @@ h2 {
 
 .route-price>span {
   color: #777;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 .route-price b {
@@ -697,7 +618,7 @@ h2 {
 }
 
 .route-price small {
-  font-size: 7px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -752,7 +673,7 @@ h2 {
   max-width: 420px;
   margin: 0 0 18px;
   color: #c4c5c2;
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -774,7 +695,7 @@ h2 {
   display: grid;
   place-items: center;
   color: rgba(255, 255, 255, .38);
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: .08em;
 }
 
@@ -793,7 +714,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 11px;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .corporate-list svg {
@@ -823,13 +744,13 @@ h2 {
 .footer-brand p {
   max-width: 235px;
   color: #c3c4c0;
-  font-size: 9.5px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
 .footer h4 {
   margin: 0 0 15px;
-  font-size: 9.5px;
+  font-size: 16px;
 }
 
 .footer-grid>div:not(.footer-brand) {
@@ -845,7 +766,7 @@ h2 {
   padding: 0;
   background: none;
   color: #c8c9c5;
-  font-size: 9.5px;
+  font-size: 16px;
   text-align: left;
 }
 
@@ -854,7 +775,7 @@ h2 {
   align-items: center;
   gap: 11px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 7px;
 }
 
@@ -888,6 +809,10 @@ h2 {
 @media (max-width: 900px) {
   .topbar {
     height: 70px;
+  }
+
+  .hero {
+    padding-top: 70px;
   }
 
   .brand {
@@ -1071,17 +996,15 @@ h2 {
 /* ========================================================= REFERENCE POSITION PATCH Matches the supplied 1024px-style reference composition: ~32–35px outer gutters, booking overlaps hero, and the hero artwork starts around 24% from the left. ========================================================= */
 
 @media (min-width: 901px) {
-  /* IMPORTANT: Do not center the desktop inside a fixed 1600px canvas. The reference uses almost the entire viewport width. */
-
   .page-width,
   .topbar,
   .hero-content,
   .booking-wrap,
   .why-grid {
-    width: calc(100% - 68px);
-    max-width: none;
-    margin-left: 34px;
-    margin-right: 34px;
+    width: 1440px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Header reference alignment: logo ≈ 34px, Home ≈ 245px, CTA ≈ 34px from right */
@@ -1132,15 +1055,15 @@ h2 {
 /* A slightly wider desktop still keeps the same reference gutters, rather than growing to a centered max-width container. */
 
 @media (min-width: 1400px) {
-
   .page-width,
   .topbar,
   .hero-content,
   .booking-wrap,
   .why-grid {
-    width: calc(100% - 72px);
-    margin-left: 36px;
-    margin-right: 36px;
+    width: 1440px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1153,10 +1076,10 @@ h2 {
   .hero-content,
   .booking-wrap,
   .why-grid {
-    width: calc(100% - 44px);
-    max-width: none;
-    margin-left: 22px;
-    margin-right: 22px;
+    width: 1440px;
+    max-width: calc(100% - 44px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .booking-wrap {
@@ -1171,9 +1094,10 @@ h2 {
   .hero-content,
   .booking-wrap,
   .why-grid {
-    width: calc(100% - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
+    width: 1440px;
+    max-width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .booking-wrap {
@@ -1212,12 +1136,16 @@ h2 {
   z-index: 1;
 }
 
-/* Navbar + ข้อความอยู่เหนือรูป */
+/* Hero copy above photo; keep overlay header absolute (do not reset .topbar) */
 
-.topbar,
 .hero-content {
   position: relative;
   z-index: 2;
+}
+
+.topbar-overlay {
+  position: absolute;
+  z-index: 30;
 }
 
 /* Booking อยู่บนสุด */
@@ -1306,7 +1234,7 @@ h2 {
 
 .vehicles-heading .eyebrow {
   margin-bottom: 7px;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1;
   letter-spacing: .045em;
   color: var(--gold);
@@ -1314,7 +1242,7 @@ h2 {
 
 .vehicles-heading h2 {
   margin: 0 0 5px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: clamp(24px, 1.75vw, 31px);
   line-height: 1.02;
   font-weight: 500;
@@ -1324,7 +1252,7 @@ h2 {
 .vehicles-heading p {
   margin: 0;
   color: #c4c5c1;
-  font-size: 9.5px;
+  font-size: 16px;
   line-height: 1.35;
 }
 
@@ -1338,7 +1266,7 @@ h2 {
   border-radius: 4px;
   color: #f3f2ef;
   background: rgba(255, 255, 255, .01);
-  font-size: 8.5px;
+  font-size: 16px;
   white-space: nowrap;
 }
 
@@ -1386,7 +1314,7 @@ h2 {
   border-radius: 44px 54px 13px 13px;
   color: rgba(255, 255, 255, .40);
   background: linear-gradient(135deg, rgba(255, 255, 255, .03), rgba(229, 180, 93, .055));
-  font-size: 9px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: .09em;
 }
@@ -1402,14 +1330,14 @@ h2 {
 .vehicle-copy h3 {
   margin: 0 0 2px;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.08;
   font-weight: 700;
 }
 
 .vehicle-type {
   color: #c5c6c2;
-  font-size: 8.5px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
@@ -1420,7 +1348,7 @@ h2 {
   gap: 9px;
   flex-wrap: wrap;
   color: #f0f0ed;
-  font-size: 7.5px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
@@ -1428,7 +1356,7 @@ h2 {
   max-width: 285px;
   margin: 0;
   color: #c6c7c3;
-  font-size: 8px;
+  font-size: 16px;
   line-height: 1.42;
 }
 
@@ -1444,7 +1372,7 @@ h2 {
   display: block;
   margin-bottom: 1px;
   color: #c1c2be;
-  font-size: 7.5px;
+  font-size: 16px;
   line-height: 1;
 }
 
@@ -1458,7 +1386,7 @@ h2 {
 
 .vehicle-price strong span {
   margin-left: 2px;
-  font-size: 7.5px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1467,7 +1395,7 @@ h2 {
   height: 27px;
   padding: 0;
   border-radius: 4px;
-  font-size: 8.5px;
+  font-size: 16px;
 }
 
 /* Make the temporary photos sit like the reference vehicles */
@@ -1590,13 +1518,13 @@ h2 {
 .vehicle-copy h3 {
   margin: 0 0 3px;
   color: #fff;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.1;
   font-weight: 700;
 }
 
 .vehicle-type {
-  font-size: 9px;
+  font-size: 16px;
   color: #d0d0cd;
   margin-bottom: 8px;
 }
@@ -1606,13 +1534,13 @@ h2 {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 8px;
-  font-size: 8px;
+  font-size: 16px;
   color: #f3f1ea;
 }
 
 .vehicle-copy p {
   margin: 0;
-  font-size: 8px;
+  font-size: 16px;
   line-height: 1.45;
   color: #c9cac5;
   max-width: 290px;
@@ -1628,7 +1556,7 @@ h2 {
 
 .vehicle-price small {
   display: block;
-  font-size: 8px;
+  font-size: 16px;
   color: #c8c8c5;
   margin-bottom: 2px;
 }
@@ -1636,13 +1564,13 @@ h2 {
 .vehicle-price strong {
   display: block;
   color: #fff;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
 }
 
 .vehicle-price strong span {
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1651,7 +1579,7 @@ h2 {
   height: 28px;
   padding: 0;
   border-radius: 4px;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 @media (max-width: 900px) {
@@ -1696,7 +1624,7 @@ h2 {
 .section-eyebrow {
   margin-bottom: 10px;
   color: #d8a44e;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1705,7 +1633,7 @@ h2 {
 .routes-title {
   margin: 0;
   color: #141414;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.08;
@@ -1722,7 +1650,7 @@ h2 {
   justify-content: center;
   color: #8e8a83;
   background: transparent;
-  font-size: 12px;
+  font-size: 16px;
   text-decoration: none;
 }
 
@@ -1777,7 +1705,7 @@ h2 {
   display: grid;
   place-items: center;
   color: #9e9688;
-  font-size: 12px;
+  font-size: 16px;
   background: #ddd6ca;
 }
 
@@ -1789,7 +1717,7 @@ h2 {
 .route-name {
   min-height: 48px;
   color: #141414;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.55;
 }
@@ -1804,7 +1732,7 @@ h2 {
 
 .route-from {
   color: #9a978f;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -1817,7 +1745,7 @@ h2 {
 }
 
 .route-price span {
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1935,14 +1863,14 @@ h2 {
 
 .corporate-copy .eyebrow {
   margin-bottom: 10px;
-  font-size: 9px;
+  font-size: 16px;
   letter-spacing: .045em;
 }
 
 .corporate-copy h2 {
   max-width: 510px;
   margin: 0 0 13px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: clamp(25px, 1.85vw, 31px);
   line-height: 1.06;
   font-weight: 500;
@@ -1952,7 +1880,7 @@ h2 {
   max-width: 430px;
   margin: 0 0 19px;
   color: #c6c7c3;
-  font-size: 9.5px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -1960,7 +1888,7 @@ h2 {
   min-width: 78px;
   height: 31px;
   padding: 0 15px;
-  font-size: 9px;
+  font-size: 16px;
 }
 
 .corporate-photo {
@@ -1998,7 +1926,7 @@ h2 {
   align-items: center;
   gap: 12px;
   color: #fff;
-  font-size: 9.5px;
+  font-size: 16px;
   font-weight: 500;
   transition: color .2s ease, transform .2s ease;
 }
@@ -2058,7 +1986,7 @@ h2 {
   max-width: 235px;
   margin: 0 0 13px;
   color: #c2c3bf;
-  font-size: 8.8px;
+  font-size: 16px;
   line-height: 1.58;
 }
 
@@ -2074,7 +2002,7 @@ h2 {
   display: inline-grid;
   place-items: center;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -2093,14 +2021,14 @@ h2 {
 .footer-column h4 {
   margin: 0 0 6px;
   color: #fff;
-  font-size: 8.8px;
+  font-size: 16px;
   line-height: 1.2;
   font-weight: 700;
 }
 
 .footer-column>a:not(.footer-contact) {
   color: #c5c6c2;
-  font-size: 8.8px;
+  font-size: 16px;
   line-height: 1.35;
 }
 
@@ -2117,7 +2045,7 @@ h2 {
   align-items: center;
   gap: 11px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -2207,7 +2135,7 @@ h2 {
   }
 
   .footer-contact {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -2240,7 +2168,7 @@ h2 {
 
 .corporate-copy .eyebrow {
   margin-bottom: 8px;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 .corporate-copy h2 {
@@ -2253,7 +2181,7 @@ h2 {
 .corporate-copy p {
   margin: 0 0 16px;
   max-width: 390px;
-  font-size: 8px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -2262,7 +2190,7 @@ h2 {
   min-width: 69px;
   height: 27px;
   padding: 0;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 /* ---------- CORPORATE IMAGE ---------- */
@@ -2293,7 +2221,7 @@ h2 {
 .corporate-panel-item {
   min-height: 39px;
   gap: 10px;
-  font-size: 8px;
+  font-size: 16px;
 }
 
 .corporate-panel-icon {
@@ -2331,7 +2259,7 @@ h2 {
 .footer-brand p {
   max-width: 225px;
   margin-bottom: 9px;
-  font-size: 7.5px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -2339,7 +2267,7 @@ h2 {
 
 .footer-column h4 {
   margin-bottom: 7px;
-  font-size: 7.5px;
+  font-size: 16px;
 }
 
 /* Footer links */
@@ -2349,7 +2277,7 @@ h2 {
 }
 
 .footer-column>a:not(.footer-contact) {
-  font-size: 7.5px;
+  font-size: 16px;
 }
 
 /* Phone / Email */
@@ -2360,7 +2288,7 @@ h2 {
 
 .footer-contact {
   gap: 9px;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .footer-contact svg {
@@ -2377,7 +2305,7 @@ h2 {
 .footer-socials a {
   width: 16px;
   height: 16px;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 /* ====================================================== CORPORATE — FINAL REFERENCE MATCH ====================================================== */
@@ -2413,7 +2341,7 @@ h2 {
 .corporate-eyebrow {
   margin-bottom: 10px;
   color: #e2ad51;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
   letter-spacing: .05em;
@@ -2421,7 +2349,7 @@ h2 {
 
 .corporate-content h2 {
   margin: 0 0 13px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
   font-size: 28px;
   line-height: 1.05;
   font-weight: 500;
@@ -2431,7 +2359,7 @@ h2 {
 .corporate-content p {
   margin: 0 0 19px;
   color: #c5c6c2;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -2445,7 +2373,7 @@ h2 {
   border-radius: 5px;
   background: linear-gradient(180deg, #f1cc82 0%, #dda850 100%);
   color: #19140d;
-  font-size: 9px;
+  font-size: 16px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
 }
 
@@ -2514,7 +2442,7 @@ h2 {
   align-items: center;
   gap: 12px;
   color: #fff;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 500;
   transition: color .2s ease, transform .2s ease;
 }
@@ -2568,7 +2496,7 @@ h2 {
 
 .footer-logo-sub {
   margin-top: 5px;
-  font-size: 6px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: .08em;
@@ -2578,7 +2506,7 @@ h2 {
   margin: 0 0 12px;
   max-width: 235px;
   color: #c4c5c1;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -2596,7 +2524,7 @@ h2 {
   display: grid;
   place-items: center;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -2617,14 +2545,14 @@ h2 {
 .footer-contact-column h4 {
   margin: 0 0 10px;
   color: #fff;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
 }
 
 .footer-menu a {
   color: #c6c7c3;
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
@@ -2703,6 +2631,7 @@ h2 {
     position: relative;
     top: auto;
     right: auto;
+    transform: none;
     width: calc(100% - 28px);
     min-height: auto;
     margin: -35px auto 22px;
@@ -2722,7 +2651,7 @@ h2 {
   }
 
   .footer-contact-link {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -2741,4 +2670,93 @@ h2 {
   .footer-contact-column {
     grid-column: auto;
   }
+}
+
+/* ========================================================= BASE TYPE 16px + PAGE WIDTH 1440 ========================================================= */
+
+.page-width,
+.topbar,
+.hero-content,
+.why-grid {
+  width: 1440px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.booking-wrap {
+  width: 1440px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-book {
+  min-width: 110px;
+  height: 44px;
+  padding-inline: 18px;
+  font-size: 16px;
+}
+
+.booking-tabs {
+  min-height: 52px;
+}
+
+.booking-tabs button {
+  height: 52px;
+  font-size: 16px;
+}
+
+.booking-grid input,
+.booking-grid select,
+.search-btn {
+  height: 44px;
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.gold-btn.small,
+.vehicle-select,
+.corporate-button,
+.corporate-learn-more,
+.outline-btn,
+.vehicles-view-all,
+.routes-view-all {
+  width: auto;
+  min-width: 96px;
+  height: 44px;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.vehicle-card {
+  min-height: 220px;
+}
+
+.vehicle-image {
+  min-height: 220px;
+}
+
+.route-name {
+  min-height: auto;
+}
+
+.corporate-inner {
+  height: auto;
+  min-height: 300px;
+}
+
+.corporate-image {
+  height: auto;
+  min-height: 300px;
+}
+
+.corporate-features {
+  width: 280px;
+  min-height: 240px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.corporate-button {
+  min-width: 120px;
 }
