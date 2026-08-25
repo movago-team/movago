@@ -6,7 +6,8 @@ export type FooterLink = {
 export type FooterSocialLink = {
   label: string
   href: string
-  symbol: string
+  icon: string
+  symbol?: string
 }
 
 export const FOOTER_BRAND = {
@@ -17,9 +18,9 @@ export const FOOTER_BRAND = {
 } as const
 
 export const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
-  { label: 'Facebook', href: 'https://facebook.com', symbol: 'f' },
-  { label: 'Instagram', href: 'https://instagram.com', symbol: '◎' },
-  { label: 'Line', href: 'https://line.me', symbol: '●' },
+  { label: 'Facebook', href: 'https://facebook.com', icon: 'facebook' },
+  { label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
+  { label: 'Line', href: 'https://line.me', icon: 'line' },
 ]
 
 export const FOOTER_SERVICE_LINKS: FooterLink[] = [

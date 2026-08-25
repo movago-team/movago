@@ -1,0 +1,140 @@
+/* =========================================================
+   MOVAGO CUSTOM SELECT & DROPDOWN MENU
+   ========================================================= */
+
+.movago-custom-select {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.movago-select-trigger {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background-color: #171919;
+  color: #f5f5f2;
+  padding: 0 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.movago-select-trigger.has-icon {
+  padding-left: 36px;
+}
+
+.movago-select-trigger:hover {
+  border-color: rgba(197, 160, 115, 0.6);
+}
+
+.movago-select-trigger:focus,
+.movago-select-trigger.is-open {
+  border-color: var(--gold, #c5a073);
+  box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.16);
+}
+
+.movago-select-value {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movago-select-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold, #c5a073);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.movago-select-arrow.is-open {
+  transform: rotate(180deg);
+}
+
+.movago-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  z-index: 60;
+  background: #4B4741;
+  border: 1px solid #75654E;
+  border-radius: 7px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.20);
+  padding: 5px 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.movago-dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.movago-dropdown-menu::-webkit-scrollbar-track {
+  background: #4B4741;
+}
+
+.movago-dropdown-menu::-webkit-scrollbar-thumb {
+  background: #75654E;
+  border-radius: 3px;
+}
+
+.movago-dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #C5A073;
+}
+
+.movago-dropdown-item {
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #F7F3EC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.movago-dropdown-item:hover,
+.movago-dropdown-item:focus-visible {
+  background-color: #5B554C;
+  color: #F7F3EC;
+  outline: none;
+}
+
+.movago-dropdown-item.is-selected {
+  background-color: #675A47;
+  color: #F7F3EC;
+  font-weight: 600;
+}
+
+.movago-dropdown-item.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.movago-dropdown-check {
+  color: var(--gold, #C5A073);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}

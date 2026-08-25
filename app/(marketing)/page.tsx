@@ -1,20 +1,20 @@
 'use client'
 
 import { useState } from 'react'
-
-import HeroSection from '@/components/home/herosection'
-import BookingSection from '@/components/home/bookingsection'
-import WhySection from '@/components/home/whysection'
-import VehicleSection from '@/components/home/vehiclesection'
-import RoutesSection from '@/components/home/routesection'
-import CorporateSection from '@/components/home/corporatesection'
+import {
+  BookingSection,
+  CorporateSection,
+  HeroSection,
+  RouteSection,
+  VehicleSection,
+  WhySection,
+} from '@/components/home'
 
 export default function HomePage() {
   const [vehicle, setVehicle] = useState('')
 
-  const selectVehicle = (vehicleName: string) => {
+  const handleSelectVehicle = (vehicleName: string) => {
     setVehicle(vehicleName)
-
     document.getElementById('booking')?.scrollIntoView({
       behavior: 'smooth',
       block: 'center',
@@ -24,15 +24,10 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-
       <BookingSection vehicle={vehicle} onVehicleChange={setVehicle} />
-
       <WhySection />
-
-      <VehicleSection onSelect={selectVehicle} />
-
-      <RoutesSection />
-
+      <VehicleSection onSelect={handleSelectVehicle} />
+      <RouteSection />
       <CorporateSection />
     </main>
   )

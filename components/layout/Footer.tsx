@@ -25,8 +25,11 @@ export default function Footer() {
       <div className="page-width footer-inner">
         <div className="footer-brand">
           <Link href="/" className="footer-logo" aria-label="MOVAGO Home">
-            <div className="footer-logo-main">{FOOTER_BRAND.name}</div>
-            <div className="footer-logo-sub">{FOOTER_BRAND.tagline}</div>
+            <img src="/images/brand/logo.png" alt="MOVAGO" className="footer-brand-logo" />
+            <div className="footer-logo-text">
+              <div className="footer-logo-main">{FOOTER_BRAND.name}</div>
+              <div className="footer-logo-sub">{FOOTER_BRAND.tagline}</div>
+            </div>
           </Link>
 
           <p>
@@ -46,7 +49,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label={item.label}
               >
-                {item.symbol}
+                <Icon name={item.icon} size={16} />
               </a>
             ))}
           </div>

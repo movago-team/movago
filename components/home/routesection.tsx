@@ -1,23 +1,83 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { useRef } from "react";
-import { routes } from "../../data/routes";
+import Link from 'next/link'
+import { useEffect, useMemo, useRef } from 'react'
+import { routes } from '@/data/routes'
+
+// 5 repeated sets for seamless infinite looping
+const SETS_COUNT = 5
+const INITIAL_SET_INDEX = 2 // middle set
 
 export default function RouteSection() {
-  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef<HTMLDivElement | null>(null)
 
-  const scrollRoutes = (direction: "left" | "right") => {
-    if (!sliderRef.current) return;
+  // Memoize the repeated routes list
+  const infiniteRoutes = useMemo(() => {
+    const list = []
+    for (let s = 0; s < SETS_COUNT; s++) {
+      for (let i = 0; i < routes.length; i++) {
+        list.push({ ...routes[i], uniqueKey: `set-${s}-route-${i}` })
+      }
+    }
+    return list
+  }, [])
 
-    const card = sliderRef.current.querySelector(".route-card") as HTMLDivElement | null;
-    const step = card ? card.offsetWidth + 12 : 260;
+  useEffect(() => {
+    const el = sliderRef.current
+    if (!el) return
 
-    sliderRef.current.scrollBy({
-      left: direction === "left" ? -step : step,
-      behavior: "smooth",
-    });
-  };
+    const getMetrics = () => {
+      const card = el.querySelector('.route-card') as HTMLElement | null
+      if (!card) return null
+      const step = card.offsetWidth + 12
+      const setWidth = routes.length * step
+      return { step, setWidth }
+    }
+
+    const initPosition = () => {
+      const metrics = getMetrics()
+      if (!metrics) return
+      el.scrollLeft = INITIAL_SET_INDEX * metrics.setWidth
+    }
+
+    // Set initial position after layout renders
+    const raf = requestAnimationFrame(initPosition)
+
+    const onScroll = () => {
+      const metrics = getMetrics()
+      if (!metrics) return
+      const { setWidth } = metrics
+
+      // If scrolled past the center sets, seamlessly wrap back to center
+      if (el.scrollLeft >= (INITIAL_SET_INDEX + 1) * setWidth) {
+        el.scrollLeft -= setWidth
+      } else if (el.scrollLeft <= (INITIAL_SET_INDEX - 1) * setWidth) {
+        el.scrollLeft += setWidth
+      }
+    }
+
+    el.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', initPosition)
+
+    return () => {
+      cancelAnimationFrame(raf)
+      el.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', initPosition)
+    }
+  }, [])
+
+  const scrollRoutes = (direction: 'left' | 'right') => {
+    const el = sliderRef.current
+    if (!el) return
+
+    const card = el.querySelector('.route-card') as HTMLElement | null
+    const step = card ? card.offsetWidth + 12 : 260
+
+    el.scrollBy({
+      left: direction === 'left' ? -step : step,
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <section className="routes-section">
@@ -37,30 +97,29 @@ export default function RouteSection() {
           <button
             type="button"
             className="route-arrow route-arrow-left"
-            onClick={() => scrollRoutes("left")}
+            onClick={() => scrollRoutes('left')}
             aria-label="Previous routes"
           >
-            ‹
+            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.5 1.5L2 6L6.5 10.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
 
           <div className="routes-track" ref={sliderRef}>
-            {routes.map((route, index) => (
+            {infiniteRoutes.map((route) => (
               <button
                 type="button"
                 className="route-card"
-                key={index}
+                key={route.uniqueKey}
                 onClick={() => {
-                  document.getElementById("booking")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
+                  document.getElementById('booking')?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                  })
                 }}
               >
                 <div className="route-image">
-                  <img
-                    src={route.image}
-                    alt={`${route.from} to ${route.to}`}
-                  />
+                  <img src={route.image} alt={`${route.from} to ${route.to}`} />
                 </div>
 
                 <div className="route-copy">
@@ -83,13 +142,15 @@ export default function RouteSection() {
           <button
             type="button"
             className="route-arrow route-arrow-right"
-            onClick={() => scrollRoutes("right")}
+            onClick={() => scrollRoutes('right')}
             aria-label="Next routes"
           >
-            ›
+            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1.5 1.5L6 6L1.5 10.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,0 +1,103 @@
+/* =========================================================
+   MOVAGO BUTTON COMPONENTS
+   ========================================================= */
+
+.movago-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding-inline: 20px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.movago-btn-primary {
+  background: var(--gold, #c5a073);
+  color: #000000;
+}
+
+.movago-btn-primary:hover {
+  background: var(--gold-hover, #b08d60);
+  color: #000000;
+}
+
+.movago-btn-primary:active {
+  transform: translateY(1px);
+}
+
+.movago-btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.28);
+}
+
+.movago-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(197, 160, 115, 0.55);
+  color: #ffffff;
+}
+
+.movago-btn-outline:hover {
+  border-color: var(--gold, #c5a073);
+  background: rgba(197, 160, 115, 0.1);
+  color: var(--gold, #c5a073);
+}
+
+.movago-btn-outline:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.2);
+}
+
+.movago-btn-secondary {
+  background: #1f2222;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.movago-btn-secondary:hover {
+  background: #282b2b;
+  border-color: rgba(197, 160, 115, 0.5);
+  color: #ffffff;
+}
+
+.movago-btn-ghost {
+  background: transparent;
+  color: #ffffff;
+}
+
+.movago-btn-ghost:hover {
+  color: var(--gold, #c5a073);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.movago-btn-sm {
+  height: 32px;
+  padding-inline: 14px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.movago-btn-md {
+  height: 42px;
+  padding-inline: 20px;
+  font-size: 15px;
+}
+
+.movago-btn-lg {
+  height: 48px;
+  padding-inline: 26px;
+  font-size: 15px;
+}
+
+.movago-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

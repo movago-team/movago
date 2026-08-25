@@ -1,0 +1,93 @@
+/* =========================================================
+   MOVAGO FORM CONTROLS (Field, Label, Input)
+   ========================================================= */
+
+.movago-field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.movago-label {
+  display: block;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #bcbdb9;
+}
+
+.movago-input-wrap,
+.movago-select-wrap,
+.movago-date-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.movago-input-icon,
+.movago-select-icon,
+.movago-date-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.movago-input-icon svg,
+.movago-select-icon svg,
+.movago-date-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.movago-input-wrap.has-icon .movago-input {
+  padding-left: 36px;
+}
+
+.movago-input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background-color: #171919;
+  color: #f5f5f2;
+  padding: 0 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.movago-input::placeholder {
+  color: #8e8f8c;
+  opacity: 1;
+}
+
+.movago-input:hover {
+  border-color: rgba(197, 160, 115, 0.6);
+}
+
+.movago-input:focus {
+  border-color: var(--gold, #c5a073);
+  box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.16);
+}
+
+.movago-field-error {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #ef4444;
+}
+
+.movago-field-helper {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #8e8f8c;
+}

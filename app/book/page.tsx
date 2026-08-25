@@ -1,3 +1,7 @@
 export default function BookPage() {
-  return <main>Book Now</main>
+  return (
+    <main className="page-width" style={{ paddingBlock: '64px' }}>
+      <h1>Book Now</h1>
+    </main>
+  )
 }
