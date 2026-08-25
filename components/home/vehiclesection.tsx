@@ -1,11 +1,12 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { vehicles } from "../../data/vehicles";
+import Link from 'next/link'
+import { Button } from '@/components/ui'
+import { vehicles } from '@/data/vehicles'
 
-type VehicleSectionProps = {
-  onSelect: (vehicle: string) => void;
-};
+export interface VehicleSectionProps {
+  onSelect: (vehicle: string) => void
+}
 
 export default function VehicleSection({ onSelect }: VehicleSectionProps) {
   return (
@@ -31,7 +32,7 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
               </div>
 
               <div className="vehicle-copy">
-                <div>
+                <div className="vehicle-copy-top">
                   <h3>{item.name}</h3>
                   <div className="vehicle-type">{item.type}</div>
 
@@ -41,7 +42,7 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
                     <span>• {item.tier}</span>
                   </div>
 
-                  <p>{item.copy}</p>
+                  <p className="vehicle-description">{item.copy}</p>
                 </div>
 
                 <div className="vehicle-bottom">
@@ -52,13 +53,14 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
                     </strong>
                   </div>
 
-                  <button
-                    type="button"
-                    className="gold-btn vehicle-select"
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="vehicle-select"
                     onClick={() => onSelect(item.name)}
                   >
                     Select
-                  </button>
+                  </Button>
                 </div>
               </div>
             </article>
@@ -66,5 +68,5 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }

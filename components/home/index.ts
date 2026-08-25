@@ -1,0 +1,6 @@
+export { default as HeroSection } from './herosection'
+export { default as BookingSection } from './bookingsection'
+export { default as WhySection } from './whysection'
+export { default as VehicleSection } from './vehiclesection'
+export { default as RouteSection } from './routesection'
+export { default as CorporateSection } from './corporatesection'

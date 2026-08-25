@@ -23,11 +23,10 @@ export default function Icon({
 
   const paths: Record<string, ReactNode> = {
     plane: (
-      <>
-        <path d="M22 2 9.6 14.4" />
-        <path d="m16 2 6 0 0 6" />
-        <path d="M10.7 8.6 6.3 4.2 4 5l2.5 5.8-4 4.1 1.3 1.3 4.1-4 5.8 2.5.8-2.3-4.4-4.4" />
-      </>
+      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+    ),
+    airplane: (
+      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
     ),
 
     users: (
@@ -131,10 +130,42 @@ export default function Icon({
 
     car: (
       <>
-        <path d="m5 17-1 1v2h2l1-2h10l1 2h2v-2l-1-1-2-7H7l-2 7Z" />
-        <path d="M7 10 8.5 6h7L17 10" />
-        <circle cx="7.5" cy="15.5" r="1" />
-        <circle cx="16.5" cy="15.5" r="1" />
+        <path d="M5 10.5 7 5.5A2 2 0 0 1 8.9 4h6.2a2 2 0 0 1 1.9 1.5l2 5" />
+        <rect x="3" y="10.5" width="18" height="7.5" rx="2" />
+        <circle cx="7" cy="14.25" r="1" />
+        <circle cx="17" cy="14.25" r="1" />
+        <path d="M5.5 18v2.5" />
+        <path d="M18.5 18v2.5" />
+      </>
+    ),
+
+    facebook: (
+      <path
+        d="M18 2h-3.2A4.8 4.8 0 0 0 10 6.8V10H7v4h3v8h4v-8h3.3l.7-4h-4V7.2c0-.7.5-1.2 1.2-1.2H18V2z"
+        fill="currentColor"
+        stroke="none"
+      />
+    ),
+
+    instagram: (
+      <>
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none" />
+      </>
+    ),
+
+    line: (
+      <>
+        <path
+          d="M12 2.5C6.75 2.5 2.5 6.2 2.5 10.75c0 4.05 3.35 7.45 7.85 8.1.3.06.7.2.8.45.09.23.06.58.03.81l-.13.82c-.04.25-.2.98.9.54 1.1-.44 5.9-3.48 8.05-5.96C21.4 13.3 21.5 12.05 21.5 10.75 21.5 6.2 17.25 2.5 12 2.5z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <path d="M7 8.2v4.6h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10.7 8.2v4.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M13 12.8V8.2l2.3 4.6V8.2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.8 8.2h-1.8v4.6h1.8M17 10.5h1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
       </>
     ),
   };

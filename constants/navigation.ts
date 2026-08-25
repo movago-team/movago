@@ -3,6 +3,13 @@ export type NavLink = {
   href: string
 }
 
+export const SERVICES_SUBMENU: NavLink[] = [
+  { label: 'Airport Transfer', href: '/services#airport' },
+  { label: 'Hourly Service', href: '/services#hourly' },
+  { label: 'Intercity Transfer', href: '/services#intercity' },
+  { label: 'Corporate Solutions', href: '/corporate' },
+]
+
 export const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'Our Services', href: '/services' },

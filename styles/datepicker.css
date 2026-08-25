@@ -1,0 +1,203 @@
+/* =========================================================
+   MOVAGO CUSTOM DATE & CALENDAR PICKER
+   ========================================================= */
+
+.movago-custom-date {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.movago-date-trigger {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background-color: #171919;
+  color: #f5f5f2;
+  padding: 0 12px 0 36px;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.movago-date-trigger:hover {
+  border-color: rgba(197, 160, 115, 0.6);
+}
+
+.movago-date-trigger:focus,
+.movago-date-trigger.is-open {
+  border-color: var(--gold, #c5a073);
+  box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.16);
+}
+
+.movago-date-value {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movago-date-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold, #c5a073);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.movago-date-arrow.is-open {
+  transform: rotate(180deg);
+}
+
+/* Calendar Popup */
+.movago-calendar-popup {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  min-width: 275px;
+  max-width: 320px;
+  z-index: 60;
+  background: #4B4741;
+  border: 1px solid #75654E;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.20);
+  padding: 14px;
+}
+
+.movago-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #635645;
+}
+
+.movago-calendar-title {
+  color: #F7F3EC;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.movago-calendar-nav {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #635645;
+  border-radius: 4px;
+  background: #5B554C;
+  color: #F7F3EC;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.movago-calendar-nav:hover {
+  background: #675A47;
+  border-color: var(--gold, #C5A073);
+  color: #F7F3EC;
+}
+
+.movago-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.movago-calendar-weekday {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D5CEC3;
+  text-transform: uppercase;
+}
+
+.movago-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.movago-calendar-day {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: #F7F3EC;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.movago-calendar-day:hover:not(.is-selected) {
+  background: #5B554C;
+  border-color: #75654E;
+  color: #F7F3EC;
+}
+
+.movago-calendar-day.is-selected {
+  background: #675A47;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-color: var(--gold, #C5A073);
+}
+
+.movago-calendar-day.is-today:not(.is-selected) {
+  border-color: var(--gold, #C5A073);
+  color: var(--gold, #C5A073);
+  font-weight: 600;
+}
+
+.movago-calendar-day.is-other-month {
+  color: #9E9689;
+  opacity: 0.65;
+}
+
+.movago-calendar-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #635645;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.movago-calendar-today-btn {
+  border: 0;
+  background: transparent;
+  color: var(--gold, #C5A073);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.movago-calendar-today-btn:hover {
+  color: #E2AD51;
+  background: rgba(197, 160, 115, 0.20);
+}

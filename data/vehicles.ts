@@ -13,7 +13,7 @@ export type Vehicle = {
 export const vehicles: Vehicle[] = [
   {
     id: "009",
-    image: "/movago/vehicles/zeekr-009.png",
+    image: "/images/vehicles/zeekr-009.png",
     name: "ZEEKR 009",
     type: "Executive Lounge Van",
     seats: "6 Seats",
@@ -25,7 +25,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: "7x",
-    image: "/movago/vehicles/zeekr-7x.png",
+    image: "/images/vehicles/zeekr-7x.png",
     name: "ZEEKR 7X",
     type: "Executive SUV",
     seats: "4 Seats",
