@@ -6,7 +6,7 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: calc(100% - (var(--page-gutter) * 2));
+  max-width: var(--page-max);
   margin-inline: auto;
   margin-top: 20px;
 }
@@ -344,7 +344,7 @@
 @media (max-width: 900px) {
   .booking-wrap {
     width: 100%;
-    max-width: calc(100% - (var(--page-gutter) * 2));
+    max-width: var(--page-max);
     margin-top: 20px;
   }
 
