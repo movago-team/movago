@@ -1,6 +1,14 @@
 'use client'
 
 import React, { forwardRef, useEffect, useId, useImperativeHandle, useRef, useState } from 'react'
+import {
+  controlErrorClass,
+  fieldClass,
+  fieldErrorClass,
+  fieldHelperClass,
+  labelClass,
+} from '@/utils/ui/input'
+import { cn } from '@/utils/cn'
 
 export interface SelectOption {
   value: string
@@ -157,7 +165,13 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           type="button"
           disabled={disabled}
           onClick={() => !disabled && setIsOpen((prev) => !prev)}
-          className={`movago-select-trigger ${icon ? 'has-icon' : ''} ${isOpen ? 'is-open' : ''} ${error ? 'movago-input-error' : ''} ${className}`}
+          className={cn(
+            'movago-select-trigger',
+            icon ? 'has-icon' : false,
+            isOpen && 'is-open',
+            controlErrorClass(Boolean(error)),
+            className,
+          )}
           aria-haspopup="listbox"
           aria-expanded={isOpen}
         >
@@ -204,15 +218,15 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     }
 
     return (
-      <div className={`movago-field ${containerClassName}`}>
+      <div className={fieldClass({ className: containerClassName })}>
         {label && (
-          <label htmlFor={selectId} className="movago-label">
+          <label htmlFor={selectId} className={labelClass()}>
             {label}
           </label>
         )}
         {selectControl}
-        {error && <span className="movago-field-error">{error}</span>}
-        {!error && helperText && <span className="movago-field-helper">{helperText}</span>}
+        {error && <span className={fieldErrorClass()}>{error}</span>}
+        {!error && helperText && <span className={fieldHelperClass()}>{helperText}</span>}
       </div>
     )
   }

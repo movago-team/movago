@@ -61,7 +61,6 @@ movago/
 │   └── favicon.ico
 ├── components/
 │   ├── layout/                   # Header, Footer, Navbar, LanguageSwitcher
-│   ├── ui/                       # shared Button, Input, Select, Badge, Card
 │   ├── home/                     # Home-only sections
 │   ├── vehicles/
 │   ├── destinations/
@@ -71,6 +70,7 @@ movago/
 │   ├── booking/                  # BookingWidget / search / manage bookings
 │   ├── membership/               # auth, profile, member-only UI
 │   └── maps/                     # Places search, map pin picker
+├── ui/                           # shared Button, Input, Select, Badge, Card
 ├── constants/                    # nav, footer links, static copy keys
 ├── data/                         # temporary mock JSON/TS
 ├── hooks/
@@ -106,7 +106,7 @@ movago/
 ## Mandatory rules
 
 1. **Routes live only under `app/`** — do not put feature folders under `app/` except `page`, `layout`, `loading`, `error`, `not-found`.
-2. **Reusable UI → `components/ui`** | **site chrome → `components/layout`** | **page sections → `components/<feature>`**.
+2. **Reusable UI → `ui/`** | **site chrome → `components/layout`** | **page sections → `components/<feature>`**.
 3. **No fetch/axios inside presentational components** — put calls in `lib/` or `services/`.
 4. **Nav/footer constants → `constants/`** — do not hardcode link lists across files.
 5. **Images/icons → `public/images|icons`** by category — do not dump assets at repo root.
@@ -123,13 +123,14 @@ movago/
 |-----------------|------------|
 | A new URL/page | `app/(marketing)/…/page.tsx` or `app/book/…` |
 | Header / Footer | `components/layout/` |
-| Shared button/input | `components/ui/` |
+| Shared button/input | `ui/` |
 | Home hero section | `components/home/` |
 | Vehicle card | `components/vehicles/` |
 | Booking search / manage trip | `components/booking/` |
 | Login / register / profile | `components/membership/` |
 | Places autocomplete / pin map | `components/maps/` + `lib/` |
 | Price formatter | `utils/` |
+| Button / brand color classes | `utils/ui/` (+ tokens in `constants/theme.ts`) |
 | Google Maps / API client | `lib/` |
 | Booking / membership logic | `services/` |
 | TypeScript interfaces | `types/` |
@@ -153,7 +154,12 @@ Cursor-only AI helper:
 ## Import examples
 
 ```ts
+import { Button, Input, Icon } from '@/ui'
 import { formatPrice } from '@/utils/formatPrice'
+import { buttonClass, btnPrimary, textGold } from '@/utils/ui'
+import { colors } from '@/constants/theme'
 import type { Vehicle } from '@/types/vehicle'
 import { NAV_LINKS } from '@/constants/navigation'
 ```
+
+Do not hardcode brand gold hex or button styles inside presentational components — import from `constants/theme` / `utils/ui`.

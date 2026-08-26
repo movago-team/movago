@@ -4,7 +4,6 @@ import AboutStorySection from '@/components/about/AboutStorySection'
 import AboutDifferenceSection from '@/components/about/AboutDifferenceSection'
 import AboutLeadershipSection from '@/components/about/AboutLeadershipSection'
 import AboutCtaSection from '@/components/about/AboutCtaSection'
-import '@/styles/about.css'
 
 export const metadata: Metadata = {
   title: 'About Us — MOVAGO Executive Airport Transfer',
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="about-page">
+    <main>
       <AboutHero />
       <AboutStorySection />
       <AboutDifferenceSection />

@@ -81,6 +81,28 @@
   box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.16);
 }
 
+.movago-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #121414;
+}
+
+.movago-input.movago-input-error,
+.movago-input-error {
+  border-color: rgba(239, 68, 68, 0.75);
+}
+
+.movago-input.movago-input-error:hover,
+.movago-input-error:hover {
+  border-color: rgba(239, 68, 68, 0.9);
+}
+
+.movago-input.movago-input-error:focus,
+.movago-input-error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
+}
+
 .movago-field-error {
   font-size: 12.5px;
   line-height: 1.35;

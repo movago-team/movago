@@ -20,3 +20,13 @@ export const NAV_LINKS: NavLink[] = [
 ]
 
 export const BOOK_NOW_HREF = '/book'
+
+/** Routes where the header floats transparently over a dark hero (like Home). */
+export const OVERLAY_HEADER_PATHS = ['/', '/about'] as const
+
+export function isOverlayHeaderPath(pathname: string): boolean {
+  return (OVERLAY_HEADER_PATHS as readonly string[]).some(
+    (path) => pathname === path || (path !== '/' && pathname.startsWith(`${path}/`)),
+  )
+}
+

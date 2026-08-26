@@ -8,16 +8,9 @@ import {
   IntercityTransferForm,
   ServiceTabType,
 } from '@/components/booking'
+import { bookingCard, bookingWrap, searchMessage } from '@/components/booking/classNames'
 
-export interface BookingSectionProps {
-  vehicle: string
-  onVehicleChange: (vehicle: string) => void
-}
-
-export default function BookingSection({
-  vehicle,
-  onVehicleChange,
-}: BookingSectionProps) {
+export default function BookingSection() {
   const [activeTab, setActiveTab] = useState<ServiceTabType>('airport')
   const [message, setMessage] = useState<string>('')
 
@@ -29,9 +22,8 @@ export default function BookingSection({
   }
 
   return (
-    <section className="booking-wrap w-full max-w-[1440px] mx-auto" id="booking">
-      <div className="booking-card">
-        {/* Tabs */}
+    <section className={bookingWrap} id="booking">
+      <div className={bookingCard}>
         <BookingTabs
           activeTab={activeTab}
           onTabChange={(tab) => {
@@ -40,35 +32,19 @@ export default function BookingSection({
           }}
         />
 
-        {/* Dynamic Service Form */}
-        <div className="booking-form-container">
-          {activeTab === 'airport' && (
-            <AirportTransferForm
-              vehicle={vehicle}
-              onVehicleChange={onVehicleChange}
-              onSearch={handleSearch}
-            />
-          )}
+        {activeTab === 'airport' && (
+          <AirportTransferForm onSearch={handleSearch} />
+        )}
 
-          {activeTab === 'hourly' && (
-            <HourlyServiceForm
-              vehicle={vehicle}
-              onVehicleChange={onVehicleChange}
-              onSearch={handleSearch}
-            />
-          )}
+        {activeTab === 'hourly' && (
+          <HourlyServiceForm onSearch={handleSearch} />
+        )}
 
-          {activeTab === 'intercity' && (
-            <IntercityTransferForm
-              vehicle={vehicle}
-              onVehicleChange={onVehicleChange}
-              onSearch={handleSearch}
-            />
-          )}
-        </div>
+        {activeTab === 'intercity' && (
+          <IntercityTransferForm onSearch={handleSearch} />
+        )}
 
-        {/* Search Result */}
-        {message && <div className="search-message">{message}</div>}
+        {message && <div className={searchMessage}>{message}</div>}
       </div>
     </section>
   )

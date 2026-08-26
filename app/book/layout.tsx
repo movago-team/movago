@@ -1,15 +1,9 @@
-import { Footer, Header } from '@/components/layout'
+import { SiteShell } from '@/components/layout'
 
 export default function BookLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <div className="site-shell">
-      <Header />
-      {children}
-      <Footer />
-    </div>
-  )
+  return <SiteShell>{children}</SiteShell>
 }
