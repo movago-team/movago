@@ -1,6 +1,14 @@
 'use client'
 
 import React, { forwardRef, useEffect, useId, useImperativeHandle, useRef, useState } from 'react'
+import {
+  controlErrorClass,
+  fieldClass,
+  fieldErrorClass,
+  fieldHelperClass,
+  labelClass,
+} from '@/utils/ui/input'
+import { cn } from '@/utils/cn'
 
 export interface DateInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'onChange'> {
   label?: string
@@ -203,7 +211,12 @@ export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
           type="button"
           disabled={disabled}
           onClick={() => !disabled && setIsOpen((prev) => !prev)}
-          className={`movago-date-trigger ${isOpen ? 'is-open' : ''} ${error ? 'movago-input-error' : ''} ${className}`}
+          className={cn(
+            'movago-date-trigger',
+            isOpen && 'is-open',
+            controlErrorClass(Boolean(error)),
+            className,
+          )}
           aria-haspopup="dialog"
           aria-expanded={isOpen}
         >
@@ -286,15 +299,15 @@ export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
     }
 
     return (
-      <div className={`movago-field ${containerClassName}`}>
+      <div className={fieldClass({ className: containerClassName })}>
         {label && (
-          <label htmlFor={inputId} className="movago-label">
+          <label htmlFor={inputId} className={labelClass()}>
             {label}
           </label>
         )}
         {dateControl}
-        {error && <span className="movago-field-error">{error}</span>}
-        {!error && helperText && <span className="movago-field-helper">{helperText}</span>}
+        {error && <span className={fieldErrorClass()}>{error}</span>}
+        {!error && helperText && <span className={fieldHelperClass()}>{helperText}</span>}
       </div>
     )
   }

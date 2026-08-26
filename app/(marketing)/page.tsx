@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import {
   BookingSection,
   CorporateSection,
@@ -11,10 +10,7 @@ import {
 } from '@/components/home'
 
 export default function HomePage() {
-  const [vehicle, setVehicle] = useState('')
-
-  const handleSelectVehicle = (vehicleName: string) => {
-    setVehicle(vehicleName)
+  const handleSelectVehicle = () => {
     document.getElementById('booking')?.scrollIntoView({
       behavior: 'smooth',
       block: 'center',
@@ -24,7 +20,7 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <BookingSection vehicle={vehicle} onVehicleChange={setVehicle} />
+      <BookingSection />
       <WhySection />
       <VehicleSection onSelect={handleSelectVehicle} />
       <RouteSection />

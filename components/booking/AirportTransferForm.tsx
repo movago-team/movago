@@ -1,18 +1,28 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import { Button, DateInput, Icon, Input, Select } from '@/components/ui'
+import { Button, DateInput, Icon, Input, Select } from '@/ui'
 import {
   AirportDirection,
   LOCATION_OPTIONS,
   TIME_OPTIONS,
   isTimeAfter,
 } from './constants'
+import {
+  bookingForm,
+  bookingRow4,
+  bookingSubmit,
+  searchBtn,
+} from './classNames'
 
 export interface AirportTransferFormProps {
-  vehicle: string
-  onVehicleChange: (vehicle: string) => void
   onSearch: (summary: string) => void
+}
+
+type FieldErrors = {
+  from?: string
+  to?: string
+  endTime?: string
 }
 
 const DIRECTION_OPTIONS = [
@@ -21,8 +31,6 @@ const DIRECTION_OPTIONS = [
 ]
 
 export default function AirportTransferForm({
-  vehicle,
-  onVehicleChange,
   onSearch,
 }: AirportTransferFormProps) {
   const [direction, setDirection] = useState<AirportDirection>('airport-to-dest')
@@ -32,9 +40,9 @@ export default function AirportTransferForm({
   const [startTime, setStartTime] = useState<string>('10:00')
   const [endTime, setEndTime] = useState<string>('11:30')
   const [flightNumber, setFlightNumber] = useState<string>('')
-  const [passengers, setPassengers] = useState<string>('2')
-  const [luggage, setLuggage] = useState<string>('2')
-  const [error, setError] = useState<string>('')
+  const [errors, setErrors] = useState<FieldErrors>({})
+
+  const clearErrors = () => setErrors({})
 
   const handleDirectionChange = (newDir: string) => {
     const dir = newDir as AirportDirection
@@ -46,119 +54,122 @@ export default function AirportTransferForm({
       setFrom('sukhumvit')
       setTo('bkk')
     }
-    setError('')
+    clearErrors()
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setError('')
+    const next: FieldErrors = {}
 
     if (!from || !to) {
-      setError('Please select both pickup and drop-off locations.')
+      if (!from) next.from = 'Please select a pickup location.'
+      if (!to) next.to = 'Please select a drop-off location.'
+      setErrors(next)
       return
     }
 
     if (from === to) {
-      setError('Pickup and drop-off locations cannot be the same.')
+      next.from = 'Pickup and drop-off cannot be the same.'
+      next.to = 'Pickup and drop-off cannot be the same.'
+      setErrors(next)
       return
     }
 
     if (!isTimeAfter(startTime, endTime)) {
-      setError('End Time must be after Start Time (expected trip completion).')
+      next.endTime = 'End time must be after start time.'
+      setErrors(next)
       return
     }
 
+    clearErrors()
     const directionLabel = direction === 'airport-to-dest' ? 'Airport Arrival' : 'Airport Departure'
     const flightInfo = flightNumber.trim() ? ` (Flight: ${flightNumber.trim().toUpperCase()})` : ''
     onSearch(
-      `Found available vehicles for ${directionLabel} from ${from.toUpperCase()} to ${to.toUpperCase()}${flightInfo} on ${date}.`
+      `Found available vehicles for ${directionLabel} from ${from.toUpperCase()} to ${to.toUpperCase()}${flightInfo} on ${date}.`,
     )
   }
 
   return (
-    <form className="booking-service-form" onSubmit={handleSubmit}>
-      <div className="booking-form-grid">
-        {/* Row 1 — Journey */}
-        <div className="booking-row booking-row-journey-airport">
-          <Select
-            label="Direction"
-            icon={<Icon name="plane" />}
-            value={direction}
-            onChange={(e) => handleDirectionChange(e.target.value)}
-            options={DIRECTION_OPTIONS}
-            containerClassName="booking-col"
-          />
+    <form className={bookingForm} onSubmit={handleSubmit} noValidate>
+      <div className={bookingRow4}>
+        <Select
+          label="Direction"
+          icon={<Icon name="plane" />}
+          value={direction}
+          onChange={(e) => handleDirectionChange(e.target.value)}
+          options={DIRECTION_OPTIONS}
+        />
 
-          <Select
-            label={direction === 'airport-to-dest' ? 'Airport (From)' : 'Pickup Point (From)'}
-            icon={direction === 'airport-to-dest' ? <Icon name="plane" /> : <Icon name="pin" />}
-            key={`from-${direction}`}
-            value={from}
-            onChange={(e) => {
-              setFrom(e.target.value)
-              setError('')
-            }}
-            options={LOCATION_OPTIONS}
-            containerClassName="booking-col"
-          />
+        <Select
+          label={direction === 'airport-to-dest' ? 'Airport (From)' : 'Pickup Point (From)'}
+          icon={direction === 'airport-to-dest' ? <Icon name="plane" /> : <Icon name="pin" />}
+          key={`from-${direction}`}
+          value={from}
+          error={errors.from}
+          onChange={(e) => {
+            setFrom(e.target.value)
+            clearErrors()
+          }}
+          options={LOCATION_OPTIONS}
+        />
 
-          <Select
-            label={direction === 'airport-to-dest' ? 'Destination (To)' : 'Airport (To)'}
-            icon={direction === 'airport-to-dest' ? <Icon name="pin" /> : <Icon name="plane" />}
-            key={`to-${direction}`}
-            value={to}
-            onChange={(e) => {
-              setTo(e.target.value)
-              setError('')
-            }}
-            options={LOCATION_OPTIONS}
-            containerClassName="booking-col"
-          />
+        <Select
+          label={direction === 'airport-to-dest' ? 'Destination (To)' : 'Airport (To)'}
+          icon={direction === 'airport-to-dest' ? <Icon name="pin" /> : <Icon name="plane" />}
+          key={`to-${direction}`}
+          value={to}
+          error={errors.to}
+          onChange={(e) => {
+            setTo(e.target.value)
+            clearErrors()
+          }}
+          options={LOCATION_OPTIONS}
+        />
 
-          <DateInput
-            label="Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            containerClassName="booking-col"
-          />
-        </div>
-
-        {/* Row 2 — Time & Flight */}
-        <div className="booking-row booking-row-time-airport">
-          <Select
-            label="Pickup Time"
-            value={startTime}
-            onChange={(e) => setStartTime(e.target.value)}
-            options={TIME_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Select
-            label="Est. End Time"
-            value={endTime}
-            onChange={(e) => setEndTime(e.target.value)}
-            options={TIME_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Input
-            label="Flight Number"
-            icon={<Icon name="airplane" />}
-            placeholder="e.g. TG678 or QR830"
-            value={flightNumber}
-            onChange={(e) => setFlightNumber(e.target.value)}
-            containerClassName="booking-col"
-          />
-
-          <div className="booking-submit-wrap">
-            <Button type="submit" variant="primary" className="search-btn w-full">
-              Search
-            </Button>
-          </div>
-        </div>
+        <DateInput
+          label="Date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
       </div>
 
-      {error && <div className="booking-validation-error">{error}</div>}
+      <div className={bookingRow4}>
+        <Select
+          label="Pickup Time"
+          value={startTime}
+          onChange={(e) => {
+            setStartTime(e.target.value)
+            clearErrors()
+          }}
+          options={TIME_OPTIONS}
+        />
+
+        <Select
+          label="Est. End Time"
+          value={endTime}
+          error={errors.endTime}
+          onChange={(e) => {
+            setEndTime(e.target.value)
+            clearErrors()
+          }}
+          options={TIME_OPTIONS}
+        />
+
+        <Input
+          label="Flight Number"
+          icon={<Icon name="airplane" />}
+          placeholder="e.g. TG678 or QR830"
+          value={flightNumber}
+          helperText="Optional"
+          onChange={(e) => setFlightNumber(e.target.value)}
+        />
+
+        <div className={bookingSubmit}>
+          <Button type="submit" variant="primary" className={searchBtn}>
+            Search
+          </Button>
+        </div>
+      </div>
     </form>
   )
 }

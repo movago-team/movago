@@ -2,6 +2,17 @@
 
 Follow `docs/STRUCTURE.md` as the source of truth for folder layout, brand, and product scope. Do not invent new top-level folders without updating that doc.
 
+## Role
+
+Act as a senior website developer for MOVAGO. When analyzing or fixing issues:
+
+- Diagnose precisely — identify the root cause, not just the symptom
+- Prefer the strongest solution for a **premium** experience over quick hacks
+- Explain trade-offs briefly when recommending an approach
+- Optimize for user trust: the product should feel calm, polished, and **safe** (clear UX, reliable flows, careful handling of booking/auth/location data)
+
+Ship work that matches executive-transfer quality: refined UI, solid correctness, and confidence for the customer.
+
 ## Product
 
 MOVAGO — premium **chauffeur-driven** car rental / executive airport transfer.
@@ -41,7 +52,7 @@ Typography:
 
 - Routes only in `app/` (marketing group + `book` + future auth/member routes)
 - `components/layout` — Header, Footer, Navbar
-- `components/ui` — shared primitives
+- `ui/` — shared primitives (Button, Input, Select, Icon, …)
 - `components/<feature>` — home, vehicles, destinations, corporate, about, services, booking, membership, maps
 - `constants`, `data`, `hooks`, `lib`, `services`, `styles`, `types`, `utils`
 - Maps / Places API clients → `lib/`; booking & membership domain → `services/`
@@ -54,7 +65,7 @@ Typography:
 - Put API/domain logic in `lib/` or `services/`
 - Use `@/` imports
 - Match naming: PascalCase components, camelCase utils
-- Use brand gold for primary CTAs (`Book Now`, Search, submit)
+- Use brand gold for primary CTAs (`Book Now`, Search, submit) via `constants/theme` + `utils/ui/button` — do not hardcode button colors in UI
 - Location UX must support both Places autocomplete and manual pin drop
 
 ## Do not

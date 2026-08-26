@@ -257,25 +257,11 @@
   transform: translateY(1px) rotate(225deg);
 }
 
+/* Layout only — colors come from utils/ui/button (btnNavBook) */
 .nav-book {
   min-width: 110px;
   height: 42px;
   padding-inline: 18px;
-  font-size: 15px;
-  line-height: 1.4;
-  font-weight: 500;
-  color: #17130d;
-  background: #c5a073;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.nav-book:hover {
-  background: #b08d60;
-  color: #17130d;
 }
 
 .nav-book:active {
