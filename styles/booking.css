@@ -6,7 +6,7 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: var(--booking-max, min(1200px, var(--page-max)));
+  max-width: var(--booking-max, min(1440px, var(--page-max)));
   margin-inline: auto;
   margin-top: 14px;
 }
@@ -265,7 +265,7 @@ button.search-btn {
 @media (max-width: 900px) {
   .booking-wrap {
     width: 100%;
-    max-width: var(--booking-max, min(1200px, var(--page-max)));
+    max-width: var(--booking-max, min(1440px, var(--page-max)));
     margin-top: 14px;
   }
 

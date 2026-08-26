@@ -29,7 +29,7 @@ export default function BookingSection({
   }
 
   return (
-    <section className="booking-wrap" id="booking">
+    <section className="booking-wrap w-full max-w-[1440px] mx-auto" id="booking">
       <div className="booking-card">
         {/* Tabs */}
         <BookingTabs

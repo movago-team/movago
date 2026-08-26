@@ -11,7 +11,7 @@
   --page-gutter: 72px;
   --page-width: 1800px;
   --page-max: min(var(--page-width), calc(100% - (var(--page-gutter) * 2)));
-  --booking-max: min(1200px, var(--page-max));
+  --booking-max: min(1440px, var(--page-max));
 }
 
 * {
