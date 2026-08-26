@@ -4,16 +4,17 @@
 
 .movago-field {
   display: grid;
-  gap: 7px;
+  gap: 2px;
   min-width: 0;
 }
 
 .movago-label {
   display: block;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.15;
   font-weight: 500;
   color: #bcbdb9;
+  margin: 0;
 }
 
 .movago-input-wrap,
@@ -28,7 +29,7 @@
 .movago-select-icon,
 .movago-date-icon {
   position: absolute;
-  left: 12px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -41,25 +42,25 @@
 .movago-input-icon svg,
 .movago-select-icon svg,
 .movago-date-icon svg {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
 }
 
 .movago-input-wrap.has-icon .movago-input {
-  padding-left: 36px;
+  padding-left: 30px;
 }
 
 .movago-input {
   width: 100%;
   min-width: 0;
-  height: 42px;
+  height: 34px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 6px;
   background-color: #171919;
   color: #f5f5f2;
-  padding: 0 12px;
-  font-size: 15px;
-  line-height: 1.4;
+  padding: 0 10px;
+  font-size: 13.5px;
+  line-height: 1.3;
   font-weight: 400;
   outline: none;
   box-sizing: border-box;
@@ -81,13 +82,20 @@
 }
 
 .movago-field-error {
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 12.5px;
+  line-height: 1.35;
   color: #ef4444;
 }
 
 .movago-field-helper {
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 12.5px;
+  line-height: 1.35;
   color: #8e8f8c;
+}
+
+@media (max-width: 600px) {
+  .movago-input {
+    height: 44px;
+    font-size: 14.5px;
+  }
 }

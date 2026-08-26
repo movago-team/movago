@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
 import './globals.css'
 import '@/styles/navbar.css'
 import '@/styles/booking.css'
@@ -13,11 +14,17 @@ import '@/styles/hero.css'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
   title: 'MOVAGO — Executive Airport Transfer',
   description: 'Premium airport transfer and executive mobility by MOVAGO',
+  icons: {
+    icon: '/images/brand/favicon.png',
+    shortcut: '/images/brand/favicon.png',
+    apple: '/images/brand/favicon.png',
+  },
 }
 
 export default function RootLayout({

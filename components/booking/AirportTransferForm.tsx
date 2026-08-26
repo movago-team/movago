@@ -5,10 +5,7 @@ import { Button, DateInput, Icon, Input, Select } from '@/components/ui'
 import {
   AirportDirection,
   LOCATION_OPTIONS,
-  LUGGAGE_OPTIONS,
-  PASSENGER_OPTIONS,
   TIME_OPTIONS,
-  VEHICLE_OPTIONS,
   isTimeAfter,
 } from './constants'
 
@@ -150,35 +147,6 @@ export default function AirportTransferForm({
             placeholder="e.g. TG678 or QR830"
             value={flightNumber}
             onChange={(e) => setFlightNumber(e.target.value)}
-            containerClassName="booking-col"
-          />
-        </div>
-
-        {/* Row 3 — Travel Details */}
-        <div className="booking-row booking-row-travel-airport">
-          <Select
-            label="Passengers"
-            icon={<Icon name="users" />}
-            value={passengers}
-            onChange={(e) => setPassengers(e.target.value)}
-            options={PASSENGER_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Select
-            label="Luggage"
-            icon={<Icon name="bag" />}
-            value={luggage}
-            onChange={(e) => setLuggage(e.target.value)}
-            options={LUGGAGE_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Select
-            label="Vehicle"
-            value={vehicle}
-            onChange={(e) => onVehicleChange(e.target.value)}
-            options={VEHICLE_OPTIONS}
             containerClassName="booking-col"
           />
 

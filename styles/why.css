@@ -45,20 +45,20 @@
 }
 
 .feature-icon {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
   border-radius: 999px;
   background: #f2eee7;
   color: #b6802f;
   display: grid;
   place-items: center;
-  font-size: 17px;
+  font-size: 32px;
 }
 
 .feature-icon svg {
-  width: 17px;
-  height: 17px;
+  width: 32px;
+  height: 32px;
 }
 
 .feature-grid h3 {
@@ -83,9 +83,33 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    font-size: 30px;
+  }
+
+  .feature-icon svg {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 600px) {
   .why-section { padding: 46px 0 38px; }
   .feature-grid { grid-template-columns: 1fr; }
+
+  .feature-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    font-size: 28px;
+  }
+
+  .feature-icon svg {
+    width: 28px;
+    height: 28px;
+  }
 }

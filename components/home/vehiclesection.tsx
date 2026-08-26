@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from '@/components/ui'
+import { Button, Icon } from '@/components/ui'
 import { vehicles } from '@/data/vehicles'
 
 export interface VehicleSectionProps {
@@ -9,8 +9,10 @@ export interface VehicleSectionProps {
 }
 
 export default function VehicleSection({ onSelect }: VehicleSectionProps) {
+  const displayVehicles = vehicles.slice(0, 3)
+
   return (
-    <section className="vehicles-section">
+    <section className="vehicles-section" id="vehicles">
       <div className="page-width">
         <div className="vehicles-heading">
           <div>
@@ -25,26 +27,46 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
         </div>
 
         <div className="vehicle-grid">
-          {vehicles.map((item) => (
-            <article className="vehicle-card" key={item.id}>
-              <div className="vehicle-image">
-                <img src={item.image} alt={item.name} />
-              </div>
+          {displayVehicles.map((item) => {
+            const categoryLabel =
+              item.category || item.tier.toUpperCase()
 
-              <div className="vehicle-copy">
-                <div className="vehicle-copy-top">
-                  <h3>{item.name}</h3>
+            return (
+              <article className="vehicle-card" key={item.id}>
+                {/* Top Area: Category, Name, Type */}
+                <div className="vehicle-header">
+                  <div className="vehicle-category">{categoryLabel}</div>
+                  <h3 className="vehicle-name">{item.name}</h3>
                   <div className="vehicle-type">{item.type}</div>
-
-                  <div className="vehicle-meta">
-                    <span>• {item.seats}</span>
-                    <span>• {item.luggage}</span>
-                    <span>• {item.tier}</span>
-                  </div>
-
-                  <p className="vehicle-description">{item.copy}</p>
                 </div>
 
+                {/* Vehicle Image Area */}
+                <div className="vehicle-image-wrap">
+                  <img src={item.image} alt={item.name} className="vehicle-img" />
+                </div>
+
+                {/* Specifications */}
+                <div className="vehicle-specs">
+                  <span className="spec-item">
+                    <Icon name="users" size={14} />
+                    <span>{item.seats}</span>
+                  </span>
+                  <span className="spec-sep">•</span>
+                  <span className="spec-item">
+                    <Icon name="briefcase" size={14} />
+                    <span>{item.luggage}</span>
+                  </span>
+                  <span className="spec-sep">•</span>
+                  <span className="spec-item">
+                    <Icon name="shield" size={14} />
+                    <span>{item.tier}</span>
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="vehicle-description">{item.copy}</p>
+
+                {/* Bottom Area: Price and Select CTA */}
                 <div className="vehicle-bottom">
                   <div className="vehicle-price">
                     <small>From</small>
@@ -62,9 +84,9 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
                     Select
                   </Button>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

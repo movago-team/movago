@@ -67,22 +67,6 @@ export default function BookingSection({
           )}
         </div>
 
-        {/* Benefits */}
-        <div className="booking-benefits">
-          <span>
-            <span className="benefit-check">✓</span> Free 60 mins waiting time
-          </span>
-          <span>
-            <span className="benefit-check">✓</span> All tolls &amp; parking included
-          </span>
-          <span>
-            <span className="benefit-check">✓</span> Professional chauffeur
-          </span>
-          <span>
-            <span className="benefit-check">✓</span> 24/7 Customer Support
-          </span>
-        </div>
-
         {/* Search Result */}
         {message && <div className="search-message">{message}</div>}
       </div>
