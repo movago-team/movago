@@ -6,9 +6,9 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: var(--page-max);
+  max-width: var(--booking-max, min(1440px, var(--page-max)));
   margin-inline: auto;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 .booking-card {
@@ -16,14 +16,14 @@
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 11px;
-  padding: 0 22px 18px;
+  padding: 0 16px 14px;
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.26);
 }
 
 .booking-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-height: 44px;
+  min-height: 35px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
@@ -32,19 +32,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 9px;
-  height: 44px;
-  padding: 0 12px;
+  gap: 7px;
+  height: 35px;
+  padding: 0 8px;
   border: 0;
   background: transparent;
   color: #f6f6f3;
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 500;
 }
 
 .booking-tabs button svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   color: var(--gold, #c5a073);
 }
@@ -68,24 +68,24 @@
 ========================= */
 
 .booking-form-container {
-  padding-top: 18px;
+  padding-top: 12px;
 }
 
 .booking-service-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .booking-form-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .booking-row {
   display: grid;
-  gap: 14px;
+  gap: 8px 8px;
   align-items: end;
 }
 
@@ -99,72 +99,64 @@
   align-items: flex-end;
 }
 
-/* Airport Transfer Grid Rows */
+/* Airport Transfer Grid Rows — 4 balanced columns */
 .booking-row-journey-airport {
-  grid-template-columns: 1fr 1.35fr 1.35fr 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .booking-row-time-airport {
-  grid-template-columns: 1fr 1fr 1.35fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.booking-row-travel-airport {
-  grid-template-columns: 0.85fr 0.85fr 1.35fr 140px;
-}
-
-/* Hourly Service Grid Rows */
+/* Hourly Service Grid Rows — 4 balanced columns */
 .booking-row-journey-hourly {
-  grid-template-columns: 1.35fr 1.35fr 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .booking-row-time-hourly {
-  grid-template-columns: 1fr 1fr 1.25fr 1.15fr;
-}
-
-.booking-row-travel-hourly {
-  grid-template-columns: 1fr 1.7fr 140px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 /* Intercity Transfer Grid Rows */
 .booking-row-journey-intercity {
-  grid-template-columns: 1fr 1.35fr 1.35fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .booking-row-schedule-intercity {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.booking-row-schedule-intercity:not(:has(.booking-submit-wrap)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .booking-row-return-intercity {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 8px;
   align-items: end;
-}
-
-.booking-row-travel-intercity {
-  grid-template-columns: 0.85fr 0.85fr 1.35fr 140px;
 }
 
 /* Computed Badge for Hourly Service */
 .booking-computed-badge {
-  height: 42px;
+  height: 34px;
   border: 1px solid rgba(197, 160, 115, 0.4);
   border-radius: 6px;
   background: rgba(197, 160, 115, 0.12);
   color: var(--gold, #c5a073);
-  padding: 0 12px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 15px;
+  gap: 6px;
+  font-size: 13.5px;
   font-weight: 500;
   white-space: nowrap;
   box-sizing: border-box;
 }
 
 .booking-computed-badge svg {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
   color: var(--gold, #c5a073);
 }
@@ -182,55 +174,60 @@
 /* Round-trip Panel for Intercity */
 .booking-roundtrip-panel {
   margin-top: 2px;
-  padding: 14px 16px;
+  padding: 10px 14px;
   border: 1px dashed rgba(197, 160, 115, 0.35);
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.22);
 }
 
 .booking-roundtrip-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--gold, #c5a073);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .booking-roundtrip-title svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   color: var(--gold, #c5a073);
 }
 
 /* Validation Error */
 .booking-validation-error {
   margin-top: 6px;
-  padding: 9px 14px;
+  padding: 8px 12px;
   border: 1px solid rgba(239, 68, 68, 0.4);
   border-radius: 6px;
   background: rgba(239, 68, 68, 0.14);
   color: #fca5a5;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13.5px;
+  line-height: 1.35;
 }
 
-.search-btn {
-  height: 42px;
+.search-btn,
+button.search-btn {
+  height: 34px;
+  min-height: 34px;
+  max-height: 34px;
   width: 100%;
-  padding-inline: 18px;
+  padding-inline: 16px;
+  padding-block: 0;
   border: 0;
   border-radius: 6px;
   background: var(--gold, #c5a073);
   color: #000000;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 13.5px;
+  line-height: 34px;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   transition:
     background-color 0.2s ease,
     transform 0.2s ease,
@@ -250,36 +247,6 @@
   box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.35);
 }
 
-/* =========================
-   Benefits Row
-========================= */
-
-.booking-benefits {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(12px, 1.8vw, 24px);
-  flex-wrap: wrap;
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: #ededeb;
-  font-size: 14.5px;
-  line-height: 1.4;
-}
-
-.booking-benefits span {
-  white-space: nowrap;
-  line-height: 1.4;
-}
-
-.booking-benefits .benefit-check {
-  color: var(--gold, #c5a073);
-  font-weight: 700;
-  margin-right: 4px;
-  line-height: 1.4;
-}
-
 .search-message {
   margin-top: 12px;
   padding: 10px 14px;
@@ -292,64 +259,18 @@
 }
 
 /* =========================
-   Medium Desktop / Laptop (901px - 1200px)
-========================= */
-
-@media (max-width: 1200px) and (min-width: 901px) {
-  .booking-row-journey-airport {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .booking-row-time-airport {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .booking-row-travel-airport {
-    grid-template-columns: 1fr 1fr 1.5fr 130px;
-  }
-
-  .booking-row-journey-hourly {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .booking-row-time-hourly {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .booking-row-travel-hourly {
-    grid-template-columns: 1fr 1.8fr 130px;
-  }
-
-  .booking-row-journey-intercity {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .booking-row-schedule-intercity {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .booking-row-return-intercity {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .booking-row-travel-intercity {
-    grid-template-columns: 1fr 1fr 1.5fr 130px;
-  }
-}
-
-/* =========================
    Tablet (601px - 900px)
 ========================= */
 
 @media (max-width: 900px) {
   .booking-wrap {
     width: 100%;
-    max-width: var(--page-max);
-    margin-top: 20px;
+    max-width: var(--booking-max, min(1440px, var(--page-max)));
+    margin-top: 14px;
   }
 
   .booking-card {
-    padding: 0 20px 20px;
+    padding: 0 16px 14px;
   }
 
   .booking-tabs {
@@ -357,42 +278,40 @@
   }
 
   .booking-tabs button {
-    min-height: 48px;
-    font-size: 14.5px;
+    min-height: 36px;
+    height: 36px;
+    font-size: 13px;
   }
 
   .booking-form-grid {
-    gap: 14px;
+    gap: 8px;
   }
 
   .booking-row,
   .booking-row-journey-airport,
   .booking-row-time-airport,
-  .booking-row-travel-airport,
   .booking-row-journey-hourly,
   .booking-row-time-hourly,
-  .booking-row-travel-hourly,
   .booking-row-journey-intercity,
   .booking-row-schedule-intercity,
-  .booking-row-return-intercity,
-  .booking-row-travel-intercity {
+  .booking-row-return-intercity {
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px 12px;
+    gap: 8px 8px;
+  }
+
+  .booking-row-journey-intercity > :last-child {
+    grid-column: span 2;
   }
 
   .booking-submit-wrap {
     grid-column: span 2;
   }
 
-  .search-btn {
-    min-height: 42px;
-  }
-
-  .booking-benefits {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 16px;
-    justify-content: flex-start;
+  .search-btn,
+  button.search-btn {
+    min-height: 34px;
+    height: 34px;
+    max-height: 34px;
   }
 }
 
@@ -416,7 +335,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: none;
     background: linear-gradient(180deg, #090b0b 0%, #121414 100%);
-    padding: 0 var(--page-gutter) 22px;
+    padding: 0 var(--page-gutter) 16px;
   }
 
   .booking-tabs {
@@ -427,9 +346,9 @@
 
   .booking-tabs button {
     height: auto;
-    min-height: 52px;
-    padding: 8px 3px;
-    font-size: clamp(12px, 3.2vw, 13.5px);
+    min-height: 44px;
+    padding: 6px 3px;
+    font-size: clamp(12px, 3.2vw, 13px);
     line-height: 1.25;
     white-space: normal;
     text-align: left;
@@ -447,22 +366,19 @@
   }
 
   .booking-form-grid {
-    gap: 13px;
+    gap: 8px;
   }
 
   .booking-row,
   .booking-row-journey-airport,
   .booking-row-time-airport,
-  .booking-row-travel-airport,
   .booking-row-journey-hourly,
   .booking-row-time-hourly,
-  .booking-row-travel-hourly,
   .booking-row-journey-intercity,
   .booking-row-schedule-intercity,
-  .booking-row-return-intercity,
-  .booking-row-travel-intercity {
+  .booking-row-return-intercity {
     grid-template-columns: 1fr;
-    gap: 13px;
+    gap: 8px;
   }
 
   .booking-submit-wrap {
@@ -470,20 +386,18 @@
     width: 100%;
   }
 
-  .search-btn {
+  .search-btn,
+  button.search-btn {
     min-height: 44px;
-    font-size: 15px;
+    height: 44px;
+    max-height: 44px;
+    font-size: 14.5px;
+    line-height: 44px;
     width: 100%;
   }
 
-  .booking-benefits {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 16px;
-    padding-top: 14px;
-    font-size: 14px;
-    line-height: 1.4;
+  .booking-computed-badge {
+    min-height: 44px;
+    height: 44px;
   }
 }

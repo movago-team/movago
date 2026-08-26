@@ -123,13 +123,30 @@ export default function RouteSection() {
                 </div>
 
                 <div className="route-copy">
-                  <div className="route-name">
-                    {route.from}
-                    <br />→ {route.to}
+                  <div className="route-journey">
+                    <div className="route-stop route-stop-from">
+                      <div className="route-stop-header">
+                        <span className="route-stop-badge">FROM</span>
+                      </div>
+                      <div className="route-stop-name">{route.from}</div>
+                    </div>
+
+                    <div className="route-direction-indicator" aria-hidden="true">
+                      <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2.5V13.5M4 9.5L8 13.5L12 9.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+
+                    <div className="route-stop route-stop-to">
+                      <div className="route-stop-header">
+                        <span className="route-stop-badge">TO</span>
+                      </div>
+                      <div className="route-stop-name">{route.to}</div>
+                    </div>
                   </div>
 
                   <div className="route-bottom">
-                    <div className="route-from">From</div>
+                    <div className="route-from">Price</div>
                     <div className="route-price">
                       {route.price} <span>THB</span>
                     </div>

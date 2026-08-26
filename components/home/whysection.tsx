@@ -18,7 +18,7 @@ export default function WhySection() {
           {/* Premium Experience */}
           <article>
             <span className="feature-icon">
-              <Icon name="car" />
+              <Icon name="car" size={32} />
             </span>
 
             <div>
@@ -33,7 +33,7 @@ export default function WhySection() {
           {/* Safety First */}
           <article>
             <span className="feature-icon">
-              <Icon name="shield" />
+              <Icon name="shield" size={32} />
             </span>
 
             <div>
@@ -48,7 +48,7 @@ export default function WhySection() {
           {/* On-Time Guarantee */}
           <article>
             <span className="feature-icon">
-              <Icon name="clock" />
+              <Icon name="clock" size={32} />
             </span>
 
             <div>
@@ -63,7 +63,7 @@ export default function WhySection() {
           {/* All-Inclusive Pricing */}
           <article>
             <span className="feature-icon">
-              <Icon name="bag" />
+              <Icon name="bag" size={32} />
             </span>
 
             <div>

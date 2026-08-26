@@ -5,10 +5,8 @@ import { Button, DateInput, Icon, Select } from '@/components/ui'
 import {
   DURATION_OPTIONS,
   LOCATION_OPTIONS,
-  PASSENGER_OPTIONS,
   SERVICE_AREA_OPTIONS,
   TIME_OPTIONS,
-  VEHICLE_OPTIONS,
   calculateEndTime,
   exceedsMaxOperatingTime,
   formatTimeLabel,
@@ -87,7 +85,7 @@ export default function HourlyServiceForm({
   return (
     <form className="booking-service-form" onSubmit={handleSubmit}>
       <div className="booking-form-grid">
-        {/* Row 1 — Pickup */}
+        {/* Row 1 — Pickup & Area */}
         <div className="booking-row booking-row-journey-hourly">
           <Select
             label="Pickup Location (From)"
@@ -107,6 +105,14 @@ export default function HourlyServiceForm({
             containerClassName="booking-col"
           />
 
+          <Select
+            label="Service Area"
+            value={serviceArea}
+            onChange={(e) => setServiceArea(e.target.value)}
+            options={SERVICE_AREA_OPTIONS}
+            containerClassName="booking-col"
+          />
+
           <DateInput
             label="Date"
             value={date}
@@ -115,7 +121,7 @@ export default function HourlyServiceForm({
           />
         </div>
 
-        {/* Row 2 — Service Time */}
+        {/* Row 2 — Service Time & Search */}
         <div className="booking-row booking-row-time-hourly">
           <Select
             label="Start Time"
@@ -165,34 +171,6 @@ export default function HourlyServiceForm({
               containerClassName="booking-col"
             />
           )}
-
-          <Select
-            label="Service Area"
-            value={serviceArea}
-            onChange={(e) => setServiceArea(e.target.value)}
-            options={SERVICE_AREA_OPTIONS}
-            containerClassName="booking-col"
-          />
-        </div>
-
-        {/* Row 3 — Travel Details */}
-        <div className="booking-row booking-row-travel-hourly">
-          <Select
-            label="Passengers"
-            icon={<Icon name="users" />}
-            value={passengers}
-            onChange={(e) => setPassengers(e.target.value)}
-            options={PASSENGER_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Select
-            label="Vehicle"
-            value={vehicle}
-            onChange={(e) => onVehicleChange(e.target.value)}
-            options={VEHICLE_OPTIONS}
-            containerClassName="booking-col"
-          />
 
           <div className="booking-submit-wrap">
             <Button type="submit" variant="primary" className="search-btn w-full">

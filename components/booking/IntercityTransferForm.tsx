@@ -4,11 +4,8 @@ import { FormEvent, useState } from 'react'
 import { Button, DateInput, Icon, Select } from '@/components/ui'
 import {
   LOCATION_OPTIONS,
-  LUGGAGE_OPTIONS,
-  PASSENGER_OPTIONS,
   TIME_OPTIONS,
   TripType,
-  VEHICLE_OPTIONS,
   isTimeAfter,
 } from './constants'
 
@@ -109,17 +106,17 @@ export default function IntercityTransferForm({
             options={LOCATION_OPTIONS}
             containerClassName="booking-col"
           />
+        </div>
 
+        {/* Row 2 — Schedule & Search */}
+        <div className="booking-row booking-row-schedule-intercity">
           <DateInput
             label="Departure Date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
             containerClassName="booking-col"
           />
-        </div>
 
-        {/* Row 2 — Schedule */}
-        <div className="booking-row booking-row-schedule-intercity">
           <Select
             label="Departure Time"
             value={startTime}
@@ -135,6 +132,14 @@ export default function IntercityTransferForm({
             options={TIME_OPTIONS}
             containerClassName="booking-col"
           />
+
+          {tripType === 'one-way' && (
+            <div className="booking-submit-wrap">
+              <Button type="submit" variant="primary" className="search-btn w-full">
+                Search
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Round-trip return section */}
@@ -165,44 +170,14 @@ export default function IntercityTransferForm({
                 options={TIME_OPTIONS}
                 containerClassName="booking-col"
               />
+              <div className="booking-submit-wrap">
+                <Button type="submit" variant="primary" className="search-btn w-full">
+                  Search
+                </Button>
+              </div>
             </div>
           </div>
         )}
-
-        {/* Row 3 — Travel Details */}
-        <div className="booking-row booking-row-travel-intercity">
-          <Select
-            label="Passengers"
-            icon={<Icon name="users" />}
-            value={passengers}
-            onChange={(e) => setPassengers(e.target.value)}
-            options={PASSENGER_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Select
-            label="Luggage"
-            icon={<Icon name="bag" />}
-            value={luggage}
-            onChange={(e) => setLuggage(e.target.value)}
-            options={LUGGAGE_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <Select
-            label="Vehicle"
-            value={vehicle}
-            onChange={(e) => onVehicleChange(e.target.value)}
-            options={VEHICLE_OPTIONS}
-            containerClassName="booking-col"
-          />
-
-          <div className="booking-submit-wrap">
-            <Button type="submit" variant="primary" className="search-btn w-full">
-              Search
-            </Button>
-          </div>
-        </div>
       </div>
 
       {error && <div className="booking-validation-error">{error}</div>}

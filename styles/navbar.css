@@ -41,7 +41,7 @@
   justify-self: start;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   height: 74px;
   text-decoration: none;
   flex: 0 0 auto;
@@ -54,12 +54,13 @@
 }
 
 .brand-logo {
-  height: 60px;
+  height: 72px;
   width: auto;
-  max-width: 78px;
+  max-width: 90px;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
+  margin-right: -5px;
 }
 
 .brand-text {
@@ -296,8 +297,8 @@
   }
 
   .brand-logo {
-    height: 56px;
-    max-width: 72px;
+    height: 67px;
+    max-width: 85px;
   }
 
   .brand-name {
@@ -327,14 +328,15 @@
   .brand {
     justify-self: auto;
     height: 70px;
-    gap: 11px;
+    gap: 0;
     width: auto;
     flex: 0 0 auto;
   }
 
   .brand-logo {
-    height: 54px;
-    max-width: 68px;
+    height: 65px;
+    max-width: 82px;
+    margin-right: -4px;
   }
 
   .brand-name {
@@ -446,12 +448,13 @@
 
   .brand {
     height: 68px;
-    gap: 10px;
+    gap: 0;
   }
 
   .brand-logo {
-    height: 50px;
-    max-width: 64px;
+    height: 60px;
+    max-width: 76px;
+    margin-right: -3px;
   }
 
   .brand-name {
@@ -472,12 +475,13 @@
 /* Small Mobile (<= 375px) */
 @media (max-width: 375px) {
   .brand {
-    gap: 8px;
+    gap: 0;
   }
 
   .brand-logo {
-    height: 46px;
-    max-width: 58px;
+    height: 54px;
+    max-width: 68px;
+    margin-right: -2px;
   }
 
   .brand-name {

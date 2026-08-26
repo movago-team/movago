@@ -67,10 +67,10 @@ export const TIME_OPTIONS = [
   { value: '23:00', label: '11:00 PM' },
 ]
 
-// Reusing existing vehicles data source
+// Reusing existing vehicles data source (real production vehicles only)
 export const VEHICLE_OPTIONS = [
   { value: '', label: 'Select Vehicle' },
-  ...vehicles.map((v) => ({ value: v.name, label: v.name })),
+  ...vehicles.filter((v) => !v.isMock).map((v) => ({ value: v.name, label: v.name })),
 ]
 
 export const PASSENGER_OPTIONS = [

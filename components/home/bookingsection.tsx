@@ -29,7 +29,7 @@ export default function BookingSection({
   }
 
   return (
-    <section className="booking-wrap" id="booking">
+    <section className="booking-wrap w-full max-w-[1440px] mx-auto" id="booking">
       <div className="booking-card">
         {/* Tabs */}
         <BookingTabs
@@ -65,22 +65,6 @@ export default function BookingSection({
               onSearch={handleSearch}
             />
           )}
-        </div>
-
-        {/* Benefits */}
-        <div className="booking-benefits">
-          <span>
-            <span className="benefit-check">✓</span> Free 60 mins waiting time
-          </span>
-          <span>
-            <span className="benefit-check">✓</span> All tolls &amp; parking included
-          </span>
-          <span>
-            <span className="benefit-check">✓</span> Professional chauffeur
-          </span>
-          <span>
-            <span className="benefit-check">✓</span> 24/7 Customer Support
-          </span>
         </div>
 
         {/* Search Result */}
