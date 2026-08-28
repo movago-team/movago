@@ -1,0 +1,5 @@
+export { default as DestinationHero } from './DestinationHero'
+export { default as PopularDestinationsSection } from './PopularDestinationsSection'
+export { default as JourneyBenefitsSection } from './JourneyBenefitsSection'
+export { default as DestinationCtaSection } from './DestinationCtaSection'
+export { default as DestinationsContent } from './DestinationsContent'

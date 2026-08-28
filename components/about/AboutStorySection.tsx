@@ -74,28 +74,28 @@ export default function AboutStorySection() {
           </div>
 
           <div className="relative">
-            <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-[14px] shadow-[0_14px_40px_rgba(0,0,0,0.12)] lg:min-h-[380px] lg:flex-row">
+            <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-black/[0.08] shadow-[0_14px_40px_rgba(0,0,0,0.12)] lg:min-h-[380px] lg:flex-row">
               <img
                 src="/images/about/story-bangkok.jpg"
                 alt="MOVAGO Executive Transportation across Bangkok"
-                className="size-full min-h-[260px] object-cover sm:min-h-[320px] lg:min-h-[380px]"
+                className="w-full min-h-[220px] max-h-[320px] object-cover sm:min-h-[300px] lg:size-full lg:max-h-none lg:min-h-[380px]"
               />
-              <div className="static grid w-full grid-cols-1 gap-4 border-t border-white/12 bg-[#0e1111]/95 p-5.5 backdrop-blur-[10px] sm:grid-cols-2 sm:gap-5 lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[230px] lg:flex-col lg:justify-around lg:gap-0 lg:border-t-0 lg:border-l lg:p-5 lg:py-6">
+              <div className="static grid w-full grid-cols-2 gap-4 border-t border-white/12 bg-[#0e1111]/95 p-5 backdrop-blur-[10px] sm:gap-5 sm:p-6 lg:absolute lg:inset-y-0 lg:right-0 lg:flex lg:w-[240px] lg:flex-col lg:justify-around lg:gap-0 lg:border-t-0 lg:border-l lg:border-white/12 lg:p-6">
                 {STATS.map((stat) => (
-                  <div className="flex items-center gap-3.5" key={stat.label}>
+                  <div className="flex items-center gap-2.5 sm:gap-3" key={stat.label}>
                     <span
                       className={cn(
-                        'inline-flex size-8.5 shrink-0 items-center justify-center sm:size-9 lg:size-[38px]',
+                        'inline-flex size-8 shrink-0 items-center justify-center sm:size-9 lg:size-9.5',
                         textGold,
                       )}
                     >
-                      <Icon name={stat.icon} size={29} />
+                      <Icon name={stat.icon} size={24} />
                     </span>
-                    <div>
-                      <span className={cn('block text-[21px] font-bold leading-none', textGoldBright)}>
+                    <div className="min-w-0 flex-1">
+                      <span className={cn('block text-base font-bold leading-tight sm:text-lg lg:text-xl', textGoldBright)}>
                         {stat.value}
                       </span>
-                      <span className="mt-0.5 block text-[12.5px] leading-snug text-[#9da099]">
+                      <span className="mt-0.5 block text-[11px] leading-snug text-[#9da099] sm:text-xs">
                         {stat.label}
                       </span>
                     </div>

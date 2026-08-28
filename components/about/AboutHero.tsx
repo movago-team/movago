@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import Icon from '@/ui/icon'
 import { cn } from '@/utils/cn'
-import { textGold } from '@/utils/ui/colors'
+import { bgPageDark, textGold } from '@/utils/ui/colors'
 
 const PILLARS = [
   {
@@ -27,39 +28,58 @@ const PILLARS = [
 
 export default function AboutHero() {
   return (
-    <section className="relative flex flex-col justify-between overflow-hidden bg-[#060808] pt-[74px] pb-7 text-white md:pb-10 max-[600px]:pt-[68px]">
-      <div className="absolute inset-0 z-0">
-        <img
+    <section
+      className={cn(
+        'relative z-20 flex flex-col justify-between overflow-visible text-white',
+        'min-h-[clamp(580px,44vw,700px)] max-[600px]:min-h-[520px]',
+        'pt-[74px] pb-8 sm:pb-10 max-[600px]:pt-[68px]',
+        bgPageDark,
+      )}
+    >
+      {/* Background Image & Overlays - identical position, scale & lighting to Home */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
           src="/images/heroes/hero-temp.png"
           alt="MOVAGO Executive Airport Chauffeur Service"
-          className="size-full object-cover object-[right_40%]"
+          fill
+          priority
+          sizes="100vw"
+          className="size-full object-cover object-[calc(50%+75px)_40%] brightness-[1.04] contrast-[1.02] max-[900px]:object-[calc(50%+42px)_38%] max-[900px]:opacity-[0.92] max-[600px]:object-[calc(50%+20px)_35%]"
         />
+
         <div
           aria-hidden
-          className={cn(
-            'pointer-events-none absolute inset-0',
-            'bg-[linear-gradient(90deg,rgba(6,8,8,0.98)_0%,rgba(6,8,8,0.94)_36%,rgba(6,8,8,0.72)_56%,rgba(6,8,8,0.35)_76%,rgba(6,8,8,0.65)_100%),linear-gradient(180deg,rgba(0,0,0,0.45)_0%,transparent_25%,transparent_70%,rgba(6,8,8,0.95)_100%)]',
-            'max-md:bg-[linear-gradient(180deg,rgba(6,8,8,0.95)_0%,rgba(6,8,8,0.88)_45%,rgba(6,8,8,0.96)_100%)]',
-          )}
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,7,0.95)_0%,rgba(5,7,7,0.88)_18%,rgba(5,7,7,0.52)_28%,rgba(5,7,7,0.10)_38%,transparent_50%)] max-[600px]:bg-[linear-gradient(90deg,rgba(5,7,7,0.82)_0%,rgba(5,7,7,0.45)_45%,transparent_75%)]"
+        />
+
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,transparent_22%,transparent_70%,rgba(5,7,7,0.5)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.88)_0%,rgba(5,7,7,0.72)_28%,rgba(5,7,7,0.28)_52%,rgba(5,7,7,0.08)_70%,rgba(5,7,7,0.55)_100%)]"
         />
       </div>
 
-      <div className="page-width-full relative z-[1] flex flex-col justify-between gap-9">
-        <div className="max-w-[520px]">
-          <h1 className="mb-3.5 text-[30px] font-bold leading-[1.1] tracking-tight text-white sm:text-[clamp(34px,3.8vw,50px)]">
+      {/* Top Header Content - aligned with logo via page-width-full */}
+      <div className="page-width-full relative z-[1] flex flex-col pt-[clamp(28px,3.5vw,44px)] max-[900px]:pt-12 max-[600px]:pt-6">
+        <div className="max-w-[540px]">
+          {/* Eyebrow */}
+          <div className={cn('mb-3 text-[clamp(11px,0.72vw,13px)] font-bold tracking-[0.08em]', textGold)}>
+            ABOUT MOVAGO
+          </div>
+
+          {/* Main Heading in Inter Font */}
+          <h1 className="m-0 text-[clamp(34px,3.4vw,56px)] font-bold leading-[1.15] tracking-[-0.02em] text-white max-[900px]:text-[clamp(36px,6vw,48px)] max-[600px]:text-[clamp(28px,7vw,36px)]">
             About MOVAGO
           </h1>
-          <p
-            className={cn(
-              'mb-4 text-[17px] font-semibold leading-tight sm:text-[clamp(18px,1.8vw,24px)]',
-              textGold,
-            )}
-          >
+
+          {/* Gold Accent Subtitle */}
+          <div className={cn('mt-2 text-lg font-semibold leading-snug sm:text-xl lg:text-[22px]', textGold)}>
             Redefining Premium Mobility
             <br />
             with Purpose and Passion
-          </p>
-          <div className="space-y-3 text-[14.5px] leading-[1.6] text-[#c4c6bf]">
+          </div>
+
+          {/* Supporting Copy */}
+          <div className="mt-4 space-y-2.5 text-sm sm:text-[15px] leading-relaxed text-[#d6d9d0]">
             <p className="m-0">
               MOVAGO was born from a simple belief — every journey deserves to be safe, comfortable, and
               exceptional.
@@ -70,27 +90,48 @@ export default function AboutHero() {
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="mt-7 grid grid-cols-1 overflow-hidden rounded-xl border border-white/10 bg-[#0d1010]/90 shadow-[0_16px_36px_rgba(0,0,0,0.35)] backdrop-blur-md md:mt-4 md:grid-cols-2 lg:grid-cols-4">
-          {PILLARS.map((item) => (
-            <div
-              className="flex flex-col gap-2.5 border-b border-white/[0.08] p-5 last:border-b-0 md:border-b-0 md:[&:nth-child(-n+2)]:border-b md:[&:nth-child(even)]:border-r-0 md:[&:nth-child(odd)]:border-r lg:border-r lg:px-5 lg:py-[22px] lg:last:border-r-0 lg:[&:nth-child(-n+2)]:border-b-0"
-              key={item.title}
-            >
-              <div className="flex items-center gap-3">
-                <span
-                  className={cn(
-                    'inline-flex size-9 shrink-0 items-center justify-center sm:size-10 lg:size-[42px]',
-                    textGold,
-                  )}
-                >
-                  <Icon name={item.icon} size={29} />
+      {/* Bottom Pillars Card - In page-width to align with Our Story section below */}
+      <div className="page-width relative z-[1] mt-auto pt-8">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-white/25 bg-[#090c0d]/85 shadow-[0_24px_55px_rgba(0,0,0,0.55),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl md:grid-cols-2 lg:grid-cols-4">
+          {PILLARS.map((item, idx) => {
+            const isNotLast = idx < PILLARS.length - 1
+            return (
+              <div
+                key={item.title}
+                className={cn(
+                  'relative flex items-start gap-4 p-5 sm:p-6 lg:py-6',
+                  'max-md:border-b max-md:last:border-b-0 max-md:border-white/10',
+                  idx % 2 === 0 && 'md:border-r lg:border-r-0 md:border-white/10',
+                  idx < 2 && 'md:border-b lg:border-b-0 md:border-white/10',
+                )}
+              >
+                {/* Left: Large Gold Icon */}
+                <span className={cn('flex size-9 shrink-0 items-center justify-center pt-0.5', textGold)}>
+                  <Icon name={item.icon} size={36} />
                 </span>
-                <h2 className="m-0 text-base font-semibold text-white">{item.title}</h2>
+
+                {/* Right: Title & Description starting at the exact same left alignment */}
+                <div className="min-w-0 flex-1">
+                  <h2 className="m-0 text-base font-bold leading-tight text-white sm:text-[17px] tracking-tight">
+                    {item.title}
+                  </h2>
+                  <p className="m-0 mt-2 text-xs sm:text-[13px] leading-relaxed text-[#b4b8af]">
+                    {item.desc}
+                  </p>
+                </div>
+
+                {/* 1px Vertical Divider between columns on desktop */}
+                {isNotLast && (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute right-0 top-6 bottom-6 hidden w-[1px] bg-white/20 lg:block"
+                  />
+                )}
               </div>
-              <p className="m-0 text-[13px] leading-[1.5] text-[#a4a7a0]">{item.desc}</p>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

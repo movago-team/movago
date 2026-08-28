@@ -41,7 +41,7 @@ export default function VehicleSection({ onSelect }: VehicleSectionProps) {
 
         <div className="grid grid-cols-1 gap-[18px] min-[601px]:grid-cols-2 min-[901px]:grid-cols-3 min-[901px]:gap-6 max-[1150px]:min-[901px]:gap-4">
           {displayVehicles.map((item) => {
-            const categoryLabel = item.category || item.tier.toUpperCase()
+            const categoryLabel = item.category || item.tier?.toUpperCase() || ''
 
             return (
               <article
