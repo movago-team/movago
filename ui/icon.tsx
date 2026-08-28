@@ -275,6 +275,89 @@ export default function Icon({
         <circle cx="12" cy="15" r="2" />
       </>
     ),
+
+    wifi: (
+      <>
+        <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+        <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+        <line x1="12" y1="20" x2="12.01" y2="20" />
+      </>
+    ),
+
+    charger: (
+      <>
+        <rect x="5" y="6" width="14" height="12" rx="2" />
+        <path d="M9 2v4" />
+        <path d="M15 2v4" />
+        <path d="M12 10v4" />
+      </>
+    ),
+
+    "child-seat": (
+      <>
+        <path d="M19 9h-4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2z" />
+        <path d="M7 19h4" />
+        <path d="M9 13V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a4 4 0 0 0 4 4" />
+      </>
+    ),
+
+    sunroof: (
+      <>
+        <path d="M4 14h16" />
+        <path d="M6 10l2-4h8l2 4" />
+        <path d="M3 18h18" />
+      </>
+    ),
+
+    sparkles: (
+      <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
+    ),
+
+    parking: (
+      <>
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
+      </>
+    ),
+
+    armchair: (
+      <>
+        <path d="M19 9a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2Z" />
+        <path d="M5 18v2" />
+        <path d="M19 18v2" />
+        <path d="M3 11v3a2 2 0 0 0 2 2" />
+        <path d="M21 11v3a2 2 0 0 1-2 2" />
+      </>
+    ),
+
+    "shield-check": (
+      <>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+        <path d="m9 12 2 2 4-4" />
+      </>
+    ),
+
+    van: (
+      <>
+        <path d="M17 6h-2a2 2 0 0 0-2 2v2H3a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h1" />
+        <path d="M17 6h4l2 4v7a2 2 0 0 1-2 2h-1" />
+        <circle cx="7" cy="19" r="2" />
+        <circle cx="17" cy="19" r="2" />
+        <path d="M9 19h6" />
+      </>
+    ),
+
+    suv: (
+      <>
+        <path d="M5 10.5 7 5.5A2 2 0 0 1 8.9 4h6.2a2 2 0 0 1 1.9 1.5l2 5" />
+        <rect x="3" y="10.5" width="18" height="7.5" rx="2" />
+        <circle cx="7" cy="14.25" r="1.2" />
+        <circle cx="17" cy="14.25" r="1.2" />
+        <path d="M5.5 18v2" />
+        <path d="M18.5 18v2" />
+      </>
+    ),
   };
 
   return (
