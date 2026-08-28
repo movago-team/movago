@@ -229,6 +229,52 @@ export default function Icon({
     star: (
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     ),
+
+    swap: (
+      <>
+        <path d="m16 3 4 4-4 4" />
+        <path d="M20 7H4" />
+        <path d="m8 21-4-4 4-4" />
+        <path d="M4 17h16" />
+      </>
+    ),
+
+    "arrow-left-right": (
+      <>
+        <path d="m16 3 4 4-4 4" />
+        <path d="M20 7H4" />
+        <path d="m8 21-4-4 4-4" />
+        <path d="M4 17h16" />
+      </>
+    ),
+
+    lock: (
+      <>
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </>
+    ),
+
+    check: (
+      <path d="M20 6 9 17l-5-5" />
+    ),
+
+    tag: (
+      <>
+        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z" />
+        <path d="M7 7h.01" />
+      </>
+    ),
+
+    calendar: (
+      <>
+        <rect width="18" height="18" x="3" y="4" rx="2" />
+        <path d="M16 2v4" />
+        <path d="M8 2v4" />
+        <path d="M3 10h18" />
+        <circle cx="12" cy="15" r="2" />
+      </>
+    ),
   };
 
   return (
