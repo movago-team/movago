@@ -89,20 +89,20 @@ export default function DestinationHero({ onSearch }: DestinationHeroProps) {
         </div>
       </div>
 
-      {/* Destination Search Panel - Black luxury box overlapping the bottom edge of hero */}
+      {/* Destination Search Panel - Black luxury box overlapping the bottom edge of hero with spacious inner padding & margin */}
       <div className="page-width relative z-30 mt-auto pt-6 -mb-14 sm:-mb-16 lg:-mb-18">
-        <div className="w-full rounded-2xl border border-white/25 bg-[#090c0d]/95 p-5 shadow-[0_24px_55px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl sm:p-6">
-          <div className="mb-4 flex items-center gap-2.5">
-            <span className={cn('inline-flex size-7 items-center justify-center rounded-md bg-gold/25', textGold)}>
-              <Icon name="pin" size={16} />
+        <div className="w-full rounded-2xl border border-white/25 bg-[#090c0d]/95 p-7 shadow-[0_24px_55px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl sm:p-8 sm:px-9 lg:p-9 lg:px-10">
+          <div className="mb-5 sm:mb-6 flex items-center gap-2.5">
+            <span className={cn('flex shrink-0 items-center justify-center', textGold)}>
+              <Icon name="pin" size={20} />
             </span>
-            <h2 className="m-0 text-base font-semibold text-white sm:text-lg">
+            <h2 className="m-0 text-lg font-semibold text-white sm:text-xl">
               Find Your Destination
             </h2>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
-            <div className="grid grid-cols-1 items-end gap-3.5 md:grid-cols-[1fr_auto_1fr_auto]">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <div className="grid grid-cols-1 items-end gap-4 sm:gap-5 md:grid-cols-[1fr_auto_1fr_auto]">
               {/* From Dropdown */}
               <div className="min-w-0">
                 <Select
@@ -114,14 +114,14 @@ export default function DestinationHero({ onSearch }: DestinationHeroProps) {
                 />
               </div>
 
-              {/* Swap Icon - Centered between From and To on both mobile and desktop */}
-              <div className="flex items-center justify-center max-md:py-1 max-md:my-0 md:pb-2">
+              {/* Swap Icon - Standalone icon without circular frame */}
+              <div className="flex items-center justify-center max-md:py-1 max-md:my-0 md:pb-2.5">
                 <button
                   type="button"
                   onClick={handleSwap}
                   aria-label="Swap pickup and destination"
                   className={cn(
-                    'flex size-8 items-center justify-center border-0 bg-transparent p-0 text-gold transition-all duration-300 hover:scale-110 hover:text-white active:scale-95 cursor-pointer max-md:rotate-90',
+                    'flex size-8 items-center justify-center border-0 bg-transparent p-0 text-gold transition-all duration-300 hover:scale-115 hover:text-white active:scale-95 cursor-pointer max-md:rotate-90',
                     isSwapping && 'rotate-180 max-md:rotate-[270deg]',
                   )}
                 >
@@ -140,13 +140,13 @@ export default function DestinationHero({ onSearch }: DestinationHeroProps) {
                 />
               </div>
 
-              {/* Search Button - Original compact width, exact 34px height matching select trigger */}
-              <div className="min-w-[130px] pt-1 md:pt-0">
+              {/* Search Button */}
+              <div className="min-w-[135px] pt-1 md:pt-0">
                 <Button
                   type="submit"
                   variant="primary"
                   size="md"
-                  className="!h-[34px] !min-h-[34px] !max-h-[34px] w-full rounded-[6px] !px-5 !py-0 !text-[13.5px] !leading-[34px] font-semibold shadow-[0_2px_14px_rgba(197,160,115,0.35)] max-[600px]:!h-11 max-[600px]:!min-h-11 max-[600px]:!max-h-11 max-[600px]:!leading-11"
+                  className="!h-[36px] !min-h-[36px] !max-h-[36px] w-full rounded-[6px] !px-6 !py-0 !text-[14px] !leading-[36px] font-semibold shadow-[0_2px_14px_rgba(197,160,115,0.35)] max-[600px]:!h-11 max-[600px]:!min-h-11 max-[600px]:!max-h-11 max-[600px]:!leading-11"
                 >
                   Search
                 </Button>

@@ -165,10 +165,10 @@ export default function PopularDestinationsSection({
                       </div>
                     </div>
 
-                    {/* View Details Black Pill Button */}
+                    {/* View Details Soft Light Gold Pill Button */}
                     <Link
                       href={`/book?destination=${dest.id}`}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-[#111313] px-4 py-2 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-black hover:scale-[1.02] active:scale-95"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-[#E5C198] px-4 py-2 text-xs font-bold text-[#2c1e0f] shadow-[0_2px_10px_rgba(229,193,152,0.35)] transition-all duration-200 hover:bg-[#d9b386] hover:scale-[1.02] active:scale-95"
                     >
                       <span>View Details</span>
                       <Icon name="arrow-right" size={12} />
