@@ -91,7 +91,7 @@ export default function DestinationHero({ onSearch }: DestinationHeroProps) {
 
       {/* Destination Search Panel - Black luxury box overlapping the bottom edge of hero with spacious inner padding & margin */}
       <div className="page-width relative z-30 mt-auto pt-6 -mb-14 sm:-mb-16 lg:-mb-18">
-        <div className="w-full rounded-2xl border border-white/25 bg-[#090c0d]/95 p-7 shadow-[0_24px_55px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl sm:p-8 sm:px-9 lg:p-9 lg:px-10">
+        <div className="w-full rounded-2xl border border-white/25 bg-[#090c0d]/95 p-7 shadow-[0_6px_20px_rgba(42,32,20,0.12),0_18px_44px_rgba(58,40,24,0.07),0_28px_56px_rgba(163,124,68,0.05),inset_0_1px_1px_rgba(255,255,255,0.12)] backdrop-blur-2xl sm:p-8 sm:px-9 lg:p-9 lg:px-10">
           <div className="mb-5 sm:mb-6 flex items-center gap-2.5">
             <span className={cn('flex shrink-0 items-center justify-center', textGold)}>
               <Icon name="pin" size={20} />

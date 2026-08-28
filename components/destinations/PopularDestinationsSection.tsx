@@ -32,8 +32,12 @@ export default function PopularDestinationsSection({
   }, [activeCategory, selectedTarget])
 
   return (
-    <section className="bg-[#f8f5ef] pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8" id="popular-destinations">
-      <div className="page-width">
+    <section className="relative bg-[#f8f5ef] pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8" id="popular-destinations">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#ebe5da]/70 to-transparent sm:h-28"
+      />
+      <div className="page-width relative">
         {/* Section Header with Category Filters */}
         <div className="mb-8 flex flex-col items-start justify-between gap-6 md:mb-12 md:flex-row md:items-end">
           <div>
