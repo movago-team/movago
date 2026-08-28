@@ -18,6 +18,7 @@ export default function Icon({
     strokeWidth: 1.8,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
+    className: "block shrink-0",
     "aria-hidden": true,
   };
 
@@ -357,6 +358,153 @@ export default function Icon({
         <path d="M5.5 18v2" />
         <path d="M18.5 18v2" />
       </>
+    ),
+
+    building: (
+      <>
+        <path d="M3 21h18" />
+        <path d="M5 21V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v14" />
+        <path d="M11 21V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v18" />
+        <path d="M17 21v-9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v9" />
+        <line x1="8" y1="10" x2="8.01" y2="10" />
+        <line x1="8" y1="14" x2="8.01" y2="14" />
+        <line x1="14" y1="6" x2="14.01" y2="6" />
+        <line x1="14" y1="10" x2="14.01" y2="10" />
+        <line x1="14" y1="14" x2="14.01" y2="14" />
+      </>
+    ),
+
+    palmtree: (
+      <>
+        <path d="M12 9a4 4 0 0 0-4-4 4 4 0 0 0-4 4" />
+        <path d="M12 3v2" />
+        <path d="m6.34 4.34 1.41 1.41" />
+        <path d="M2 15c2 1 4 1 6 0s4-1 6 0 4 1 6 0" />
+        <path d="M2 19c2 1 4 1 6 0s4-1 6 0 4 1 6 0" />
+      </>
+    ),
+
+    beach: (
+      <>
+        <path d="M12 9a4 4 0 0 0-4-4 4 4 0 0 0-4 4" />
+        <path d="M12 3v2" />
+        <path d="m6.34 4.34 1.41 1.41" />
+        <path d="M2 15c2 1 4 1 6 0s4-1 6 0 4 1 6 0" />
+        <path d="M2 19c2 1 4 1 6 0s4-1 6 0 4 1 6 0" />
+      </>
+    ),
+
+    waves: (
+      <>
+        <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+        <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+        <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      </>
+    ),
+
+    mountain: (
+      <>
+        <path d="m2 20 7-12 5 7 3-4 5 9H2Z" />
+        <circle cx="18" cy="6" r="2.5" />
+      </>
+    ),
+
+    globe: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3v18M3 12h18" />
+        <path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+      </>
+    ),
+
+    compass: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <polygon points="12 7 14.5 12 12 17 9.5 12" />
+      </>
+    ),
+
+    zeekr: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width={size}
+        height={size}
+        className="block shrink-0"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M4.5 3A2.5 2.5 0 0 0 2 5.5v13A2.5 2.5 0 0 0 4.5 21H10V3H4.5ZM4 5.5C4 5.22 4.22 5 4.5 5H8v14H4.5c-.28 0-.5-.22-.5-.5v-13ZM14 3h5.5A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5H14V3Zm2 2v14h3.5c.28 0 .5-.22.5-.5v-13c0-.28-.22-.5-.5-.5H16Z"
+        />
+      </svg>
+    ),
+
+    toyota: (
+      <svg
+        viewBox="0 0 32 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={size * 1.3}
+        height={size}
+        className="block shrink-0"
+        aria-hidden="true"
+      >
+        <ellipse cx="16" cy="12" rx="14" ry="10" />
+        <ellipse cx="16" cy="12" rx="5.2" ry="10" />
+        <ellipse cx="16" cy="7.8" rx="9" ry="4.2" />
+      </svg>
+    ),
+
+    honda: (
+      <svg
+        viewBox="0 0 26 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={size * 1.1}
+        height={size}
+        className="block shrink-0"
+        aria-hidden="true"
+      >
+        <rect x="2" y="2.5" width="22" height="19" rx="4" />
+        <path d="M7 6v12M19 6v12M7 12h12" />
+      </svg>
+    ),
+
+    nissan: (
+      <svg
+        viewBox="0 0 26 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        width={size * 1.1}
+        height={size}
+        className="block shrink-0"
+        aria-hidden="true"
+      >
+        <circle cx="13" cy="12" r="9.5" />
+        <path d="M2 12h22" strokeWidth="3.5" />
+      </svg>
+    ),
+
+    suzuki: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width={size}
+        height={size}
+        className="block shrink-0"
+        aria-hidden="true"
+      >
+        <path d="M4 5h12L8.5 12h11.5L16 19H4l7.5-7H0L4 5Z" />
+      </svg>
     ),
   };
 

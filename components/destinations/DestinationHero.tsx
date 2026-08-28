@@ -46,7 +46,7 @@ export default function DestinationHero({ onSearch }: DestinationHeroProps) {
       className={cn(
         'relative z-20 flex flex-col justify-between overflow-visible text-white',
         'min-h-[clamp(580px,44vw,700px)] max-[600px]:min-h-[520px]',
-        'pt-[74px] pb-8 sm:pb-10 max-[600px]:pt-[68px]',
+        'pt-[74px] pb-6 sm:pb-8 max-[600px]:pt-[68px]',
         bgPageDark,
       )}
     >
@@ -89,9 +89,9 @@ export default function DestinationHero({ onSearch }: DestinationHeroProps) {
         </div>
       </div>
 
-      {/* Destination Search Panel - In page-width, positioned at bottom matching Home booking widget */}
-      <div className="page-width relative z-[1] mt-auto pt-6">
-        <div className="w-full rounded-2xl border border-white/40 bg-white/[0.12] p-5 shadow-[0_24px_55px_rgba(0,0,0,0.45),inset_0_1px_1px_rgba(255,255,255,0.35)] backdrop-blur-2xl sm:p-6">
+      {/* Destination Search Panel - Black luxury box overlapping the bottom edge of hero */}
+      <div className="page-width relative z-30 mt-auto pt-6 -mb-14 sm:-mb-16 lg:-mb-18">
+        <div className="w-full rounded-2xl border border-white/25 bg-[#090c0d]/95 p-5 shadow-[0_24px_55px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl sm:p-6">
           <div className="mb-4 flex items-center gap-2.5">
             <span className={cn('inline-flex size-7 items-center justify-center rounded-md bg-gold/25', textGold)}>
               <Icon name="pin" size={16} />

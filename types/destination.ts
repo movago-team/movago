@@ -3,6 +3,7 @@ export type DestinationCategory = 'all' | 'city' | 'beach' | 'nature'
 export interface DestinationCategoryOption {
   id: DestinationCategory
   label: string
+  icon?: string
 }
 
 export interface DestinationItem {
@@ -14,7 +15,12 @@ export interface DestinationItem {
   image: string
   duration: string
   startingPoint: string
-  priceZeekr7X: string
-  priceZeekr009: string
+  startingPrice: string
+  originDetail?: string
+  durationDetail?: string
+  vehiclesDetail?: string
+  isPopular?: boolean
+  priceZeekr7X?: string
+  priceZeekr009?: string
   hasAsterisk?: boolean
 }
