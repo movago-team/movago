@@ -22,7 +22,7 @@ export const NAV_LINKS: NavLink[] = [
 export const BOOK_NOW_HREF = '/book'
 
 /** Routes where the header floats transparently over a dark hero (like Home, About, Destinations). */
-export const OVERLAY_HEADER_PATHS = ['/', '/about', '/destinations'] as const
+export const OVERLAY_HEADER_PATHS = ['/', '/about', '/destinations', '/vehicles'] as const
 
 export function isOverlayHeaderPath(pathname: string): boolean {
   return (OVERLAY_HEADER_PATHS as readonly string[]).some(

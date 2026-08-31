@@ -38,6 +38,8 @@ export interface VehicleAmenity {
   id: string
   title: string
   icon: string
+  line1?: string
+  line2?: string
 }
 
 export interface HeroHighlight {

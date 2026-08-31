@@ -260,6 +260,20 @@ export default function Icon({
       <path d="M20 6 9 17l-5-5" />
     ),
 
+    "check-circle": (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <path d="m8.5 12.5 2.5 2.5 5-5" />
+      </>
+    ),
+
+    "circle-check": (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <path d="m8.5 12.5 2.5 2.5 5-5" />
+      </>
+    ),
+
     tag: (
       <>
         <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z" />
@@ -286,20 +300,60 @@ export default function Icon({
       </>
     ),
 
+    "water-wifi": (
+      <>
+        {/* Sleek water bottle with droplet */}
+        <path d="M4 2h4v2H4z" />
+        <path d="M3.5 5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.2a2 2 0 0 1-.6 1.4l-.8.8a2 2 0 0 0-.6 1.4V19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-9.2a2 2 0 0 0-.6-1.4l-.8-.8A2 2 0 0 1 2 6.2V5a1 1 0 0 1 1-1" />
+        <line x1="4" y1="12.5" x2="8" y2="12.5" />
+        {/* Wi-Fi signal arcs */}
+        <path d="M13 10.5a8 8 0 0 1 8.5 0" />
+        <path d="M14.5 13.5a5 5 0 0 1 5.5 0" />
+        <circle cx="17.2" cy="17.5" r="1.1" fill="currentColor" />
+      </>
+    ),
+
     charger: (
       <>
-        <rect x="5" y="6" width="14" height="12" rx="2" />
-        <path d="M9 2v4" />
-        <path d="M15 2v4" />
-        <path d="M12 10v4" />
+        <rect x="7" y="5" width="10" height="14" rx="2.5" />
+        <path d="M10 2.5v2.5" />
+        <path d="M14 2.5v2.5" />
+        <path d="M12.5 8.5l-2.5 3.5h3l-2 3.5" />
+        <line x1="12" y1="19" x2="12" y2="21.5" />
       </>
     ),
 
     "child-seat": (
       <>
-        <path d="M19 9h-4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2z" />
-        <path d="M7 19h4" />
-        <path d="M9 13V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a4 4 0 0 0 4 4" />
+        {/* Car seat shell: backrest, base, headrest */}
+        <path d="M6 4a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v3" />
+        <path d="M6 5v10a4 4 0 0 0 4 4h7a3 3 0 0 0 3-3v-1a2 2 0 0 0-2-2h-5" />
+        {/* Baby profile inside */}
+        <circle cx="11.5" cy="8.5" r="1.8" />
+        <path d="M11 11.5c0 1.8 1.2 3.5 3.5 3.5" />
+      </>
+    ),
+
+    "plane-up": (
+      <path d="M12 2c-.8 0-1.5.8-1.5 2.5V11L3 14v1.8l7.5-1.8v4.5L8 20v1.5l4-.8 4 .8V20l-2.5-1.5V14.5L21 16.3V14.5L13.5 11V4.5C13.5 2.8 12.8 2 12 2z" />
+    ),
+
+    stopwatch: (
+      <>
+        <circle cx="12" cy="13.5" r="7.5" />
+        <path d="M12 9.5v4l2.5 1.5" />
+        <path d="M12 3v3" />
+        <path d="M5 5.5l2 2" />
+        <path d="M19 5.5l-2 2" />
+      </>
+    ),
+
+    "toll-card": (
+      <>
+        <rect x="4" y="3" width="11" height="17" rx="2.5" />
+        <path d="M9.5 8l-1.5 3h2l-1 3" />
+        <circle cx="16.5" cy="16.5" r="4.5" />
+        <circle cx="16.5" cy="16.5" r="1.8" />
       </>
     ),
 

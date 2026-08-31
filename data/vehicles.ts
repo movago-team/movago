@@ -111,12 +111,48 @@ export const HERO_HIGHLIGHTS: HeroHighlight[] = [
 ]
 
 export const VEHICLE_AMENITIES: VehicleAmenity[] = [
-  { id: '1', title: 'Complimentary Water & Wi-Fi', icon: 'wifi' },
-  { id: '2', title: 'Phone Charger Available', icon: 'charger' },
-  { id: '3', title: 'Child Seat Available', icon: 'child-seat' },
-  { id: '4', title: 'Flight Tracking Included', icon: 'plane' },
-  { id: '5', title: '60 Mins Free Waiting Time', icon: 'clock' },
-  { id: '6', title: 'All Tolls & Parking Included', icon: 'parking' },
+  {
+    id: '1',
+    title: 'Complimentary Water & Wi-Fi',
+    line1: 'Complimentary',
+    line2: 'Water & Wi-Fi',
+    icon: 'wifi',
+  },
+  {
+    id: '2',
+    title: 'Phone Charger Available',
+    line1: 'Phone Charger',
+    line2: 'Available',
+    icon: 'charger',
+  },
+  {
+    id: '3',
+    title: 'Child Seat Available',
+    line1: 'Child Seat',
+    line2: 'Available',
+    icon: 'child-seat',
+  },
+  {
+    id: '4',
+    title: 'Flight Tracking Included',
+    line1: 'Flight Tracking',
+    line2: 'Included',
+    icon: 'plane-up',
+  },
+  {
+    id: '5',
+    title: '60 Mins Free Waiting Time',
+    line1: '60 Mins Free',
+    line2: 'Waiting Time',
+    icon: 'stopwatch',
+  },
+  {
+    id: '6',
+    title: 'All Tolls & Parking Included',
+    line1: 'All Tolls & Parking',
+    line2: 'Included',
+    icon: 'toll-card',
+  },
 ]
 
 export const CTA_BENEFITS: CtaBenefit[] = [
