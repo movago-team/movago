@@ -1,0 +1,6 @@
+export { default as CorporateHero } from './CorporateHero'
+export { default as CorporateBenefitsSection } from './CorporateBenefitsSection'
+export { default as CorporateSolutionsSection } from './CorporateSolutionsSection'
+export { default as CorporateClientsSection } from './CorporateClientsSection'
+export { default as CorporateCtaSection } from './CorporateCtaSection'
+export { default as CorporateContent } from './CorporateContent'
