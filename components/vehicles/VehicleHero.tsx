@@ -17,13 +17,14 @@ export default function VehicleHero() {
     <section
       className={cn(
         'relative z-20 flex flex-col overflow-visible text-white',
-        'min-h-[clamp(560px,44vw,700px)] max-[600px]:min-h-[520px]',
-        'pt-[74px] pb-10 sm:pb-12 max-[600px]:pt-[68px]',
+        'min-h-[clamp(560px,44vw,700px)] max-[600px]:min-h-[460px]',
+        'pt-[74px] pb-10 sm:pb-12 max-[600px]:pt-[68px] max-[600px]:pb-5',
         bgPageDark,
       )}
     >
       {/* Background Image & Overlays */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-[#050707]">
+        {/* Desktop & Tablet: Next.js Optimized Image */}
         <Image
           src="/images/heroes/vehicles-hero.jpg"
           alt="MOVAGO Premium Luxury Vehicle Fleet — Executive Airport Transfer"
@@ -31,24 +32,28 @@ export default function VehicleHero() {
           priority
           sizes="100vw"
           className={cn(
-            // v5: car faces RIGHT matching Home hero, dark left zone, VIP terminal right
-            'object-cover object-[50%_50%]',
+            'hidden sm:block object-cover object-[50%_50%]',
             '[filter:brightness(1.14)_contrast(1.04)_saturate(1.06)]',
             'max-[900px]:object-[48%_50%] max-[900px]:opacity-[0.95]',
-            'max-[600px]:object-[45%_48%]',
           )}
         />
 
-        {/* Left-to-right: lighter gradient since new image has natural dark left zone */}
+        {/* Mobile: Direct CSS background pinned directly to bottom (removes black bar) */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,7,0.82)_0%,rgba(5,7,7,0.65)_15%,rgba(5,7,7,0.30)_28%,rgba(5,7,7,0.05)_40%,transparent_52%)] max-[600px]:bg-[linear-gradient(90deg,rgba(5,7,7,0.85)_0%,rgba(5,7,7,0.50)_45%,transparent_75%)]"
+          className="block sm:hidden absolute inset-0 z-0 bg-[url('/images/heroes/vehicles-hero.jpg')] bg-no-repeat bg-[length:155%_auto] bg-[position:80%_bottom] [filter:brightness(1.14)_contrast(1.04)_saturate(1.06)]"
         />
 
-        {/* Top-to-bottom: navbar blend at top, light bottom fade so car stays visible */}
+        {/* Left-to-right: light gradient on mobile so rear of the car remains fully visible */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,7,0.88)_0%,rgba(5,7,7,0.60)_8%,rgba(5,7,7,0.22)_18%,transparent_30%,transparent_65%,rgba(5,7,7,0.35)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.95)_0%,rgba(5,7,7,0.75)_12%,rgba(5,7,7,0.35)_28%,rgba(5,7,7,0.08)_50%,transparent_70%,rgba(5,7,7,0.50)_100%)]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,7,0.82)_0%,rgba(5,7,7,0.65)_15%,rgba(5,7,7,0.30)_28%,rgba(5,7,7,0.05)_40%,transparent_52%)] max-[600px]:bg-[linear-gradient(90deg,rgba(5,7,7,0.30)_0%,transparent_40%)]"
+        />
+
+        {/* Top-to-bottom: deep dark top for crisp text legibility, clear bottom without dark cut-off */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,7,0.88)_0%,rgba(5,7,7,0.60)_8%,rgba(5,7,7,0.22)_18%,transparent_30%,transparent_65%,rgba(5,7,7,0.35)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.96)_0%,rgba(5,7,7,0.85)_24%,rgba(5,7,7,0.45)_42%,rgba(5,7,7,0.05)_62%,transparent_100%)]"
         />
       </div>
 
@@ -61,26 +66,26 @@ export default function VehicleHero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="m-0 text-[clamp(34px,3.4vw,56px)] font-bold leading-[1.15] tracking-[-0.02em] text-white max-[900px]:text-[clamp(36px,6vw,48px)] max-[600px]:text-[clamp(28px,7vw,36px)]">
+          <h1 className="m-0 text-[clamp(34px,3.4vw,56px)] font-bold leading-[1.15] tracking-[-0.02em] text-white max-[900px]:text-[clamp(36px,6vw,48px)] max-[600px]:text-[clamp(28px,7vw,36px)] max-[600px]:[text-shadow:0_2px_12px_rgba(0,0,0,0.85)]">
             Our Vehicles
           </h1>
 
           {/* Gold Accent Subtitle */}
-          <div className={cn('mt-2 text-lg font-semibold leading-snug sm:text-xl lg:text-[22px]', textGold)}>
+          <div className={cn('mt-2 text-lg font-semibold leading-snug sm:text-xl lg:text-[22px] max-[600px]:[text-shadow:0_2px_10px_rgba(0,0,0,0.85)]', textGold)}>
             Luxury, Comfort, and Safety
             <br />
             in Every Journey
           </div>
 
           {/* Supporting Description */}
-          <p className="mt-4 mb-0 max-w-[420px] text-base leading-relaxed text-[#d6d9d0]">
+          <p className="mt-4 mb-0 max-w-[420px] text-base leading-relaxed text-[#e6e8e2] max-[600px]:[text-shadow:0_1px_8px_rgba(0,0,0,0.9)]">
             Handpicked premium vehicles and professional chauffeurs to deliver an exceptional travel
             experience from start to finish.
           </p>
         </div>
 
         {/* Highlights — outside max-w constraint, single row desktop, 2×2 mobile */}
-        <div className="mt-16 sm:mt-24 lg:mt-36 flex flex-nowrap items-center gap-x-7 sm:gap-x-8 max-[600px]:mt-8 max-[600px]:grid max-[600px]:grid-cols-2 max-[600px]:gap-x-5 max-[600px]:gap-y-3.5">
+        <div className="mt-16 sm:mt-24 lg:mt-36 flex flex-nowrap items-center gap-x-7 sm:gap-x-8 max-[600px]:mt-5.5 max-[600px]:grid max-[600px]:grid-cols-2 max-[600px]:gap-x-5 max-[600px]:gap-y-3.5">
           {HIGHLIGHTS.map(({ icon, line1, line2 }) => (
             <div key={line1} className="flex shrink-0 items-center gap-3">
               <span className={cn('shrink-0', textGold)}>
