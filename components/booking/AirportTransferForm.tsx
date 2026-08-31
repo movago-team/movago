@@ -156,11 +156,10 @@ export default function AirportTransferForm({
         />
 
         <Input
-          label="Flight Number"
+          label="Flight Number (Optional)"
           icon={<Icon name="airplane" />}
           placeholder="e.g. TG678 or QR830"
           value={flightNumber}
-          helperText="Optional"
           onChange={(e) => setFlightNumber(e.target.value)}
         />
 
