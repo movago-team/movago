@@ -44,7 +44,13 @@ export default function AboutHero() {
           fill
           priority
           sizes="100vw"
-          className="size-full object-cover object-[calc(50%+75px)_40%] brightness-[1.04] contrast-[1.02] max-[900px]:object-[calc(50%+42px)_38%] max-[900px]:opacity-[0.92] max-[600px]:object-[calc(50%+20px)_35%]"
+          className="size-full object-cover object-[calc(50%+75px)_40%] brightness-[1.04] contrast-[1.02] max-[900px]:object-[calc(50%+42px)_38%] max-[900px]:opacity-[0.92] max-[600px]:hidden"
+        />
+
+        {/* Mobile: CSS bg — 140% scale, 80% horiz shows full van + chauffeur + exec, 30% vert positions car in middle zone */}
+        <div
+          aria-hidden
+          className="block sm:hidden absolute inset-0 z-0 bg-[url('/images/heroes/hero-temp.png')] bg-no-repeat bg-[length:140%_auto] bg-[position:80%_30%] [filter:brightness(1.14)_contrast(1.05)_saturate(1.06)]"
         />
 
         <div
@@ -54,7 +60,7 @@ export default function AboutHero() {
 
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,transparent_22%,transparent_70%,rgba(5,7,7,0.5)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.88)_0%,rgba(5,7,7,0.72)_28%,rgba(5,7,7,0.28)_52%,rgba(5,7,7,0.08)_70%,rgba(5,7,7,0.55)_100%)]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,transparent_22%,transparent_70%,rgba(5,7,7,0.5)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.96)_0%,rgba(5,7,7,0.92)_22%,rgba(5,7,7,0.45)_30%,rgba(5,7,7,0.06)_43%,rgba(5,7,7,0.30)_55%,rgba(5,7,7,0.93)_68%,rgba(5,7,7,0.98)_100%)]"
         />
       </div>
 

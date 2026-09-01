@@ -15,18 +15,18 @@ export default function HeroSection() {
       <div
         aria-hidden
         className={cn(
-          "absolute inset-x-0 top-0 bottom-[-70px] z-0 bg-[url('/images/heroes/hero-temp.png')] bg-cover bg-no-repeat bg-[position:calc(50%+75px)_40%] [filter:brightness(1.04)_contrast(1.02)] max-[900px]:bg-[position:calc(50%+42px)_38%] max-[900px]:opacity-[0.92] max-[600px]:bottom-[-40px] max-[600px]:bg-[position:calc(50%+20px)_35%]",
+          "absolute inset-x-0 top-0 bottom-[-70px] z-0 bg-[url('/images/heroes/hero-temp.png')] bg-cover bg-no-repeat bg-[position:calc(50%+75px)_40%] [filter:brightness(1.04)_contrast(1.02)] max-[900px]:bg-[position:calc(50%+42px)_38%] max-[900px]:opacity-[0.92] max-[600px]:bottom-[-40px] max-[600px]:bg-[length:185%_auto] max-[600px]:bg-[position:52%_88%]",
           bgPageDark,
         )}
       />
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 bottom-[-80px] z-[1] bg-[linear-gradient(90deg,rgba(5,7,7,0.95)_0%,rgba(5,7,7,0.88)_18%,rgba(5,7,7,0.52)_28%,rgba(5,7,7,0.10)_38%,transparent_50%)] max-[600px]:bg-[linear-gradient(90deg,rgba(5,7,7,0.82)_0%,rgba(5,7,7,0.45)_45%,transparent_75%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 bottom-[-80px] z-[1] bg-[linear-gradient(90deg,rgba(5,7,7,0.95)_0%,rgba(5,7,7,0.88)_18%,rgba(5,7,7,0.52)_28%,rgba(5,7,7,0.10)_38%,transparent_50%)] max-[600px]:bg-[linear-gradient(90deg,rgba(5,7,7,0.70)_0%,rgba(5,7,7,0.25)_45%,transparent_75%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 bottom-[-80px] z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,transparent_22%,transparent_70%,rgba(5,7,7,0.5)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.88)_0%,rgba(5,7,7,0.72)_28%,rgba(5,7,7,0.28)_52%,rgba(5,7,7,0.08)_70%,rgba(5,7,7,0.55)_100%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 bottom-[-80px] z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,transparent_22%,transparent_70%,rgba(5,7,7,0.5)_100%)] max-[600px]:bg-[linear-gradient(180deg,rgba(5,7,7,0.88)_0%,rgba(5,7,7,0.72)_25%,rgba(5,7,7,0.20)_48%,rgba(5,7,7,0.05)_68%,rgba(5,7,7,0.65)_100%)]"
       />
 
       <div className="page-width-full relative z-[2] pt-[clamp(28px,3.5vw,44px)] pb-[clamp(16px,2vw,28px)] max-[900px]:pt-12 max-[600px]:pt-6 max-[600px]:pb-5">
