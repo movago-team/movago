@@ -1,0 +1,6 @@
+export { default as ContactContent } from './ContactContent'
+export { default as ContactHero } from './ContactHero'
+export { default as ContactFormSection } from './ContactFormSection'
+export { default as ContactManageBookingSection } from './ContactManageBookingSection'
+export { default as ContactFaqSection } from './ContactFaqSection'
+export { default as ContactCtaSection } from './ContactCtaSection'

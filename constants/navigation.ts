@@ -28,6 +28,7 @@ export const OVERLAY_HEADER_PATHS = [
   '/destinations',
   '/vehicles',
   '/corporate',
+  '/contact',
 ] as const
 
 export function isOverlayHeaderPath(pathname: string): boolean {

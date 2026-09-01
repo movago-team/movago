@@ -39,8 +39,7 @@ export const FOOTER_INFO_LINKS: FooterLink[] = [
 ]
 
 export const FOOTER_SUPPORT_LINKS: FooterLink[] = [
-  { label: 'Contact Us', href: 'mailto:hello@movago.co.th' },
-  { label: 'Customer Support', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
   { label: 'Privacy Policy', href: '/about' },
 ]
 
