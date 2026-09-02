@@ -41,7 +41,7 @@ export default function AboutLeadershipSection() {
             <div className="mt-5.5 flex flex-col gap-1">
               <span
                 className={cn(
-                  'font-serif text-[22px] font-medium italic leading-tight',
+                  'font-display text-[22px] font-medium italic leading-tight',
                   textChampagne,
                 )}
               >

@@ -35,10 +35,22 @@ Dark luxury + gold accent (from approved designs). Do not invent alternate brand
 | Text on gold | `#000000` | text on gold buttons |
 | Light section bg | `#F3F3F3` | light amenity / strip sections |
 
-### Typography
+### Typography Rules
 
-- Headings: serif display
-- Body / nav / forms: sans-serif
+MOVAGO uses Inter as the only font family.
+
+Rules:
+- All website text must use Inter.
+- No serif fonts are allowed.
+- Do not use font-serif.
+- Do not introduce custom fonts.
+
+Allowed:
+- `font-sans`
+- `font-display`
+
+All new components must inherit the MOVAGO typography system.
+
 - **Default size = `text-base`** for body, tables, buttons, inputs, labels, errors
 - Avoid `text-sm` / `text-xs` except badges, captions, metadata
 - Titles use `text-lg`+ — do not shrink body below `text-base`

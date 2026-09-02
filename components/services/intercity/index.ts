@@ -1,0 +1,8 @@
+export { default as IntercityHero } from './IntercityHero'
+export { default as IntercityBookingWidget } from './IntercityBookingWidget'
+export { default as IntercityRoutesSection } from './IntercityRoutesSection'
+export { default as IntercityBenefitsSection } from './IntercityBenefitsSection'
+export { default as IntercityFleetSection } from './IntercityFleetSection'
+export { default as IntercityIncludedSection } from './IntercityIncludedSection'
+export { default as IntercityCTASection } from './IntercityCTASection'
+export { default as IntercityContent } from './IntercityContent'

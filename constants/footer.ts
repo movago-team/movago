@@ -24,9 +24,9 @@ export const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
 ]
 
 export const FOOTER_SERVICE_LINKS: FooterLink[] = [
-  { label: 'Airport Transfer', href: '/services' },
-  { label: 'Hourly Service', href: '/services' },
-  { label: 'Intercity Transfer', href: '/services' },
+  { label: 'Airport Transfer', href: '/services/airport-transfer' },
+  { label: 'Hourly Service', href: '/services/hourly-service' },
+  { label: 'Intercity Transfer', href: '/services/intercity-transfer' },
   { label: 'Corporate Solutions', href: '/corporate' },
 ]
 
