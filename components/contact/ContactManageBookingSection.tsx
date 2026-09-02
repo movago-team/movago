@@ -196,36 +196,36 @@ export default function ContactManageBookingSection() {
               </div>
             </div>
 
-            {/* Right Column (4 cols): Office Hours & Our Office - Balanced UX with #F8F5EF background and Clear 2px Border */}
-            <div className="lg:col-span-4 rounded-2xl bg-[#F8F5EF] p-6 sm:p-7 border-2 border-[#9C917C] shadow-[0_4px_16px_rgba(0,0,0,0.06)] flex flex-col justify-between">
+            {/* Right Column (4 cols): Office Hours & Our Office - Clean White Card with Layered Inner Sub-cards */}
+            <div className="lg:col-span-4 rounded-2xl bg-white p-6 sm:p-7 border border-[#D5CDBD] shadow-[0_6px_24px_rgba(0,0,0,0.06)] flex flex-col justify-between">
               <div className="space-y-4">
-                {/* Office Hours Sub-card */}
-                <div className="rounded-2xl border border-[#D5CDBD] bg-[#F8F5EF] p-4.5 sm:p-5 shadow-sm">
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="flex items-center gap-2">
-                      <span className="flex size-7 items-center justify-center rounded-lg bg-gold/15 text-[#C5A073]">
+                {/* Office Hours Sub-card - Elevated White Layer */}
+                <div className="rounded-2xl border border-[#E2DBD0] bg-white p-5 shadow-[0_6px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-gold/40 transition-all duration-200">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <span className="flex size-8 items-center justify-center rounded-xl bg-[#FAF5ED] text-[#C5A073] border border-gold/25">
                         <Icon name="clock" size={16} />
                       </span>
                       <h4 className="m-0 font-sans text-sm sm:text-base font-bold text-[#111311]">
                         Office Hours
                       </h4>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E8F8EE] px-2.5 py-0.5 text-xs font-bold text-[#1B8348]">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E8F8EE] border border-[#C5ECD4] px-2.5 py-0.5 text-xs font-bold text-[#1B8348]">
                       <span className="size-1.5 rounded-full bg-[#1B8348] animate-pulse" />
                       Open
                     </span>
                   </div>
 
-                  <div className="flex items-baseline justify-between text-xs sm:text-[13px] pt-1 border-t border-black/5">
+                  <div className="flex items-baseline justify-between text-xs sm:text-[13.5px] pt-2.5 border-t border-[#F0ECE4]">
                     <span className="text-[#767870]">Monday – Sunday</span>
                     <span className="font-bold text-[#111311]">24 Hours</span>
                   </div>
                 </div>
 
-                {/* Our Office Sub-card */}
-                <div className="rounded-2xl border border-[#D5CDBD] bg-[#F8F5EF] p-4.5 sm:p-5 shadow-sm">
-                  <div className="flex items-center gap-2 mb-2.5">
-                    <span className="flex size-7 items-center justify-center rounded-lg bg-gold/15 text-[#C5A073]">
+                {/* Our Office Sub-card - Elevated White Layer */}
+                <div className="rounded-2xl border border-[#E2DBD0] bg-white p-5 shadow-[0_6px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-gold/40 transition-all duration-200">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <span className="flex size-8 items-center justify-center rounded-xl bg-[#FAF5ED] text-[#C5A073] border border-gold/25">
                       <Icon name="pin" size={16} />
                     </span>
                     <h4 className="m-0 font-sans text-sm sm:text-base font-bold text-[#111311]">
@@ -233,7 +233,7 @@ export default function ContactManageBookingSection() {
                     </h4>
                   </div>
 
-                  <div className="text-xs sm:text-[13px] leading-relaxed pt-1 border-t border-black/5">
+                  <div className="text-xs sm:text-[13.5px] leading-relaxed pt-2.5 border-t border-[#F0ECE4]">
                     <p className="m-0 font-bold text-[#111311]">
                       MOVAGO Headquarters
                     </p>
@@ -242,7 +242,7 @@ export default function ContactManageBookingSection() {
                       999 Phloen Chit Road, Lumphini<br />
                       Bangkok, Thailand 10330
                     </p>
-                    <p className="m-0 mt-2 text-[11px] font-medium text-[#8C8F86]">
+                    <p className="m-0 mt-2 text-[11.5px] font-medium text-[#8C8F86]">
                       Direct BTS Chit Lom Skywalk Access
                     </p>
                   </div>
@@ -255,8 +255,7 @@ export default function ContactManageBookingSection() {
                   href="https://maps.google.com/?q=Gaysorn+Tower+Bangkok"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ backgroundColor: '#C5A073' }}
-                  className="flex h-[48px] w-full items-center justify-center gap-2 rounded-xl !bg-[#C5A073] hover:!bg-[#B38F62] text-sm font-bold text-[#111311] shadow-[0_6px_20px_rgba(197,160,115,0.4)] transition-all no-underline cursor-pointer border-0"
+                  className="flex h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-gold hover:bg-gold-hover text-sm font-bold text-black shadow-[0_6px_20px_rgba(197,160,115,0.35)] transition-all no-underline cursor-pointer border-0"
                 >
                   <span>Get Directions</span>
                   <Icon name="arrow-right" size={15} />

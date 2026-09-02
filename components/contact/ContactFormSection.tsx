@@ -113,22 +113,22 @@ export default function ContactFormSection() {
                       href={item.href}
                       target={isExternal ? '_blank' : undefined}
                       rel={isExternal ? 'noreferrer' : undefined}
-                      className="group flex min-h-[136px] sm:min-h-[144px] items-center gap-5 rounded-2xl border-2 border-[#9C917C] bg-[#F8F5EF] p-6 sm:p-7 shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:border-gold hover:shadow-[0_8px_24px_rgba(197,160,115,0.2)] no-underline text-inherit"
+                      className="group flex min-h-[136px] sm:min-h-[144px] items-center gap-5 rounded-2xl border border-[#D5CDBD] bg-white p-6 sm:p-7 shadow-[0_4px_16px_rgba(0,0,0,0.05)] transition-all duration-200 hover:-translate-y-0.5 hover:border-gold hover:shadow-[0_10px_28px_rgba(197,160,115,0.2)] no-underline text-inherit"
                     >
-                      {/* Large Standalone High-Clarity Icons */}
-                      <span className="flex size-12 sm:size-14 shrink-0 items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                      {/* Enlarged Standalone High-Clarity Icons */}
+                      <span className="flex size-14 sm:size-16 shrink-0 items-center justify-center transition-transform duration-200 group-hover:scale-105">
                         {item.id === 'line' ? (
-                          <span className="flex size-11 sm:size-12 items-center justify-center rounded-2xl bg-[#06C755] text-white font-black text-sm sm:text-base shadow-[0_4px_14px_rgba(6,199,85,0.3)]">
+                          <span className="flex size-13 sm:size-14 items-center justify-center rounded-2xl bg-[#06C755] text-white font-black text-base sm:text-[17px] shadow-[0_4px_14px_rgba(6,199,85,0.3)] tracking-tight">
                             LINE
                           </span>
                         ) : item.id === 'whatsapp' ? (
-                          <svg className="size-11 sm:size-12" viewBox="0 0 36 36" fill="none">
+                          <svg className="size-13 sm:size-14" viewBox="0 0 36 36" fill="none">
                             <circle cx="18" cy="18" r="18" fill="#25D366" />
                             <path d="M25.5 21.2c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.1c.2.3 2.8 4.3 6.9 6 .9.4 1.7.7 2.3.9 1 .3 1.8.3 2.5.2.8-.1 2.4-1 2.7-1.9.4-.9.4-1.7.3-1.9-.1-.2-.4-.3-.8-.5z" fill="#fff" />
                           </svg>
                         ) : item.id === 'call' ? (
                           <svg
-                            className="size-9 sm:size-10 text-[#C5A073]"
+                            className="size-11 sm:size-12 text-[#C5A073]"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -140,7 +140,7 @@ export default function ContactFormSection() {
                           </svg>
                         ) : item.id === 'email' ? (
                           <svg
-                            className="size-9 sm:size-10 text-[#C5A073]"
+                            className="size-11 sm:size-12 text-[#C5A073]"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -153,7 +153,7 @@ export default function ContactFormSection() {
                           </svg>
                         ) : item.id === 'chat' ? (
                           <svg
-                            className="size-9 sm:size-10 text-[#C5A073]"
+                            className="size-11 sm:size-12 text-[#C5A073]"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -165,7 +165,7 @@ export default function ContactFormSection() {
                           </svg>
                         ) : (
                           <svg
-                            className="size-9 sm:size-10 text-[#C5A073]"
+                            className="size-11 sm:size-12 text-[#C5A073]"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -182,13 +182,13 @@ export default function ContactFormSection() {
 
                       {/* Right: Title, Value, Sub matching Image 2 with clear hierarchy */}
                       <div className="min-w-0 flex-1">
-                        <div className="font-sans text-sm sm:text-[15px] font-bold text-[#111311] leading-snug">
+                        <div className="font-sans text-base sm:text-[16.5px] font-bold text-[#111311] leading-snug">
                           {item.title}
                         </div>
-                        <div className="font-sans text-[14.5px] font-semibold text-[#222420] mt-1 break-words group-hover:text-champagne transition-colors">
+                        <div className="font-sans text-[15px] sm:text-base font-semibold text-[#222420] mt-1 break-words group-hover:text-champagne transition-colors">
                           {item.value}
                         </div>
-                        <div className="text-xs text-[#8C8F86] mt-0.5 leading-relaxed">
+                        <div className="text-xs sm:text-sm text-[#767870] mt-1 leading-relaxed">
                           {item.sub}
                         </div>
                       </div>
@@ -198,47 +198,47 @@ export default function ContactFormSection() {
               </div>
             </div>
 
-            {/* Right Column: Luxury Form Card (#FAF7F2), Refined Accents, and 100% Unified Inputs */}
+            {/* Right Column: MOVAGO Luxury White Surface Card with Crisp Borders and Spacious Line-Height */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl border-2 border-[#9C917C] bg-[#FAF8F5] p-7 sm:p-8 lg:p-9 text-[#111311] shadow-[0_12px_32px_rgba(0,0,0,0.06)] z-20">
+              <div className="relative rounded-2xl border border-[#D5CDBD] bg-white p-7 sm:p-8 lg:p-9 text-[#111311] shadow-[0_16px_40px_rgba(0,0,0,0.08)] z-20">
                 {/* Subtle Luxury Gold Accent Bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-transparent via-gold to-transparent opacity-80" />
 
-                <div className="mb-6">
-                  <h3 className="m-0 font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#111311]">
+                <div className="mb-5">
+                  <h3 className="m-0 font-sans text-2xl sm:text-[26px] font-bold tracking-tight text-[#111311]">
                     Send Us a Message
                   </h3>
-                  <p className="m-0 mt-1.5 text-xs text-[#767870] leading-relaxed">
+                  <p className="m-0 mt-2 text-base text-[#666860] leading-relaxed">
                     Fill in the form and our team will get back to you.
                   </p>
                 </div>
 
                 {isSubmitted ? (
-                  <div className="rounded-xl border border-gold/40 bg-gold/10 p-6 text-center">
-                    <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-gold text-[#111311] mb-3">
-                      <Icon name="check" size={24} />
+                  <div className="rounded-xl border border-gold/40 bg-[#FAF7F2] p-7 text-center">
+                    <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-gold text-black mb-4 shadow-[0_4px_16px_rgba(197,160,115,0.3)]">
+                      <Icon name="check" size={28} />
                     </span>
-                    <h4 className="m-0 font-sans text-lg font-bold text-[#111311]">
+                    <h4 className="m-0 font-sans text-xl font-bold text-[#111311]">
                       Message Received
                     </h4>
-                    <p className="m-0 mt-2 text-xs text-[#666860] leading-relaxed">
+                    <p className="m-0 mt-2.5 text-base text-[#666860] leading-relaxed">
                       Thank you for contacting MOVAGO Executive Support. Our concierge specialist will review your request and reply shortly.
                     </p>
                     <button
                       type="button"
                       onClick={handleReset}
-                      className="mt-5 inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-xs font-bold text-[#111311] transition-all hover:bg-gold-hover cursor-pointer border-0"
+                      className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-3 text-base font-bold text-black transition-all hover:bg-gold-hover cursor-pointer border-0 shadow-[0_4px_16px_rgba(197,160,115,0.3)]"
                     >
                       <span>Send Another Message</span>
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} noValidate className="space-y-4.5">
+                  <form onSubmit={handleSubmit} noValidate className="space-y-3.5">
                     {/* Full Name */}
                     <div>
                       <label
                         htmlFor="fullName"
-                        className="block text-xs font-semibold text-[#222420] mb-1.5"
+                        className="block text-base font-semibold text-[#1A1A1A] mb-2 leading-snug"
                       >
                         Full Name <span className="text-red-500">*</span>
                       </label>
@@ -249,12 +249,12 @@ export default function ContactFormSection() {
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="Enter your full name"
                         className={cn(
-                          'h-12 w-full rounded-xl border-0 border-none bg-white px-4 text-sm text-[#111311] placeholder:text-[#9A9C94] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all focus:outline-none focus:ring-2 focus:ring-gold/60',
-                          errors.fullName && 'ring-2 ring-red-400',
+                          'h-12 w-full rounded-xl border border-solid border-[#D5CDBD] bg-white px-4 text-base leading-normal text-[#111311] placeholder:text-[#8C8F86] transition-all hover:border-gold focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30',
+                          errors.fullName && 'border-red-500 ring-2 ring-red-500/30',
                         )}
                       />
                       {errors.fullName && (
-                        <span className="mt-1 block text-[11px] text-red-500">{errors.fullName}</span>
+                        <span className="mt-1.5 block text-sm font-medium text-red-600 leading-snug">{errors.fullName}</span>
                       )}
                     </div>
 
@@ -262,7 +262,7 @@ export default function ContactFormSection() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs font-semibold text-[#222420] mb-1.5"
+                        className="block text-base font-semibold text-[#1A1A1A] mb-2 leading-snug"
                       >
                         Email Address <span className="text-red-500">*</span>
                       </label>
@@ -273,12 +273,12 @@ export default function ContactFormSection() {
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="Enter your email"
                         className={cn(
-                          'h-12 w-full rounded-xl border-0 border-none bg-white px-4 text-sm text-[#111311] placeholder:text-[#9A9C94] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all focus:outline-none focus:ring-2 focus:ring-gold/60',
-                          errors.email && 'ring-2 ring-red-400',
+                          'h-12 w-full rounded-xl border border-solid border-[#D5CDBD] bg-white px-4 text-base leading-normal text-[#111311] placeholder:text-[#8C8F86] transition-all hover:border-gold focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30',
+                          errors.email && 'border-red-500 ring-2 ring-red-500/30',
                         )}
                       />
                       {errors.email && (
-                        <span className="mt-1 block text-[11px] text-red-500">{errors.email}</span>
+                        <span className="mt-1.5 block text-sm font-medium text-red-600 leading-snug">{errors.email}</span>
                       )}
                     </div>
 
@@ -286,7 +286,7 @@ export default function ContactFormSection() {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-xs font-semibold text-[#222420] mb-1.5"
+                        className="block text-base font-semibold text-[#1A1A1A] mb-2 leading-snug"
                       >
                         Phone Number
                       </label>
@@ -296,20 +296,20 @@ export default function ContactFormSection() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="Enter your phone number"
-                        className="h-12 w-full rounded-xl border-0 border-none bg-white px-4 text-sm text-[#111311] placeholder:text-[#9A9C94] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all focus:outline-none focus:ring-2 focus:ring-gold/60"
+                        className="h-12 w-full rounded-xl border border-solid border-[#D5CDBD] bg-white px-4 text-base leading-normal text-[#111311] placeholder:text-[#8C8F86] transition-all hover:border-gold focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30"
                       />
                     </div>
 
-                    {/* Subject Select - 100% Matched MOVAGO Theme Dropdown */}
+                    {/* Subject Select - MOVAGO Theme Dropdown */}
                     <div ref={subjectDropdownRef} className="relative">
                       <label
                         htmlFor="subject"
-                        className="block text-xs font-semibold text-[#222420] mb-1.5"
+                        className="block text-base font-semibold text-[#1A1A1A] mb-2 leading-snug"
                       >
                         Subject <span className="text-red-500">*</span>
                       </label>
 
-                      {/* Dropdown Trigger Button (Identical h-12, bg-white, borderless, shadow to other inputs) */}
+                      {/* Dropdown Trigger Button */}
                       <button
                         id="subject"
                         type="button"
@@ -317,9 +317,9 @@ export default function ContactFormSection() {
                         aria-haspopup="listbox"
                         aria-expanded={isSubjectOpen}
                         className={cn(
-                          'flex h-12 w-full items-center justify-between rounded-xl border-0 border-none bg-white px-4 text-sm shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold/60',
-                          !formData.subject ? 'text-[#9A9C94]' : 'text-[#111311] font-medium',
-                          errors.subject && 'ring-2 ring-red-400',
+                          'flex h-12 w-full items-center justify-between rounded-xl border border-solid border-[#D5CDBD] bg-white px-4 text-base leading-normal text-left transition-all cursor-pointer hover:border-gold focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30',
+                          !formData.subject ? 'text-[#8C8F86]' : 'text-[#111311] font-medium',
+                          errors.subject && 'border-red-500 ring-2 ring-red-500/30',
                         )}
                       >
                         <span className="truncate">{formData.subject || 'Select a subject'}</span>
@@ -329,15 +329,15 @@ export default function ContactFormSection() {
                             isSubjectOpen && 'rotate-180',
                           )}
                         >
-                          <Icon name="chevron-down" size={16} />
+                          <Icon name="chevron-down" size={18} />
                         </span>
                       </button>
 
-                      {/* MOVAGO Luxury White & Soft Gold Popover Dropdown Menu */}
+                      {/* MOVAGO Luxury Dropdown Menu */}
                       {isSubjectOpen && (
                         <div
                           role="listbox"
-                          className="absolute top-[calc(100%+6px)] left-0 right-0 z-[100] overflow-hidden rounded-xl border-2 border-[#C5A073] bg-white py-2 shadow-[0_20px_50px_rgba(0,0,0,0.22)] ring-1 ring-black/5 max-h-64 overflow-y-auto"
+                          className="absolute top-[calc(100%+6px)] left-0 right-0 z-[100] overflow-hidden rounded-xl border-2 border-gold bg-white py-2 shadow-[0_20px_50px_rgba(0,0,0,0.18)] max-h-64 overflow-y-auto"
                         >
                           {SUBJECT_OPTIONS.map((opt) => {
                             const isSelected = formData.subject === opt
@@ -354,16 +354,16 @@ export default function ContactFormSection() {
                                   }
                                 }}
                                 className={cn(
-                                  'flex items-center justify-between px-4 py-2.5 text-sm transition-colors cursor-pointer',
+                                  'flex items-center justify-between px-4 py-3 text-base leading-normal transition-colors cursor-pointer',
                                   isSelected
-                                    ? 'bg-[#FAF5ED] font-semibold text-[#B38F62]'
-                                    : 'text-[#2D312E] hover:bg-[#FAF6F0] hover:text-[#B38F62]',
+                                    ? 'bg-[#FAF5ED] font-semibold text-[#A37C44]'
+                                    : 'text-[#2D312E] hover:bg-[#FAF6F0] hover:text-[#A37C44]',
                                 )}
                               >
                                 <span className="truncate">{opt}</span>
                                 {isSelected && (
-                                  <span className="text-[#C5A073] ml-2 shrink-0">
-                                    <Icon name="check" size={16} />
+                                  <span className="text-gold ml-2 shrink-0">
+                                    <Icon name="check" size={18} />
                                   </span>
                                 )}
                               </div>
@@ -373,7 +373,7 @@ export default function ContactFormSection() {
                       )}
 
                       {errors.subject && (
-                        <span className="mt-1 block text-[11px] text-red-500">{errors.subject}</span>
+                        <span className="mt-1.5 block text-sm font-medium text-red-600 leading-snug">{errors.subject}</span>
                       )}
                     </div>
 
@@ -381,7 +381,7 @@ export default function ContactFormSection() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-xs font-semibold text-[#222420] mb-1.5"
+                        className="block text-base font-semibold text-[#1A1A1A] mb-2 leading-snug"
                       >
                         Message <span className="text-red-500">*</span>
                       </label>
@@ -392,25 +392,24 @@ export default function ContactFormSection() {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Type your message here..."
                         className={cn(
-                          'w-full rounded-xl border-0 border-none bg-white p-4 text-sm text-[#111311] placeholder:text-[#9A9C94] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all focus:outline-none focus:ring-2 focus:ring-gold/60 resize-none',
-                          errors.message && 'ring-2 ring-red-400',
+                          'w-full rounded-xl border border-solid border-[#D5CDBD] bg-white p-4 font-sans text-base leading-relaxed text-[#111311] placeholder:text-[#8C8F86] transition-all hover:border-gold focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 resize-none',
+                          errors.message && 'border-red-500 ring-2 ring-red-500/30',
                         )}
                       />
                       {errors.message && (
-                        <span className="mt-1 block text-[11px] text-red-500">{errors.message}</span>
+                        <span className="mt-1.5 block text-sm font-medium text-red-600 leading-snug">{errors.message}</span>
                       )}
                     </div>
 
-                    {/* Submit Button - Solid Gold Box */}
+                    {/* Submit Button - Brand Gold CTA */}
                     <div className="pt-2">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        style={{ backgroundColor: '#C5A073' }}
-                        className="flex h-[52px] w-full items-center justify-center gap-2 rounded-xl !bg-[#C5A073] hover:!bg-[#B38F62] text-sm font-bold text-[#111311] shadow-[0_8px_24px_rgba(197,160,115,0.4)] hover:shadow-[0_10px_28px_rgba(197,160,115,0.5)] active:scale-[0.99] transition-all disabled:opacity-50 cursor-pointer border-0"
+                        className="flex h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-gold hover:bg-gold-hover active:scale-[0.99] text-base font-bold text-black shadow-[0_8px_24px_rgba(197,160,115,0.35)] hover:shadow-[0_10px_28px_rgba(197,160,115,0.45)] transition-all disabled:opacity-50 cursor-pointer border-0"
                       >
                         <span>{isSubmitting ? 'Sending Message…' : 'Send Message'}</span>
-                        <Icon name="send" size={16} />
+                        <Icon name="send" size={18} />
                       </button>
                     </div>
                   </form>
