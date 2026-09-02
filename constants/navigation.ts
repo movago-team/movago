@@ -19,9 +19,37 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'About Us', href: '/about' },
 ]
 
+export const CONTACT_NAV_LINK: NavLink = {
+  label: 'Contact Us',
+  href: '/contact',
+}
+
+export function isContactPath(pathname: string): boolean {
+  return pathname === '/contact' || pathname.startsWith('/contact/')
+}
+
+export const SUPPORT_NAV_LINK: NavLink = {
+  label: 'Customer Support',
+  href: '/support/faqs',
+}
+
+export const SUPPORT_PATHS = [
+  '/support/faqs',
+  '/support/terms',
+  '/support/privacy',
+] as const
+
+export function isSupportPath(pathname: string): boolean {
+  return (
+    pathname === '/support' ||
+    pathname.startsWith('/support/') ||
+    (SUPPORT_PATHS as readonly string[]).includes(pathname)
+  )
+}
+
 export const BOOK_NOW_HREF = '/book'
 
-/** Routes where the header floats transparently over a dark hero (like Home, About, Destinations, Corporate, Vehicles). */
+/** Routes where the header floats transparently over a dark hero (like Home, About, Destinations, Corporate, Vehicles, Contact, Support). */
 export const OVERLAY_HEADER_PATHS = [
   '/',
   '/about',
@@ -29,6 +57,7 @@ export const OVERLAY_HEADER_PATHS = [
   '/vehicles',
   '/corporate',
   '/contact',
+  '/support',
 ] as const
 
 export function isOverlayHeaderPath(pathname: string): boolean {

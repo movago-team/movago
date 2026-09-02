@@ -34,13 +34,15 @@ export const FOOTER_INFO_LINKS: FooterLink[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Our Vehicles', href: '/vehicles' },
   { label: 'Destinations', href: '/destinations' },
-  { label: 'FAQs', href: '/about' },
-  { label: 'Terms & Conditions', href: '/about' },
+  { label: 'Corporate', href: '/corporate' },
 ]
 
 export const FOOTER_SUPPORT_LINKS: FooterLink[] = [
   { label: 'Contact Us', href: '/contact' },
-  { label: 'Privacy Policy', href: '/about' },
+  { label: 'Customer Support', href: '/support/faqs' },
+  { label: 'FAQs', href: '/support/faqs' },
+  { label: 'Terms & Conditions', href: '/support/terms' },
+  { label: 'Privacy Policy', href: '/support/privacy' },
 ]
 
 export const FOOTER_CONTACT = {
