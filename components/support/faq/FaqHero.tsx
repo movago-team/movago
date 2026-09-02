@@ -101,7 +101,7 @@ export default function FaqHero() {
                   {isNotLast && (
                     <div
                       aria-hidden
-                      className="pointer-events-none absolute right-0 top-[16px] hidden h-[48px] w-[1px] bg-white/20 lg:block"
+                      className="pointer-events-none absolute right-0 top-[12px] hidden h-[74px] w-[1px] bg-white/20 lg:block"
                     />
                   )}
 
@@ -109,7 +109,7 @@ export default function FaqHero() {
                   {idx % 2 === 0 && (
                     <div
                       aria-hidden
-                      className="pointer-events-none absolute right-0 top-[16px] hidden h-[48px] w-[1px] bg-white/20 sm:block lg:hidden"
+                      className="pointer-events-none absolute right-0 top-[12px] hidden h-[74px] w-[1px] bg-white/20 sm:block lg:hidden"
                     />
                   )}
 
