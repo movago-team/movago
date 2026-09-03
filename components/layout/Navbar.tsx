@@ -3,7 +3,14 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { NAV_LINKS, SERVICES_SUBMENU } from '@/constants/navigation'
+import {
+  CONTACT_NAV_LINK,
+  NAV_LINKS,
+  SERVICES_SUBMENU,
+  SUPPORT_NAV_LINK,
+  isContactPath,
+  isSupportPath,
+} from '@/constants/navigation'
 
 type NavbarProps = {
   open?: boolean
@@ -14,6 +21,8 @@ function isActivePath(pathname: string, href: string) {
   if (href === '/') return pathname === '/'
   const cleanHref = href.split('#')[0]
   if (!cleanHref) return false
+  if (cleanHref === '/contact' && isContactPath(pathname)) return true
+  if (cleanHref === '/support/faqs' && isSupportPath(pathname)) return true
   return pathname === cleanHref || pathname.startsWith(`${cleanHref}/`)
 }
 
@@ -21,6 +30,8 @@ export default function Navbar({ open = false, onNavigate }: NavbarProps) {
   const pathname = usePathname()
   const [servicesOpen, setServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const showContact = isContactPath(pathname)
+  const showSupport = isSupportPath(pathname)
 
   // Close dropdown on click outside or escape key
   useEffect(() => {
@@ -114,6 +125,28 @@ export default function Navbar({ open = false, onNavigate }: NavbarProps) {
           </Link>
         )
       })}
+
+      {showContact && (
+        <Link
+          key={CONTACT_NAV_LINK.href}
+          href={CONTACT_NAV_LINK.href}
+          className="active"
+          onClick={onNavigate}
+        >
+          {CONTACT_NAV_LINK.label}
+        </Link>
+      )}
+
+      {showSupport && (
+        <Link
+          key={SUPPORT_NAV_LINK.href}
+          href={SUPPORT_NAV_LINK.href}
+          className="active"
+          onClick={onNavigate}
+        >
+          {SUPPORT_NAV_LINK.label}
+        </Link>
+      )}
     </nav>
   )
 }

@@ -35,7 +35,7 @@ export default function CorporateSection() {
           </Link>
         </div>
 
-        <div className="relative isolate h-[300px] overflow-hidden max-[700px]:h-[230px]">
+        <div className="relative isolate h-full min-h-[400px] overflow-hidden max-[700px]:h-[260px]">
           {/* Soft edge blur fill */}
           <div
             aria-hidden

@@ -21,7 +21,10 @@ export const vehicles: Vehicle[] = [
     badge: 'EXECUTIVE LOUNGE',
     category: 'mpv',
     categoryLabel: 'MPV / Van',
+    brand: 'ZEEKR',
+    brandLogo: '/images/brand/zeekr-logo.svg',
     image: '/images/vehicles/zeekr-009.png',
+    imageScale: 1.0,
     seats: 6,
     luggage: 4,
     features: [
@@ -50,7 +53,10 @@ export const vehicles: Vehicle[] = [
     badge: 'EXECUTIVE SUV',
     category: 'suv',
     categoryLabel: 'SUV',
+    brand: 'ZEEKR',
+    brandLogo: '/images/brand/zeekr-logo.svg',
     image: '/images/vehicles/zeekr-7x.png',
+    imageScale: 1.15,
     seats: 4,
     luggage: 3,
     features: [
@@ -74,12 +80,15 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: 'toyota-bz4x',
-    name: 'TOYOTA BZ4X',
+    name: 'TOYOTA bZ4X',
     subtitle: 'Premium Electric SUV',
     badge: 'PREMIUM SUV',
     category: 'suv',
     categoryLabel: 'SUV',
+    brand: 'TOYOTA',
+    brandLogo: '/images/brand/toyota-logo.svg',
     image: '/images/vehicles/toyota-bz4x.png',
+    imageScale: 1.14,
     seats: 4,
     luggage: 3,
     features: [

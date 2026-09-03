@@ -24,9 +24,9 @@ export const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
 ]
 
 export const FOOTER_SERVICE_LINKS: FooterLink[] = [
-  { label: 'Airport Transfer', href: '/services' },
-  { label: 'Hourly Service', href: '/services' },
-  { label: 'Intercity Transfer', href: '/services' },
+  { label: 'Airport Transfer', href: '/services/airport-transfer' },
+  { label: 'Hourly Service', href: '/services/hourly-service' },
+  { label: 'Intercity Transfer', href: '/services/intercity-transfer' },
   { label: 'Corporate Solutions', href: '/corporate' },
 ]
 
@@ -34,14 +34,15 @@ export const FOOTER_INFO_LINKS: FooterLink[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Our Vehicles', href: '/vehicles' },
   { label: 'Destinations', href: '/destinations' },
-  { label: 'FAQs', href: '/about' },
-  { label: 'Terms & Conditions', href: '/about' },
+  { label: 'Corporate', href: '/corporate' },
 ]
 
 export const FOOTER_SUPPORT_LINKS: FooterLink[] = [
-  { label: 'Contact Us', href: 'mailto:hello@movago.co.th' },
-  { label: 'Customer Support', href: '/about' },
-  { label: 'Privacy Policy', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
+  { label: 'Customer Support', href: '/support/faqs' },
+  { label: 'FAQs', href: '/support/faqs' },
+  { label: 'Terms & Conditions', href: '/support/terms' },
+  { label: 'Privacy Policy', href: '/support/privacy' },
 ]
 
 export const FOOTER_CONTACT = {

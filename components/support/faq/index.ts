@@ -1,0 +1,6 @@
+export { default as FaqCategorySection } from './FaqCategorySection'
+export { default as FaqContactSection } from './FaqContactSection'
+export { default as FaqContent } from './FaqContent'
+export { default as FaqHero } from './FaqHero'
+export { default as FaqListSection } from './FaqListSection'
+export { default as FaqSearchBar } from './FaqSearchBar'

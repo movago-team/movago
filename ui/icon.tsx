@@ -218,7 +218,15 @@ export default function Icon({
         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
         <circle cx="12" cy="7" r="4" />
       </>
+    ),    handshake: (
+      <>
+        <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.6-4.6a2 2 0 0 0 0-2.8l-1.4-1.4a2 2 0 0 0-2.8 0L13 12" />
+        <path d="m13 7 1.6-1.6a2 2 0 0 1 2.8 0l1.4 1.4a2 2 0 0 1 0 2.8L16.2 12" />
+        <path d="m3 14 3-3a2 2 0 0 1 2.8 0l1.4 1.4a2 2 0 0 1 0 2.8L7 18.4a1 1 0 0 1-1.4 0L3 16a1.4 1.4 0 0 1 0-2Z" />
+        <path d="m6 11 1.4-1.4a2 2 0 0 1 2.8 0L12 11" />
+      </>
     ),
+
 
     "arrow-right": (
       <>
@@ -226,6 +234,84 @@ export default function Icon({
         <path d="m12 5 7 7-7 7" />
       </>
     ),
+
+    "chevron-down": (
+      <path d="m6 9 6 6 6-6" />
+    ),
+
+    search: (
+      <>
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.3-4.3" />
+      </>
+    ),
+
+    grid: (
+      <>
+        <rect x="3" y="3" width="7" height="7" rx="1.5" />
+        <rect x="14" y="3" width="7" height="7" rx="1.5" />
+        <rect x="14" y="14" width="7" height="7" rx="1.5" />
+        <rect x="3" y="14" width="7" height="7" rx="1.5" />
+      </>
+    ),
+
+    "credit-card": (
+      <>
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <line x1="2" y1="10" x2="22" y2="10" />
+      </>
+    ),
+
+    "help-circle": (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+        <line x1="12" y1="17" x2="12.01" y2="17" />
+      </>
+    ),
+
+    "file-check": (
+      <>
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+        <polyline points="14 2 14 8 20 8" />
+        <path d="m9 15 2 2 4-4" />
+      </>
+    ),
+
+    "chevron-up": (
+      <path d="m18 15-6-6-6 6" />
+    ),
+
+    "chevron-right": (
+      <path d="m9 18 6-6-6-6" />
+    ),
+
+    whatsapp: (
+      <>
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        <path d="M9.5 9a1.5 1.5 0 0 0-.5 1c0 2 2 4 4 4a1.5 1.5 0 0 0 1-.5l.8-.8a.5.5 0 0 0 0-.7l-1.5-1.5a.5.5 0 0 0-.7 0l-.5.5c-.3.3-.8.3-1.1 0l-1.4-1.4c-.3-.3-.3-.8 0-1.1l.5-.5a.5.5 0 0 0 0-.7L9 7.8a.5.5 0 0 0-.7 0z" />
+      </>
+    ),
+
+    chat: (
+      <>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </>
+    ),
+
+    send: (
+      <>
+        <line x1="22" y1="2" x2="11" y2="13" />
+        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+      </>
+    ),
+
+    refresh: (
+      <>
+        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+      </>
+    ),
+
 
     star: (
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -498,39 +584,33 @@ export default function Icon({
     ),
 
     zeekr: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        width={size}
-        height={size}
-        className="block shrink-0"
-        aria-hidden="true"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M4.5 3A2.5 2.5 0 0 0 2 5.5v13A2.5 2.5 0 0 0 4.5 21H10V3H4.5ZM4 5.5C4 5.22 4.22 5 4.5 5H8v14H4.5c-.28 0-.5-.22-.5-.5v-13ZM14 3h5.5A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5H14V3Zm2 2v14h3.5c.28 0 .5-.22.5-.5v-13c0-.28-.22-.5-.5-.5H16Z"
+      <>
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
         />
-      </svg>
+        <path
+          d="M 9.8 3 v 6.5 l 4.4 5 v 6.5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+        />
+      </>
     ),
 
     toyota: (
-      <svg
-        viewBox="0 0 32 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={size * 1.3}
-        height={size}
-        className="block shrink-0"
-        aria-hidden="true"
-      >
-        <ellipse cx="16" cy="12" rx="14" ry="10" />
-        <ellipse cx="16" cy="12" rx="5.2" ry="10" />
-        <ellipse cx="16" cy="7.8" rx="9" ry="4.2" />
-      </svg>
+      <>
+        <ellipse cx="12" cy="12" rx="10.8" ry="7.8" stroke="currentColor" strokeWidth="1.9" fill="none" />
+        <ellipse cx="12" cy="12" rx="3.8" ry="7.4" stroke="currentColor" strokeWidth="1.9" fill="none" />
+        <ellipse cx="12" cy="8.2" rx="6.6" ry="3.2" stroke="currentColor" strokeWidth="1.9" fill="none" />
+      </>
     ),
 
     honda: (
