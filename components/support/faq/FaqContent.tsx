@@ -26,12 +26,6 @@ export default function FaqContent() {
     })
   }, [selectedCategory, searchQuery])
 
-  const currentCategoryTitle = useMemo(() => {
-    if (searchQuery) return `Search Results for "${searchQuery}"`
-    const found = FAQ_CATEGORIES.find((c) => c.id === selectedCategory)
-    return found ? found.title : 'All Questions'
-  }, [selectedCategory, searchQuery])
-
   return (
     <div className="bg-[#F8F5EF]">
       <FaqCategorySection
@@ -41,7 +35,7 @@ export default function FaqContent() {
 
       <FaqListSection
         items={filteredItems}
-        categoryTitle={currentCategoryTitle}
+        selectedCategory={selectedCategory}
       />
 
       <FaqContactSection />
