@@ -21,6 +21,7 @@ export interface Vehicle {
   brand?: string
   brandLogo?: string
   image: string
+  imageScale?: number
   seats: number
   luggage: number
   features: VehicleFeature[]

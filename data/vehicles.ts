@@ -24,6 +24,7 @@ export const vehicles: Vehicle[] = [
     brand: 'ZEEKR',
     brandLogo: '/images/brand/zeekr-logo.svg',
     image: '/images/vehicles/zeekr-009.png',
+    imageScale: 1.0,
     seats: 6,
     luggage: 4,
     features: [
@@ -55,6 +56,7 @@ export const vehicles: Vehicle[] = [
     brand: 'ZEEKR',
     brandLogo: '/images/brand/zeekr-logo.svg',
     image: '/images/vehicles/zeekr-7x.png',
+    imageScale: 1.15,
     seats: 4,
     luggage: 3,
     features: [
@@ -86,6 +88,7 @@ export const vehicles: Vehicle[] = [
     brand: 'TOYOTA',
     brandLogo: '/images/brand/toyota-logo.svg',
     image: '/images/vehicles/toyota-bz4x.png',
+    imageScale: 1.14,
     seats: 4,
     luggage: 3,
     features: [

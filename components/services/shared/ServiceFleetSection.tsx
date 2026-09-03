@@ -13,6 +13,7 @@ export interface ServiceFleetSectionProps {
   priceSuffix?: string
   buttonLabel?: string
   buttonHrefBase?: string
+  enableCustomImageScale?: boolean
   className?: string
 }
 
@@ -24,6 +25,7 @@ export default function ServiceFleetSection({
   priceSuffix = '',
   buttonLabel = 'View Details',
   buttonHrefBase = '/book?vehicle=',
+  enableCustomImageScale = false,
   className,
 }: ServiceFleetSectionProps) {
   // Show the top 3 luxury vehicles (ZEEKR 009, ZEEKR 7X, TOYOTA bZ4X)
@@ -113,11 +115,9 @@ export default function ServiceFleetSection({
                   className="relative w-full h-full flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   style={{
                     transform:
-                      vehicle.id === 'zeekr-7x'
-                        ? 'scale(1.18)'
-                        : vehicle.id === 'toyota-bz4x'
-                          ? 'scale(1.12)'
-                          : 'scale(1.00)',
+                      enableCustomImageScale && vehicle.imageScale
+                        ? `scale(${vehicle.imageScale})`
+                        : undefined,
                   }}
                 >
                   <Image

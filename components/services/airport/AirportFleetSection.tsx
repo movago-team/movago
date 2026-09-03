@@ -7,6 +7,7 @@ export default function AirportFleetSection() {
       description="Premium vehicles for every journey, crafted for first-class comfort, safety, and seamless airport transfers."
       buttonLabel="View Details"
       buttonHrefBase="/book?service=airport&vehicle="
+      enableCustomImageScale={true}
     />
   )
 }
