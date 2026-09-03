@@ -18,6 +18,8 @@ export interface Vehicle {
   badge: string
   category: VehicleCategory
   categoryLabel: string
+  brand?: string
+  brandLogo?: string
   image: string
   seats: number
   luggage: number

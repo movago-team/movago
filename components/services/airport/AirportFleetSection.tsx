@@ -3,10 +3,11 @@ import ServiceFleetSection from '@/components/services/shared/ServiceFleetSectio
 export default function AirportFleetSection() {
   return (
     <ServiceFleetSection
-      eyebrow="OUR FLEET"
-      title="Premium Vehicles for Every Journey"
+      title="OUR FLEET"
+      description="Premium vehicles for every journey, crafted for first-class comfort, safety, and seamless airport transfers."
       buttonLabel="View Details"
       buttonHrefBase="/book?service=airport&vehicle="
     />
   )
 }
+

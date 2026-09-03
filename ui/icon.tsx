@@ -584,39 +584,33 @@ export default function Icon({
     ),
 
     zeekr: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        width={size}
-        height={size}
-        className="block shrink-0"
-        aria-hidden="true"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M4.5 3A2.5 2.5 0 0 0 2 5.5v13A2.5 2.5 0 0 0 4.5 21H10V3H4.5ZM4 5.5C4 5.22 4.22 5 4.5 5H8v14H4.5c-.28 0-.5-.22-.5-.5v-13ZM14 3h5.5A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5H14V3Zm2 2v14h3.5c.28 0 .5-.22.5-.5v-13c0-.28-.22-.5-.5-.5H16Z"
+      <>
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
         />
-      </svg>
+        <path
+          d="M 9.8 3 v 6.5 l 4.4 5 v 6.5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+        />
+      </>
     ),
 
     toyota: (
-      <svg
-        viewBox="0 0 32 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={size * 1.3}
-        height={size}
-        className="block shrink-0"
-        aria-hidden="true"
-      >
-        <ellipse cx="16" cy="12" rx="14" ry="10" />
-        <ellipse cx="16" cy="12" rx="5.2" ry="10" />
-        <ellipse cx="16" cy="7.8" rx="9" ry="4.2" />
-      </svg>
+      <>
+        <ellipse cx="12" cy="12" rx="10.8" ry="7.8" stroke="currentColor" strokeWidth="1.9" fill="none" />
+        <ellipse cx="12" cy="12" rx="3.8" ry="7.4" stroke="currentColor" strokeWidth="1.9" fill="none" />
+        <ellipse cx="12" cy="8.2" rx="6.6" ry="3.2" stroke="currentColor" strokeWidth="1.9" fill="none" />
+      </>
     ),
 
     honda: (

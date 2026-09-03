@@ -1,0 +1,247 @@
+/* Scoped light theme styles for Airport Transfer Booking Form */
+
+.airportLightForm :global(.movago-field) {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.airportLightForm :global(.movago-label) {
+  display: block;
+  font-size: 13px;
+  line-height: 1.15;
+  font-weight: 500;
+  color: #344054;
+  margin: 0;
+}
+
+/* Inputs, Select Triggers, Date Triggers */
+.airportLightForm :global(.movago-input),
+.airportLightForm :global(.movago-select-trigger),
+.airportLightForm :global(.movago-date-trigger) {
+  height: 34px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5CDBD;
+  border-radius: 6px;
+  color: #0F172A;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.3;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.airportLightForm :global(.movago-input)::placeholder {
+  color: #8A8E85;
+  opacity: 1;
+}
+
+.airportLightForm :global(.movago-input):hover,
+.airportLightForm :global(.movago-select-trigger):hover,
+.airportLightForm :global(.movago-date-trigger):hover {
+  border-color: rgba(197, 160, 115, 0.7);
+  background-color: #FFFFFF;
+}
+
+.airportLightForm :global(.movago-input):focus,
+.airportLightForm :global(.movago-select-trigger):focus,
+.airportLightForm :global(.movago-select-trigger.is-open),
+.airportLightForm :global(.movago-date-trigger):focus,
+.airportLightForm :global(.movago-date-trigger.is-open) {
+  border-color: var(--gold, #C5A073);
+  box-shadow: 0 0 0 3px rgba(197, 160, 115, 0.16);
+  background-color: #FFFFFF;
+}
+
+.airportLightForm :global(.movago-input):disabled,
+.airportLightForm :global(.movago-select-trigger):disabled,
+.airportLightForm :global(.movago-date-trigger):disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #F1ECE4;
+}
+
+.airportLightForm :global(.movago-input.movago-input-error),
+.airportLightForm :global(.movago-input-error) {
+  border-color: rgba(239, 68, 68, 0.75);
+}
+
+.airportLightForm :global(.movago-input.movago-input-error:focus),
+.airportLightForm :global(.movago-input-error:focus) {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+}
+
+/* Icons */
+.airportLightForm :global(.movago-input-icon),
+.airportLightForm :global(.movago-select-icon),
+.airportLightForm :global(.movago-date-icon) {
+  color: #64748B;
+}
+
+.airportLightForm :global(.movago-select-arrow),
+.airportLightForm :global(.movago-date-arrow) {
+  color: var(--gold, #C5A073);
+}
+
+/* Select Dropdown Menu */
+.airportLightForm :global(.movago-dropdown-menu) {
+  background: #FFFFFF;
+  border: 1px solid #D5CDBD;
+  border-radius: 7px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 5px 0;
+  max-height: 300px;
+}
+
+.airportLightForm :global(.movago-dropdown-menu::-webkit-scrollbar) {
+  width: 6px;
+}
+
+.airportLightForm :global(.movago-dropdown-menu::-webkit-scrollbar-track) {
+  background: #FFFFFF;
+}
+
+.airportLightForm :global(.movago-dropdown-menu::-webkit-scrollbar-thumb) {
+  background: #D5CDBD;
+  border-radius: 3px;
+}
+
+.airportLightForm :global(.movago-dropdown-menu::-webkit-scrollbar-thumb:hover) {
+  background: var(--gold, #C5A073);
+}
+
+.airportLightForm :global(.movago-dropdown-item) {
+  color: #334155;
+  padding: 7px 11px;
+  font-size: 13.5px;
+  line-height: 1.35;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.airportLightForm :global(.movago-dropdown-item:hover),
+.airportLightForm :global(.movago-dropdown-item:focus-visible) {
+  background-color: #FAF8F5;
+  color: var(--gold, #C5A073);
+}
+
+.airportLightForm :global(.movago-dropdown-item.is-selected) {
+  background-color: #F8F5EF;
+  color: var(--gold, #C5A073);
+  font-weight: 600;
+}
+
+.airportLightForm :global(.movago-dropdown-check) {
+  color: var(--gold, #C5A073);
+}
+
+/* Calendar Popup */
+.airportLightForm :global(.movago-calendar-popup) {
+  background: #FFFFFF;
+  border: 1px solid #D5CDBD;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 14px;
+}
+
+.airportLightForm :global(.movago-calendar-header) {
+  border-bottom: 1px solid #F1ECE4;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+}
+
+.airportLightForm :global(.movago-calendar-title) {
+  color: #1E293B;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.airportLightForm :global(.movago-calendar-nav) {
+  background: #FAF8F5;
+  border: 1px solid #E2D9CC;
+  color: #475467;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.airportLightForm :global(.movago-calendar-nav:hover) {
+  background: #F1ECE4;
+  border-color: var(--gold, #C5A073);
+  color: var(--gold, #C5A073);
+}
+
+.airportLightForm :global(.movago-calendar-weekdays) {
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.airportLightForm :global(.movago-calendar-weekday) {
+  color: #8A8E85;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.airportLightForm :global(.movago-calendar-grid) {
+  gap: 4px;
+}
+
+.airportLightForm :global(.movago-calendar-day) {
+  color: #1E293B;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.airportLightForm :global(.movago-calendar-day:hover:not(.is-selected)) {
+  background: #FAF8F5;
+  border-color: #E2D9CC;
+  color: var(--gold, #C5A073);
+}
+
+.airportLightForm :global(.movago-calendar-day.is-selected) {
+  background: var(--gold, #C5A073);
+  color: #000000;
+  font-weight: 700;
+  border-color: var(--gold, #C5A073);
+}
+
+.airportLightForm :global(.movago-calendar-day.is-today:not(.is-selected)) {
+  border-color: var(--gold, #C5A073);
+  color: var(--gold, #C5A073);
+  font-weight: 600;
+}
+
+.airportLightForm :global(.movago-calendar-day.is-other-month) {
+  color: #CBD5E1;
+  opacity: 0.6;
+}
+
+.airportLightForm :global(.movago-calendar-footer) {
+  border-top: 1px solid #F1ECE4;
+  margin-top: 10px;
+  padding-top: 8px;
+}
+
+.airportLightForm :global(.movago-calendar-today-btn) {
+  color: var(--gold, #C5A073);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.airportLightForm :global(.movago-calendar-today-btn:hover) {
+  color: #B08D60;
+  background: #F8F5EF;
+}
+
+@media (max-width: 600px) {
+  .airportLightForm :global(.movago-input),
+  .airportLightForm :global(.movago-select-trigger),
+  .airportLightForm :global(.movago-date-trigger) {
+    height: 44px;
+    font-size: 14.5px;
+  }
+}
