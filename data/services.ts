@@ -192,7 +192,7 @@ export const AIRPORT_CTA_DATA: ServiceCTA = {
 
 export const HOURLY_HERO_DATA: ServiceHero = {
   eyebrow: 'HOURLY SERVICE',
-  title: 'Your Time. Your Plan.\nYour Chauffeur.',
+  title: 'Your Time Your Plan\nYour Chauffeur',
   description:
     'Enjoy the freedom of movement with a professional chauffeur by the hour. Perfect for business, meetings, events, shopping, and city tours.',
   breadcrumb: [
@@ -238,7 +238,7 @@ export const HOURLY_BENEFITS: ServiceFeature[] = [
   },
   {
     id: 'chauffeur',
-    icon: 'user-check',
+    icon: 'user',
     title: 'Professional Chauffeur',
     desc: 'Experienced, courteous and dedicated to your comfort and privacy.',
   },
@@ -256,7 +256,7 @@ export const HOURLY_BENEFITS: ServiceFeature[] = [
   },
   {
     id: 'support',
-    icon: 'headphones',
+    icon: 'headset',
     title: '24/7 Support',
     desc: "We're here to assist you before, during, and after your journey.",
   },
@@ -285,7 +285,7 @@ export const HOURLY_OCCASIONS: ServiceOccasion[] = [
     id: 'shopping-trips',
     title: 'Shopping Trips',
     description: 'Shop comfortably and travel with ease.',
-    image: '/images/services/occasions/shopping.jpg',
+    image: '/images/services/occasions/shopping-luxury.jpg',
   },
   {
     id: 'private-tours',
