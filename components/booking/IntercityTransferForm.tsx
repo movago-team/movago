@@ -1,10 +1,12 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { Button, DateInput, Icon, Select } from '@/ui'
+import { cn } from '@/utils/cn'
 import {
   LOCATION_OPTIONS,
   TIME_OPTIONS,
+  TRIP_TYPE_OPTIONS,
   TripType,
   isTimeAfter,
 } from './constants'
@@ -18,8 +20,14 @@ import {
   searchBtn,
 } from './classNames'
 
+import styles from '@/components/services/airport/AirportBookingWidget.module.css'
+
 export interface IntercityTransferFormProps {
   onSearch: (summary: string) => void
+  variant?: 'dark' | 'light'
+  tripTypePresentation?: 'tabs' | 'select'
+  headerRightContent?: React.ReactNode
+  className?: string
 }
 
 type FieldErrors = {
@@ -29,14 +37,16 @@ type FieldErrors = {
   returnEndTime?: string
 }
 
-const TRIP_TYPE_OPTIONS = [
-  { value: 'one-way', label: 'One-way Trip' },
-  { value: 'round-trip', label: 'Round-trip' },
-]
-
 export default function IntercityTransferForm({
   onSearch,
+  variant = 'dark',
+  tripTypePresentation,
+  headerRightContent,
+  className,
 }: IntercityTransferFormProps) {
+  const isLight = variant === 'light'
+  const showTabs = tripTypePresentation ? tripTypePresentation === 'tabs' : isLight
+
   const [tripType, setTripType] = useState<TripType>('one-way')
   const [from, setFrom] = useState<string>('hotel')
   const [to, setTo] = useState<string>('pattaya')
@@ -83,58 +93,137 @@ export default function IntercityTransferForm({
     }
 
     clearErrors()
-    const tripSummary =
-      tripType === 'round-trip'
-        ? `Round-trip (${from.toUpperCase()} ⇄ ${to.toUpperCase()}) with return on ${returnDate}`
-        : `One-way transfer from ${from.toUpperCase()} to ${to.toUpperCase()} on ${date}`
+    let tripSummary = ''
+    if (tripType === 'round-trip') {
+      tripSummary = `Round-trip (${from.toUpperCase()} ⇄ ${to.toUpperCase()}) with return on ${returnDate}`
+    } else if (tripType === 'multi-city') {
+      tripSummary = `Multi-City journey starting from ${from.toUpperCase()} to ${to.toUpperCase()} on ${date}`
+    } else {
+      tripSummary = `One-way transfer from ${from.toUpperCase()} to ${to.toUpperCase()} on ${date}`
+    }
 
     onSearch(`Found available vehicles for Intercity: ${tripSummary}.`)
   }
 
-  const scheduleRowClass = tripType === 'one-way' ? bookingRow4 : bookingRow3
+  const scheduleRowClass = tripType === 'round-trip' ? bookingRow3 : bookingRow4
 
   return (
-    <form className={bookingForm} onSubmit={handleSubmit} noValidate>
-      <div className={bookingRow3}>
-        <Select
-          label="Trip Type"
-          icon={<Icon name="car" />}
-          value={tripType}
-          onChange={(e) => {
-            setTripType(e.target.value as TripType)
-            clearErrors()
-          }}
-          options={TRIP_TYPE_OPTIONS}
-        />
+    <form
+      className={cn(bookingForm, isLight && styles.airportLightForm, className)}
+      onSubmit={handleSubmit}
+      noValidate
+    >
+      {/* 1. Trip Type Tabs Presentation (When in Tab Mode) */}
+      {showTabs && (
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E5DFD5] pb-0 -mt-2 sm:-mt-1 mb-2">
+          {/* Trip Type Tabs */}
+          <div className="flex items-center gap-6 sm:gap-8">
+            {TRIP_TYPE_OPTIONS.map((opt) => (
+              <button
+                key={opt.value}
+                type="button"
+                onClick={() => {
+                  setTripType(opt.value)
+                  clearErrors()
+                }}
+                className={cn(
+                  'relative pb-3 pt-1 text-sm sm:text-[14.5px] transition-all border-0 bg-transparent cursor-pointer outline-none font-sans',
+                  tripType === opt.value
+                    ? isLight
+                      ? 'font-semibold text-[#101828]'
+                      : 'font-semibold text-white'
+                    : isLight
+                      ? 'font-medium text-[#667085] hover:text-[#101828]'
+                      : 'font-medium text-[#A6AAA0] hover:text-white',
+                )}
+              >
+                <span>{opt.label}</span>
+                {tripType === opt.value && (
+                  <span className="absolute -bottom-[1px] left-0 right-0 h-[2.5px] bg-[#C5A073] rounded-full z-10" />
+                )}
+              </button>
+            ))}
+          </div>
 
-        <Select
-          label="Origin (From)"
-          icon={<Icon name="pin" />}
-          value={from}
-          error={errors.from}
-          onChange={(e) => {
-            setFrom(e.target.value)
-            clearErrors()
-          }}
-          options={LOCATION_OPTIONS}
-        />
+          {/* Optional Right-Aligned Header Note (e.g. Free Cancellation) */}
+          {headerRightContent && (
+            <div className="hidden sm:flex items-center pb-2.5">{headerRightContent}</div>
+          )}
+        </div>
+      )}
 
-        <Select
-          label="Destination (To)"
-          icon={<Icon name="pin" />}
-          value={to}
-          error={errors.to}
-          onChange={(e) => {
-            setTo(e.target.value)
-            clearErrors()
-          }}
-          options={LOCATION_OPTIONS}
-        />
-      </div>
+      {/* 2. Route Inputs Row */}
+      {showTabs ? (
+        /* Tab Mode: Clean 2-Column Origin & Destination (No redundant dropdown) */
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Select
+            label="Origin (From)"
+            icon={<Icon name="pin" />}
+            value={from}
+            error={errors.from}
+            onChange={(e) => {
+              setFrom(e.target.value)
+              clearErrors()
+            }}
+            options={LOCATION_OPTIONS}
+          />
 
+          <Select
+            label="Destination (To)"
+            icon={<Icon name="pin" />}
+            value={to}
+            error={errors.to}
+            onChange={(e) => {
+              setTo(e.target.value)
+              clearErrors()
+            }}
+            options={LOCATION_OPTIONS}
+          />
+        </div>
+      ) : (
+        /* Select Dropdown Mode (Home booking tab fallback) */
+        <div className={bookingRow3}>
+          <Select
+            label="Trip Type"
+            icon={<Icon name="car" />}
+            value={tripType}
+            onChange={(e) => {
+              setTripType(e.target.value as TripType)
+              clearErrors()
+            }}
+            options={TRIP_TYPE_OPTIONS}
+          />
+
+          <Select
+            label="Origin (From)"
+            icon={<Icon name="pin" />}
+            value={from}
+            error={errors.from}
+            onChange={(e) => {
+              setFrom(e.target.value)
+              clearErrors()
+            }}
+            options={LOCATION_OPTIONS}
+          />
+
+          <Select
+            label="Destination (To)"
+            icon={<Icon name="pin" />}
+            value={to}
+            error={errors.to}
+            onChange={(e) => {
+              setTo(e.target.value)
+              clearErrors()
+            }}
+            options={LOCATION_OPTIONS}
+          />
+        </div>
+      )}
+
+      {/* 3. Schedule Row */}
       <div className={scheduleRowClass}>
         <DateInput
-          label="Departure Date"
+          label={tripType === 'multi-city' ? 'First Journey Date' : 'Departure Date'}
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
@@ -160,19 +249,44 @@ export default function IntercityTransferForm({
           options={TIME_OPTIONS}
         />
 
-        {tripType === 'one-way' && (
+        {tripType !== 'round-trip' && (
           <div className={bookingSubmit}>
             <Button type="submit" variant="primary" className={searchBtn}>
-              Search
+              Search Vehicles
             </Button>
           </div>
         )}
       </div>
 
+      {/* 4. Multi-City Info Hint */}
+      {tripType === 'multi-city' && (
+        <div className="rounded-xl border border-dashed border-[#C5A073]/40 bg-[#FAF8F5] p-3 sm:p-3.5 flex items-center gap-2.5 text-xs text-[#555850]">
+          <span className="text-[#C5A073] shrink-0">
+            <Icon name="car" size={16} />
+          </span>
+          <span>
+            <strong>Multi-City Journey:</strong> Set your initial route here. You can customize additional intermediate stops and layovers during checkout.
+          </span>
+        </div>
+      )}
+
+      {/* 5. Return Journey Schedule Panel (When Round-Trip is selected) */}
       {tripType === 'round-trip' && (
-        <div className={roundtripPanel}>
-          <div className={roundtripTitle}>
-            <Icon name="car" />
+        <div
+          className={
+            isLight
+              ? 'rounded-xl border border-dashed border-[#C5A073]/50 bg-[#FAF8F5] p-3.5 sm:p-4'
+              : roundtripPanel
+          }
+        >
+          <div
+            className={
+              isLight
+                ? 'mb-2.5 flex items-center gap-[7px] text-[13px] font-semibold text-[#C5A073]'
+                : roundtripTitle
+            }
+          >
+            <Icon name="car" size={16} />
             <span>Return Journey Schedule</span>
           </div>
           <div className={bookingRow4}>
@@ -202,7 +316,7 @@ export default function IntercityTransferForm({
             />
             <div className={bookingSubmit}>
               <Button type="submit" variant="primary" className={searchBtn}>
-                Search
+                Search Vehicles
               </Button>
             </div>
           </div>

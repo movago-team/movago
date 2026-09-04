@@ -3,8 +3,8 @@ import ServiceFleetSection from '@/components/services/shared/ServiceFleetSectio
 export default function IntercityFleetSection() {
   return (
     <ServiceFleetSection
-      eyebrow="OUR FLEET"
-      title="Premium Vehicles for Every Journey"
+      title="OUR FLEET"
+      description="Premium vehicles for every journey, crafted for first-class comfort, safety, and seamless intercity travel."
       buttonLabel="Book This Vehicle"
       buttonHrefBase="/book?service=intercity&vehicle="
     />
