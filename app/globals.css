@@ -26,7 +26,7 @@
 }
 
 html {
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,7 +38,7 @@ body {
   background: var(--cream);
   color: var(--text);
   font-size: 15px;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -121,7 +121,8 @@ h4,
 h5,
 h6 {
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .eyebrow {
@@ -129,7 +130,8 @@ h6 {
   color: var(--gold);
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: .025em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* ========================================================= RESPONSIVE ========================================================= */

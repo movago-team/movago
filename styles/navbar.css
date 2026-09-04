@@ -46,50 +46,15 @@
   text-decoration: none;
   flex: 0 0 auto;
   min-width: 0;
-  transition: opacity 0.2s ease;
-}
-
-.brand:hover {
-  opacity: 0.92;
 }
 
 .brand-logo {
-  height: 72px;
+  height: 70px;
   width: auto;
-  max-width: 90px;
+  max-width: min(340px, 52vw);
   object-fit: contain;
   flex-shrink: 0;
   display: block;
-  margin-right: -5px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-  line-height: 1;
-  user-select: none;
-}
-
-.brand-name {
-  font-size: 23px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #ffffff;
-  line-height: 1.1;
-  font-family: inherit;
-}
-
-.brand-tagline {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: var(--gold, #c5a073);
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
-  font-family: inherit;
 }
 
 /* 2. Center Zone: Main Navigation */
@@ -289,17 +254,8 @@
   }
 
   .brand-logo {
-    height: 67px;
-    max-width: 85px;
-  }
-
-  .brand-name {
-    font-size: 21px;
-  }
-
-  .brand-tagline {
-    font-size: 8.5px;
-    letter-spacing: 0.13em;
+    height: 64px;
+    max-width: min(310px, 46vw);
   }
 
   .nav-actions {
@@ -326,17 +282,8 @@
   }
 
   .brand-logo {
-    height: 65px;
-    max-width: 82px;
-    margin-right: -4px;
-  }
-
-  .brand-name {
-    font-size: 20px;
-  }
-
-  .brand-tagline {
-    font-size: 8px;
+    height: 58px;
+    max-width: min(280px, 54vw);
   }
 
   .desktop-nav {
@@ -444,19 +391,8 @@
   }
 
   .brand-logo {
-    height: 60px;
-    max-width: 76px;
-    margin-right: -3px;
-  }
-
-  .brand-name {
-    font-size: 19px;
-    letter-spacing: 0.1em;
-  }
-
-  .brand-tagline {
-    font-size: 7.5px;
-    letter-spacing: 0.1em;
+    height: 52px;
+    max-width: min(250px, 62vw);
   }
 
   .desktop-nav {
@@ -471,18 +407,7 @@
   }
 
   .brand-logo {
-    height: 54px;
-    max-width: 68px;
-    margin-right: -2px;
-  }
-
-  .brand-name {
-    font-size: 17.5px;
-    letter-spacing: 0.08em;
-  }
-
-  .brand-tagline {
-    font-size: 7px;
-    letter-spacing: 0.08em;
+    height: 48px;
+    max-width: min(220px, 66vw);
   }
 }
