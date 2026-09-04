@@ -2,7 +2,13 @@ import { vehicles } from '@/data/vehicles'
 
 export type ServiceTabType = 'airport' | 'hourly' | 'intercity'
 export type AirportDirection = 'airport-to-dest' | 'dest-to-airport'
-export type TripType = 'one-way' | 'round-trip'
+export type TripType = 'one-way' | 'round-trip' | 'multi-city'
+
+export const TRIP_TYPE_OPTIONS: { value: TripType; label: string }[] = [
+  { value: 'one-way', label: 'One Way' },
+  { value: 'round-trip', label: 'Round-Trip' },
+  { value: 'multi-city', label: 'Multi-City' },
+]
 
 export interface LocationOption {
   value: string

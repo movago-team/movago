@@ -17,12 +17,12 @@ export default function Header() {
 
   return (
     <header className={`topbar${isOverlay ? ' topbar-overlay' : ' topbar-solid'}`}>
-      <Link href="/" className="brand" aria-label="MOVAGO — Executive Airport Transfer">
-        <img src="/images/brand/logo.png" alt="MOVAGO" className="brand-logo" />
-        <div className="brand-text">
-          <span className="brand-name">MOVAGO</span>
-          <span className="brand-tagline">EXECUTIVE AIRPORT TRANSFER</span>
-        </div>
+      <Link href="/" className="brand" aria-label="MOVAGO — Move a Brighter Tomorrow">
+        <img
+          src="/images/logo-movago.png?v=4"
+          alt="MOVAGO — Move a Brighter Tomorrow"
+          className="brand-logo"
+        />
       </Link>
 
       <Navbar open={menuOpen} onNavigate={() => setMenuOpen(false)} />

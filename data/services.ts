@@ -456,7 +456,7 @@ export const INTERCITY_ROUTES: ServiceRoute[] = [
     duration: '~ 2.5 - 3.0 HRS',
     priceFrom: '2,790',
     currency: 'THB',
-    image: '/images/destinations/pattaya.jpg', // fallback or rayong image
+    image: '/images/services/routes/rayong.jpg',
   },
   {
     id: 'bkk-phuket',
@@ -478,7 +478,7 @@ export const INTERCITY_BENEFITS: ServiceFeature[] = [
   },
   {
     id: 'pro-every-step',
-    icon: 'user-check',
+    icon: 'user',
     title: 'Professional Every Step',
     desc: 'Skilled chauffeurs who know every route well.',
   },
@@ -496,7 +496,7 @@ export const INTERCITY_BENEFITS: ServiceFeature[] = [
   },
   {
     id: 'rely-support',
-    icon: 'headphones',
+    icon: 'headset',
     title: '24/7 Support You Can Rely On',
     desc: "We're here to assist you anytime, anywhere you need.",
   },
@@ -504,11 +504,11 @@ export const INTERCITY_BENEFITS: ServiceFeature[] = [
 
 export const INTERCITY_INCLUSIONS: ServiceInclusion[] = [
   { id: 'inc-1', icon: 'car', title: 'Private Vehicle' },
-  { id: 'inc-2', icon: 'user-check', title: 'Professional Chauffeur' },
-  { id: 'inc-3', icon: 'receipt', title: 'Fuel & Tolls' },
-  { id: 'inc-4', icon: 'shield-check', title: 'Highway Fees' },
-  { id: 'inc-5', icon: 'pin', title: 'Parking Fees' },
-  { id: 'inc-6', icon: 'sparkles', title: 'Bottled Water' },
+  { id: 'inc-2', icon: 'chauffeur', title: 'Professional Chauffeur' },
+  { id: 'inc-3', icon: 'fuel', title: 'Fuel & Tolls' },
+  { id: 'inc-4', icon: 'highway', title: 'Highway Fees' },
+  { id: 'inc-5', icon: 'parking', title: 'Parking Fees' },
+  { id: 'inc-6', icon: 'bottle', title: 'Bottled Water' },
   { id: 'inc-7', icon: 'plane', title: 'Flight Monitoring*' },
 ]
 

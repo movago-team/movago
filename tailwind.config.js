@@ -49,15 +49,15 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'var(--font-inter)',
-          'Inter',
+          'var(--font-montserrat)',
+          'Montserrat',
           'ui-sans-serif',
           'system-ui',
           'sans-serif',
         ],
         display: [
-          'var(--font-inter)',
-          'Inter',
+          'var(--font-montserrat)',
+          'Montserrat',
           'ui-sans-serif',
           'system-ui',
           'sans-serif',

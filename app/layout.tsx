@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
 import './globals.css'
 import '@/styles/navbar.css'
@@ -7,9 +7,9 @@ import '@/styles/form-controls.css'
 import '@/styles/select.css'
 import '@/styles/datepicker.css'
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-montserrat',
   display: 'swap',
 })
 
@@ -40,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={montserrat.variable}>
+      <body className={montserrat.className}>{children}</body>
     </html>
   )
 }
