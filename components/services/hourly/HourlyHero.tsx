@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { HOURLY_HERO_DATA } from '@/data/services'
 import Icon from '@/ui/icon'
@@ -6,10 +5,10 @@ import { cn } from '@/utils/cn'
 import { textGold } from '@/utils/ui/colors'
 
 export default function HourlyHero() {
-  const { eyebrow, title, description, breadcrumb, features, bgImage } = HOURLY_HERO_DATA
+  const { eyebrow, title, description, features, bgImage } = HOURLY_HERO_DATA
 
   return (
-    <section className="relative min-h-[560px] sm:min-h-[600px] lg:min-h-[640px] w-full overflow-hidden bg-[#07090A] pb-24 sm:pb-32 pt-[74px] max-[600px]:pt-[68px]">
+    <section className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[640px] w-full overflow-hidden bg-[#07090A] pb-16 sm:pb-24 lg:pb-32 pt-[74px] max-[600px]:pt-[68px]">
       {/* Background Image & Gradient */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,60 +17,47 @@ export default function HourlyHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[72%_center] sm:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07090A] via-[#07090A]/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07090A]/95 via-[#07090A]/60 to-transparent" />
+        {/* Base dark backdrop for text contrast */}
+        <div className="absolute inset-0 bg-[#07090A]/20 sm:bg-[#07090A]/35" />
+        {/* Bottom gradient fade into booking widget section */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07090A] via-[#07090A]/70 via-30% to-transparent" />
+        {/* Left side vignette to ensure headline, description, and badges pop sharply */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090A]/90 via-[#07090A]/75 via-45% to-transparent lg:via-[#07090A]/50" />
       </div>
 
       <div className="page-width-full relative z-10 pt-[clamp(28px,3.5vw,44px)] max-[900px]:pt-12 max-[600px]:pt-6">
-        {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs sm:text-sm text-[#A6AAA0]">
-          {breadcrumb.map((crumb, idx) => {
-            const isLast = idx === breadcrumb.length - 1
-            return (
-              <span key={crumb.label} className="inline-flex items-center gap-2">
-                {crumb.href && !isLast ? (
-                  <Link href={crumb.href} className="hover:text-gold transition-colors no-underline">
-                    {crumb.label}
-                  </Link>
-                ) : (
-                  <span className={isLast ? 'text-white font-medium' : undefined}>
-                    {crumb.label}
-                  </span>
-                )}
-                {!isLast && <Icon name="chevron-right" size={12} />}
-              </span>
-            )
-          })}
-        </nav>
-
-        {/* Content Box */}
         {/* Content Box */}
         <div className="max-w-2xl">
-          <div className={cn('text-xs sm:text-sm font-bold tracking-[0.1em] uppercase mb-3', textGold)}>
+          <div className={cn('text-xs sm:text-sm font-bold tracking-[0.14em] uppercase mb-3.5 sm:mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]', textGold)}>
             {eyebrow}
           </div>
-          <h1 className="m-0 font-sans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15] whitespace-pre-line">
+          <h1 className="m-0 font-sans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.28] sm:leading-[1.25] lg:leading-[1.22] whitespace-pre-line drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             {title}
           </h1>
-          <p className="m-0 mt-4 max-w-xl font-sans text-base leading-relaxed text-[#D6D9D0]">
+          <p className="m-0 mt-4 sm:mt-5 max-w-xl font-sans text-sm sm:text-base leading-[1.7] sm:leading-[1.75] text-[#E6E8E1] drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
             {description}
           </p>
         </div>
 
-        {/* 4 Feature Badges - Single line & enlarged icons */}
-        <div className="mt-8 sm:mt-10 lg:mt-12 flex items-center gap-6 sm:gap-8 lg:gap-9 xl:gap-11 max-[820px]:flex-wrap max-[820px]:gap-y-4">
+        {/* 4 Feature Badges: 2 Rows (2x2 Grid) on Mobile, Horizontal Flex on Desktop with comfortable spacing */}
+        <div className="mt-8 sm:mt-11 lg:mt-14 grid grid-cols-2 gap-x-3.5 sm:gap-x-6 gap-y-3.5 sm:gap-y-4 max-w-lg lg:max-w-none lg:flex lg:flex-wrap lg:items-center lg:gap-8 xl:gap-10">
           {features.map((item) => (
-            <div key={item.id} className="flex items-center gap-3.5 shrink-0">
-              <span className="flex size-12 sm:size-[52px] shrink-0 items-center justify-center rounded-full border-[1.5px] border-gold/65 text-gold bg-gold/[0.08] shadow-[0_0_20px_rgba(197,160,115,0.12)]">
-                <Icon name={item.icon} size={30} />
+            <div key={item.id} className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+              <span className="shrink-0 text-gold flex items-center justify-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                <span className="sm:hidden flex items-center justify-center">
+                  <Icon name={item.icon} size={28} />
+                </span>
+                <span className="hidden sm:inline-flex items-center justify-center">
+                  <Icon name={item.icon} size={34} />
+                </span>
               </span>
-              <div className="flex flex-col">
-                <span className="text-sm sm:text-[15px] font-bold text-white leading-tight">
+              <div className="flex flex-col min-w-0">
+                <span className="text-xs sm:text-sm lg:text-[15px] font-bold text-white leading-tight drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] truncate">
                   {item.title}
                 </span>
-                <span className="text-xs sm:text-[13px] text-[#A6AAA0] leading-tight mt-1 whitespace-nowrap">
+                <span className="text-[10.5px] sm:text-xs lg:text-[13px] text-[#C4C8BE] leading-tight mt-0.5 sm:mt-1 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] truncate">
                   {item.desc}
                 </span>
               </div>
